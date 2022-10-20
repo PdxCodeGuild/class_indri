@@ -8,7 +8,7 @@ measure = {
     'yard': .9144
 
 }
-# Ask the user amount of distance
+# Ask the user number amount of distance
 user_input= float(input('What is the distance?'))
 #Ask the user what input units
 user_units=input('What are the units? (mi, km, ft, m, inch, yard)')
