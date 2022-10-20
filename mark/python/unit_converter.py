@@ -28,5 +28,6 @@ meters = int(user_distance) * convert[from_unit]
 result = meters * (1/convert[to_unit])
 
 #return the result
-print(result)
+print(f"{user_distance} {from_unit} is {result} {to_unit}")
+
 
