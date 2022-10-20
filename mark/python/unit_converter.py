@@ -1,6 +1,7 @@
 # Unit Converter
 
-# Dictionary containing conversion of unit to meters, with support for yards and inches
+# Dictionary containing conversion for unit to meters
+# support for yards and inches
 convert = {
     "ft" : 0.3048,
     "mi" : 1609.34,
@@ -10,14 +11,21 @@ convert = {
     "in" : 0.0254
 }
 
+
 # ask the user for the number
-user_distance = input("what is the distance in feet? ")
+user_distance = input("what is the distance? ")
 
 # ask the user for the unit
-user_unit = input("What are the units? ")
+from_unit = input("What are the input units? ")
 
-#Convert the user distance from user unit to meters
-result = int(user_distance) * convert[user_unit]
+# ask the user what to convert to
+to_unit = input("what are the output units? ")
+
+# Convert the user distance from user unit to meters
+meters = int(user_distance) * convert[from_unit]
+
+# Convert from meters to the desired unit
+result = meters * (1/convert[to_unit])
 
 #return the result
 print(result)
