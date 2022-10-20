@@ -35,9 +35,9 @@ Staff:
 <details open>
   <summary>Python</summary>
 
-| Lab Number | Title | Due Date |
-| ---------- | ----- | -------- |
-| Lab 01     | [Code Folder]() | 07 JUN |
+| Title | Due Date |
+| ----- | -------- |
+| [Unit Converter](https://python-documenation-site.deno.dev/python/labs/unit-converter) | 02 NOV |
 
 </details>
 
