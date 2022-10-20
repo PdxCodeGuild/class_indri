@@ -16,15 +16,17 @@ quantity = int(input('What is the distance? '))
 input_unit = input("What are the input units? ")
 output_unit = input("What are the output units? ")
 
-# convert input_unit to meters 
+# convert input_unit to unit value
 meter_per = distance_units[input_unit]
 
 # calcutalte the total in meters
-total_input_unit = quantity * meter_per
+input_unit_meter = quantity * meter_per
 
-distance_per = distance_units[output_unit]
+#print(f'{quantity} is {round(input_unit_meter, 4)} m.') # round to the 4 decimal 
 
-total = int(distance_per) / total_input_unit
+distance_output = distance_units[output_unit] #converting out put unit value
 
-print (f'{quantity} {input_unit} is {round(total, 4)} {output_unit}.') # round to the 4 decimal
+total = input_unit_meter / int(distance_output) # dividing meter by output unit
+
+print (f'{quantity} {input_unit} is {round(total, 7)} {output_unit}.') # round to the 7 decimal
 

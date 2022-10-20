@@ -134,7 +134,7 @@ else:
 '''
 
 # Lists
-
+'''
 foods = ["potato", "tomato", "grape", "kiwi"]
 
 # print(foods) # print list
@@ -146,3 +146,4 @@ removed_item = foods.pop(1)
 
 foods.pop(1) #remove items
 
+'''
