@@ -1,2 +1,0 @@
-# Anthony Wallace
-## Class Indri
