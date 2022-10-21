@@ -13,7 +13,7 @@ unit_measured_two = input(f"What unit would you like to convert {unit_measured_o
 amount_measured = float(input(f"How many {unit_measured_one} would you like to convert to {unit_measured_two}?: "))
 
 unit_measured_one_in_meters = distances[unit_measured_one] * amount_measured
+unit_measured_two_in_meters = distances[unit_measured_two] * distances["meters"]
 
-answer = unit_measured_one_in_meters / distances[unit_measured_two]
-
+answer = unit_measured_one_in_meters / unit_measured_two_in_meters
 print(print(f"{amount_measured} {unit_measured_one} converted to {unit_measured_two} is {answer}"))
