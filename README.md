@@ -35,9 +35,9 @@ Staff:
 <details open>
   <summary>Python</summary>
 
-| Lab Number | Title | Due Date |
-| ---------- | ----- | -------- |
-| Lab 01     | [Code Folder]() | 07 JUN |
+| Title | Due Date |
+| ----- | -------- |
+| [Unit Converter](https://python-documenation-site.deno.dev/python/labs/unit-converter) | 02 NOV |
 
 </details>
 
@@ -113,35 +113,14 @@ To emulate a more professional Git workflow, we're going to start creating new b
 
   `git push -u origin <BRANCH_NAME>`
 
-  <details>
-    <summary>Screenshot</summary>
-    <img src="images/screenshots/set_upstream_message.png" width=800>
-  </details>
-
 - After successfully pushing your new branch to Github, you should see the option to create a Pull Request for your branch on the main repo page.
 
-  <details>
-    <summary>Screenshot</summary>
-    <img src="images/screenshots/pull_request_button.png" width=800>
-  </details>
-
 - If you don't see that message, you'll have to navigate to your new remote branch
-  <details>
-    <summary>Screenshot</summary>
-    <img src="images/screenshots/switch_branch.gif" width=800>
-  </details>
 
 - Once you've navigated to your individual branch, you'll find the option to create a Pull Request in the "Contribute" dropdown.
-  <details>
-    <summary>Screenshot</summary>
-    <img src="images/screenshots/open_pull_request_alternative.gif" width=800>
-  </details>
 
 - Click the "Open Pull Request" button. Add a comment to your Pull Request like "Submitting Lab 00" and click "Create Pull request"
-  <details>
-    <summary>Screenshot</summary>
-    <img src="images/screenshots/create_pull_request.png" width=800>
-  </details>
+
 </details>
 
 ## Updating a branch
