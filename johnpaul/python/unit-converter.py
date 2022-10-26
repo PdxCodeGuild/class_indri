@@ -77,11 +77,4 @@ while True:
     else:
         print("Input Error! Please try again")
 
-
-# while user_input_unit in metrics and user_output_unit in metrics:
-#     new_value = round(number_of_distance * metrics[user_input_unit]/ metrics[user_output_unit], 5) 
-#     print(f'{number_of_distance} {user_input_unit} is {new_value} {user_output_unit}')
-#     break
-# else:
-#     print("Input Error! Please try again")
    
