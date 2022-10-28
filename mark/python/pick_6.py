@@ -1,27 +1,3 @@
-'''
-Have the computer play pick6 many times and determine net balance.
-
-Initially the program will pick 6 random numbers as the 'winner'. Then try playing pick6 100,000 times, with the ticket cost and payoff below.
-
-A ticket contains 6 numbers, 1 to 99, and the number of matches between the ticket and the winning numbers determines the payoff. 
-Order matters, if the winning numbers are [5, 10] and your ticket numbers are [10, 5] you have 0 matches. 
-If the winning numbers are [5, 10, 2] and your ticket numbers are [10, 5, 2], you have 1 match.
-
-Calculate your net winnings (the sum of all expenses and earnings).
-
-a ticket costs $2
-if 1 number matches, you win $4
-if 2 numbers match, you win $7
-if 3 numbers match, you win $100
-if 4 numbers match, you win $50,000
-if 5 numbers match, you win $1,000,000
-if 6 numbers match, you win $25,000,000
-Write the following functions and use them in the code:
-
-pick6(): Generate a list of 6 random numbers, which can then be used for both the winning numbers and tickets. Return the list
-num_matches(winning, ticket): Return the number of matches between the winning numbers and the ticket.
-'''
-from audioop import add
 import random
 
 # pick 6 number generator
@@ -30,6 +6,14 @@ def pick6(numbers):
     while len(numbers) < 6:
         numbers.append(random.randint(1,100))
     return numbers
+
+# compare two lists and add to a counter when a matching index is found.
+def num_matches(winning_ticket, user_ticket):
+    matches = 0
+    for i in range(len(user_ticket)):    
+        if user_ticket[i] == winning_ticket[i]:
+            matches += 1
+    return matches
 
 # Generate a list of 6 random numbers representing the winning tickets
 winning_ticket = []
@@ -42,46 +26,46 @@ user_balance = 0
 expenses = []
 earnings = []
 
-# Loop 100,000 times
 for x in range(100000):
     
     # Generate a list of 6 random numbers representing the ticket
     user_ticket = []
     pick6(user_ticket)
+    # print(winning_ticket) #testing comparison
+    # print(user_ticket)
 
     # Subtract 2 from your balance (you bought a ticket, expenditure)
     expenses.append(int(-2))
 
-    # Find how many numbers match from the user ticket against the winning ticket (assume none, add 1 for every match)
-    matches = 0
-    for i in range(len(user_ticket)):    
-        if user_ticket[i] == winning_ticket[i]:
-            matches = matches + 1
-    # print("matches: ", matches)
+    # Find how many numbers match from the user ticket against the winning ticket
+    chicken_dinner = num_matches(winning_ticket, user_ticket)
+    # print(chicken_dinner) #testing matchs
 
     # add prize winnings to earnings bucket
-    if matches == 1:
+    if chicken_dinner == 1:
         earnings.append(int(4))
-    elif matches == 2:
+    elif chicken_dinner == 2:
         earnings.append(int(7))
-    elif matches == 3:
+    elif chicken_dinner == 3:
         earnings.append(int(100))
-    elif matches == 4:
+    elif chicken_dinner == 4:
         earnings.append(int(50000))
-    elif matches == 5:
+    elif chicken_dinner == 5:
         earnings.append(int(1000000))
-    elif matches == 6:
+    elif chicken_dinner == 6:
         earnings.append(int(25000000))
+    # print(sum(earnings)) #testing earnings
 
-# calculate total expenses and earnings
+# Sum of expenditures & earnings
 total_expenses = sum(expenses)
 total_earnings = sum(earnings)
 
-# After the loop, print the final balance
-user_balance = total_expenses - total_earnings
+
+# # After the loop, print the final balance
+user_balance = total_earnings - abs(total_expenses) #absolute value expenses used for math
 print("final balance: ", user_balance)
 
-# Display total earnings, total expneses & the return on investment
+# # Display total earnings, total expneses & the return on investment
 print("Total expenses: ", total_expenses, "\nTotal earnings: ", total_earnings)
-roy = (total_earnings - total_expenses)/(total_expenses)
+roy = -(total_earnings - abs(total_expenses))/(total_expenses)
 print("ROI: ", roy)
