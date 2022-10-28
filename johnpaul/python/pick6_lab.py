@@ -18,49 +18,79 @@ if 5 numbers match, you win $1,000,000
 if 6 numbers match, you win $25,000,000
 
 """
+#-------------------------------------------------------------------------------------------#
+
+from itertools import count
 import random
-#STEPS
+
 ## Generate a list of 6 random numbers representing the winning tickets
 def pick6():
     winning_tickets = []
-    choices = range(1, 100)
-    for x in range(6):
-        winning_tickets.append(random.choices(choices, k = 6))
-        print(winning_tickets)
-    
-pick6()
+    i = 0
+    while i < 6:
+        winning_tickets.append(random.randint(1, 99))
+        i += 1
+    return winning_tickets
 
-def num_matches():
-   comp_tickets = []
-   tickect_choices = range(1, 100)
-   for x in range(6):
-        comp_tickets.append(random.choices(tickect_choices, k = 6))
-        print(comp_tickets)
+winning = pick6() # winning ticket
 
-num_matches()
-#--------------------------------------------------------------------------------------------------------------------------------------#
-## Start your balance at 0
-# Your_balance = 0
+print(winning)
+print()
 
-#--------------------------------------------------------------------------------------------------------------------------------------#
-## Loop 100,000 times, for each loop:
-# played_tickets = []
-# for x in range(10):
-#     if x == random.choices(pick_choice)
-#     print(x)
-#     x += 1
+# #-------------------------------------------------------------------------------------------#
+# # Looping 100,000 times ## Generate a list of 6 random numbers representing the ticket
+
+def ticket():
+    my_ticket = 0
+    random_ticket = [] ##---------------------- my your ticket at 0
+    while my_ticket < 100000: 
+        ticket = pick6()
+        random_ticket.append(ticket)
+        my_ticket += 1
+    return random_ticket
+
+        
+
+result = ticket()
+# print(result)
+# #-------------------------------------------------------------------------------------------#
+
+matched = 0
+beginning_balance = 0
+
+for nums in range(len(result)):
+
+    for item in range(len(result[nums])):
+        # print(item, result[nums][item])
+        while matched < 0:
+            matching_ticket = winning[item] == result[item]
+            if matching_ticket == "True":
+                matched += 1
+                beginning_balance += 4
+            elif matched== 2:
+                beginning_balance += 7
+            elif matched== 3:
+                beginning_balance += 100
+            elif matched== 4:
+                beginning_balance += 50000
+            elif matched== 5:
+                beginning_balance += 1000000
+            elif matched== 6:
+                beginning_balance += 25000000
+            else:
+                if matching_ticket == "False":
+                    matched += 0
+       
+        # print(checked, item, result[nums][item], winning[item])
+
+ticket_cost = (-2 * nums)
+earnings = beginning_balance 
+print('you earned: ',earnings)
+print('you owe:', ticket_cost)
 
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------#
-
-
-## Generate a list of 6 random numbers representing the ticket
-
-## Subtract 2 from your balance (you bought a ticket)
-
-## Find how many numbers match
-
-## Add to your balance the winnings from your matches
-
-## After the loop, print the final balance
+# #-------------------------------------------------------------------------------------------#
+# Calculate return on investment
+ROI = (f' {(((earnings - ticket_cost) / ticket_cost)) * 100}%')
+print('your ROI:', ROI)
