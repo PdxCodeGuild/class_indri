@@ -13,14 +13,14 @@ while True:
         user_card_num = test
         break 
 
-    try: #try to format the list, and if we can't restart the loop.
+    try: #try to format the list or, if we can't, restart the loop.
         
         f_input = "".join(user_input.split()) #delete spaces from the input string
         user_card_num = [int(i) for i in f_input] # Convert input string to a list of integers
     
         # print(user_card_num) # test
         if len(f_input) == 16: # validate length of list
-                break # Great Success! move on with the program.
+                break
         else:
             print("\nThat is not a valid card number.\n")
 
@@ -45,7 +45,7 @@ for i in range(0, len(user_card_num)):
     
 # Sum all values.
 sum = str(sum(user_card_num))
-print(sum[1])
+# print(sum[1]) #testing
 
 # Take the second digit of that sum.
 # If that matches the check digit, the whole card number is valid.
