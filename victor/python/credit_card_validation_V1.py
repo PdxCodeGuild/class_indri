@@ -26,16 +26,15 @@ for i in range(0, len(rev_cc)):
         
 # Sum all values.
 
-cc_total = sum(rev_cc)
+cc_total = str(sum(rev_cc))
 
 # Take the second digit of that sum.
 
-cc_total_str = str(cc_total)
-cc_second_digit = int(cc_total_str[1:])
+cc_second_digit = int(cc_total[1])
 
 # If that matches the check digit, the whole card number is valid.
 if cc_second_digit == check_digit:
     print("Your card is valid!")
 else:
     print("Not valid!")
-    print(check_digit, cc_second_digit, rev_cc)
+              
