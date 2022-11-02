@@ -29,34 +29,40 @@ while True:
 
 
 # Slice off the last digit. That is the check digit.
+print(user_card_num)
 check_digit = user_card_num.pop(-1)
+# print(user_card_num)
 
 # Reverse the digits.
 user_card_num.reverse()
+# print(user_card_num)
 
 # Double every other element in the reversed list.
 for i in range(0, len(user_card_num), 2):
     user_card_num[i] *= 2
+# print(user_card_num)
 
 # Subtract nine from numbers over nine.
 for i in range(0, len(user_card_num)):
     if user_card_num[i] > 9:
         user_card_num[i] -= 9
+# print(user_card_num)
     
 # Sum all values.
-sum = str(sum(user_card_num))
+total = str(sum(user_card_num))
 # print(sum[1]) #testing
-
+# print(total)
+# print(check_digit)
 # Take the second digit of that sum.
 # If that matches the check digit, the whole card number is valid.
-if int(sum[1]) == check_digit:
+if int(total[1]) == check_digit:
     print("Valid!")
 else:
     print("invalid!")
 
 
 
-# For example, the worked out steps would be:
+# For example:
 # 4 5 5 6 7 3 7 5 8 6 8 9 9 8 5 5
 # 4 5 5 6 7 3 7 5 8 6 8 9 9 8 5
 # 5 8 9 9 8 6 8 5 7 3 7 6 5 5 4
