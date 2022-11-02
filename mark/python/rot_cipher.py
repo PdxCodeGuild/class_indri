@@ -13,19 +13,13 @@ def rot_cipher(character, step):
         # take the index position of the letter,
         letter_index = lower_case.index(character)    
         # apply the step
-        try:  
-            rotation = lower_case[letter_index + int(int(step))] # return value at position for letter index plus step.
-        except IndexError:
-            rotation = lower_case[(letter_index+int(step)) % len(lower_case)] #if > length of list, divide length of list from total & return index value.  
+        rotation = lower_case[(letter_index+int(step)) % len(lower_case)] # store value at index position for (letter index plus step) divided by list length.
         # return the value at the stepped index position
         return rotation
     #samesies but for upper case
     if character in upper_case:
         letter_index = upper_case.index(character)
-        try:
-            rotation = upper_case[letter_index + int(step)]
-        except IndexError:
-            rotation = upper_case[(letter_index + int(step)) % len(upper_case)]
+        rotation = upper_case[(letter_index + int(step)) % len(upper_case)]
         return rotation
     # numbers and special characters can be put directly into the output
     else:
