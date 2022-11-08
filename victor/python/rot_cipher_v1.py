@@ -17,8 +17,10 @@ if direction == "decode":
 for char in prompt:
     if char in ALPHABET:
         position = ALPHABET.index(char)
-        new_position = position + shift
+        new_position =   position + shift
         output += ALPHABET[new_position]
+    else:
+        output += char
 
 
 print(f"Your {direction}d phrase is now:\n{output}")
