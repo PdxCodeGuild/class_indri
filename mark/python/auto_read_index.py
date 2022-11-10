@@ -5,7 +5,7 @@ The automated readability index (ARI) is a formula for computing the U.S. grade 
 import requests
 import math
 
-url = "https://www.gutenberg.org/files/11/11-0.txt"
+url = "https://www.gutenberg.org/cache/epub/46/pg46.txt"
 response = requests.get(url)
 response.encoding = 'utf-8'
 given_text = response.text
@@ -15,41 +15,35 @@ characters = len(given_text)
 print(f"Total characters: ", characters)
 
 # remove characters that may interfere with sentence detection.
-items_to_remove = ["\n","\r",",",";","'s", "@", "&","*","(",")","#","!","%","=","+","-","_",":", '"',"'"]
+items_to_remove = ["\t","\n","\r","\v","\f", ",", ":", "'", "-", "/", "*", "@", "$", "\"", ";"]
 for i in items_to_remove:
-    given_text = given_text.replace(i, " ")
+    given_text = given_text.replace(i, "")
 
 # number of words
 words = len(given_text.split())
 print("Total words:", words)
 
-punctuation = [".","!","?","-"]
+# split string into a list of sentences based on punctuation used to end a sentence.
+punctuation = [".","!","?"]
 for i in punctuation:
     given_text = given_text.replace(i, "|")
 sentence = given_text.split("|")
-print("Total sentenches: ", *sentence, sep="\n")
+# print(*sentence, sep="\n") # testing
+
 sentences = len(sentence) #number of sentences
 print("Total sentences:", sentences)
 
+# ARI formula
+# If the result is a decimal, always round up
+score = math.ceil(4.71 * (characters / words) + 0.5 * (words / sentences) - 21.43)
 
-
-# The score is computed by multiplying the number of characters divided by the number of words by 4.71, 
-# adding the number of words divided by the number of sentences 
-# multiplied by 0.5, 
-# and subtracting 21.43. 
-# If the result is a decimal, always round up, and if the result is higher than 14, it should be set to 14
-
-score = (4.71 * (characters / words)) + (0.5 * (words / sentences)) - 21.43
-
-if score is float:
-    score = round(score)
+# if the result is higher than 14, it should be set to 14
+if score < 1:
+    score = 1
 if score > 14:
     score = 14
 
-print(f"your score is:", math.ceil(score))
-# print(score)
-
-#Scores correspond to the following ages and grad levels:
+# Scores correspond to the following ages and grad levels:
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -67,12 +61,9 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-# The output should look something like the following:
-
-'''
---------------------------------------------------------
-The ARI for gettysburg-address.txt is 12
-This corresponds to a 11th Grade level of difficulty
-that is suitable for an average person 16-17 years old.
---------------------------------------------------------
-'''
+# output
+print(f"""
+    The ARI for {url} is {score}.
+    This corresponds to a {ari_scale[score]['grade_level']} level of difficulty.
+    That is suitable for an average person {ari_scale[score]['ages']} years old.
+""")
