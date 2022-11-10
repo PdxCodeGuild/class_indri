@@ -1,6 +1,6 @@
 import requests
 import string
-
+import re
 response = requests.get('https://www.gutenberg.org/cache/epub/120/pg120.txt')
 response.encoding = 'utf-8' # set encoding to utf-8
 book = (response.text).lower()
@@ -8,9 +8,23 @@ book = (response.text).lower()
 # Take the following steps to build up our dictionary. The result should look something like {'a': 3, 'the': 4}
 
 # Make everything lowercase, strip punctuation, split into a list of words.
+'''
+book = book.replace("\n", " ")
+for i in book:
+    if i not in string.ascii_letters and i != " ":
+        book = book.replace(i, "")
+'''
+
+
+# REGEX 
+pattern = r"\b([a-zA-z'-]+)\b"
+book_list = re.findall(pattern, book)
+
+'''
 punct = string.punctuation + '' + '//' 
 book = book.translate(str.maketrans('', '', punct))
 book_list = book.split(" ")
+'''
 
 # Your dictionary will have words as keys and counts as values. If a word isn't in your dictionary yet, add it with a count of 1. If it is, increment its count.
 word_dict = {}
