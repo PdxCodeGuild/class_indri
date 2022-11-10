@@ -8,7 +8,7 @@ import requests
 import string
 response = requests.get('https://www.gutenberg.org/cache/epub/69283/pg69283.txt')
 response.encoding = 'utf-8'
-print(response.text)
+# print(response.text)
 response = response.text
 # dictionary holding all words in the text!
 word_dict = {
@@ -38,6 +38,7 @@ for word in response:
     else:
         word_dict[word] = 1
 
+print(response)
 #Code from lab to list top 10 words! (credit to lab creator)
 words = list(word_dict.items()) # .items() returns a list of tuples
 words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
