@@ -17,15 +17,18 @@ response.encoding = 'utf-8'
 # Make everything lowercase
 book = response.text.lower()
 # strip punctuation 
-book = book.translate(str.maketrans('','',string.punctuation)) # this way is faster...
+# book = book.translate(str.maketrans('','',string.punctuation)) # this way is faster...
 
-# for i in book:                                                  # but this one returns more results...
-#     if i not in string.ascii_letters and i != " ":
-#         book = book.replace(i, "")
+for i in book:                                                  # but this one returns more results...
+    if i not in string.ascii_letters and i != " ":
+        book = book.replace(i, "")
+
+# print(book)
 
 
-# #split into a list of words.
-book = str.split(book, " ")
+# # #split into a list of words.
+book =  book.split(" ")
+
 
 # # Your dictionary will have words as keys and counts as values. 
 word_count = {}
