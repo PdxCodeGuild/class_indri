@@ -23,3 +23,5 @@ for char in prompt:
 
 print(f"Your {direction}d phrase is now:\n{output}")
     
+
+
