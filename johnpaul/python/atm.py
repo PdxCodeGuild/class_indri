@@ -5,18 +5,19 @@
 
 class ATM:
     
-    def __init__(self):
+    def __init__(self, balance=0, message1=[], message2=[]):
         # initialize our class with a balance of 0 and an interest rate of 0.1
-        self._balance = 0
+        self._balance = balance
         self.__interest = 0.1
-        self.message1 = []
-        self.message2 = []
+        self.message1 = message1
+        self.message2 = message2
         
     
         
     def deposit(self, amount):
         # add the given amount to the balance
         self._balance += amount
+        self.message1.append(f'User deposit {amount}')
         return self._balance
     
     def check_withdrawal(self, amount):
@@ -29,6 +30,7 @@ class ATM:
     def withdraw(self, amount):
         # removes the given amount from the balance and returns it
         self._balance -= amount
+        self.message2.append(f'User withdraw {amount}')
         return self._balance
 
     
@@ -44,14 +46,11 @@ class ATM:
 
 # Part 2: Have the ATM maintain a list of transactions
 # Add a new method 
-    def print_transactions(self, deposit, withdraw):
-        if transaction == 'deposit':
-            self._balance += amount
-            self.message1.append(f'User deposited {amount}')
+    def print_transactions(self):
+        if transactions == 'deposit':
             return self.message1
-        elif transaction == 'withdraw':
-            self._balance -= amount
-            self.message2.append(f'User withdrew {amount}')
+
+        elif transactions == 'withdraw':
             return self.message2
   
 
@@ -82,10 +81,14 @@ while True:
         amount = atm.deposit_interest() # call the calc_interest() method
         atm.deposit(amount)
         print(f'Deposited ${amount} in interest')
-    elif command == 'print transaction':
-        transaction = input('Which transaction would you like to print (deposit or withdraw)? ')
-        if transaction == 'deposit' or 'withdraw':
-            print(atm.print_transactions())
+    elif command == 'transactions':
+        transactions = input("Which transaction would you like to print (deposit or withdraw)?: ")
+        if transactions == 'deposit':
+            msg = atm.print_transactions()
+            print(msg)
+        elif transactions == 'withdraw':
+            msg = atm.print_transactions()
+            print(msg)
   
     elif command == 'help':
         print('Available commands:')
