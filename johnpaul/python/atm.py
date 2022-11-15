@@ -38,6 +38,19 @@ class ATM:
         return self._balance * self.__interest
 
 
+# Part 2: Have the ATM maintain a list of transactions
+# Add a new method 
+    def print_transactions(self, transaction):
+        transaction = []
+        if command == "deposit":
+            transaction.append(f'User deposited: {atm.deposit}')
+            return transaction
+        elif command == "withdraw":
+            transaction.append(f'User withdrew: {atm.withdraw}')
+            return transaction
+
+
+
 atm = ATM() # create an instance of our class
 print('Welcome to the ATM')
 while True:
@@ -60,6 +73,14 @@ while True:
         amount = atm.deposit_interest() # call the calc_interest() method
         atm.deposit(amount)
         print(f'Deposited ${amount} in interest')
+    elif command == 'print transaction':
+        transaction = input('Which transaction would you like to print (deposit or withdraw)? ')
+        if transaction == 'deposit':
+            atm.print_transactions(transaction)
+            print(f'User deposited: ${transaction}')
+        elif transaction == 'withdraw':
+            atm.print_transactions(transaction)
+            print(f'User withdrew ${transaction}')
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
