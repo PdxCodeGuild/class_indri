@@ -9,12 +9,15 @@ class ATM:
         # initialize our class with a balance of 0 and an interest rate of 0.1
         self._balance = 0
         self.__interest = 0.1
+        self.message1 = []
+        self.message2 = []
         
     
         
     def deposit(self, amount):
         # add the given amount to the balance
         self._balance += amount
+        return self._balance
     
     def check_withdrawal(self, amount):
         # returns true if the withdrawn amount won't put the account in the negative, false otherwise
@@ -27,6 +30,7 @@ class ATM:
         # removes the given amount from the balance and returns it
         self._balance -= amount
         return self._balance
+
     
     def balance(self):
         # return the account balance
@@ -40,14 +44,19 @@ class ATM:
 
 # Part 2: Have the ATM maintain a list of transactions
 # Add a new method 
-    def print_transactions(self, transaction):
-        transaction = []
-        if command == "deposit":
-            transaction.append(f'User deposited: {atm.deposit}')
-            return transaction
-        elif command == "withdraw":
-            transaction.append(f'User withdrew: {atm.withdraw}')
-            return transaction
+    def print_transactions(self, deposit, withdraw):
+        if transaction == 'deposit':
+            self._balance += amount
+            self.message1.append(f'User deposited {amount}')
+            return self.message1
+        elif transaction == 'withdraw':
+            self._balance -= amount
+            self.message2.append(f'User withdrew {amount}')
+            return self.message2
+  
+
+
+
 
 
 
@@ -75,12 +84,9 @@ while True:
         print(f'Deposited ${amount} in interest')
     elif command == 'print transaction':
         transaction = input('Which transaction would you like to print (deposit or withdraw)? ')
-        if transaction == 'deposit':
-            atm.print_transactions(transaction)
-            print(f'User deposited: ${transaction}')
-        elif transaction == 'withdraw':
-            atm.print_transactions(transaction)
-            print(f'User withdrew ${transaction}')
+        if transaction == 'deposit' or 'withdraw':
+            print(atm.print_transactions())
+  
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
