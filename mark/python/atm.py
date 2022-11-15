@@ -20,7 +20,7 @@ class ATM:
     
     def check_withdrawal(self, amount):
         # returns true if the withdrawn amount won't put the account in the negative, false otherwise
-        if self.user_balance - amount <= 0:
+        if self.user_balance - amount < 0:
             return False
         else:
             return True
