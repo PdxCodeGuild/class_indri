@@ -5,37 +5,38 @@ The automated readability index (ARI) is a formula for computing the U.S. grade 
 import requests
 import math
 
-url = "https://www.gutenberg.org/cache/epub/46/pg46.txt"
+url = "https://www.gutenberg.org/cache/epub/120/pg120.txt"
 response = requests.get(url)
 response.encoding = 'utf-8'
 given_text = response.text
 
+# remove characters that may interfere with sentence detection.
+items_to_remove = ['"', "\t","\n","\r","\v","\f", ",", ":", "'", "-", "/", "*", "@", "$", "\"", ";"]
+for i in items_to_remove:
+    given_text = given_text.replace(i, "")
+
 # number of characters
 characters = len(given_text) 
 print(f"Total characters: ", characters)
-
-# remove characters that may interfere with sentence detection.
-items_to_remove = ["\t","\n","\r","\v","\f", ",", ":", "'", "-", "/", "*", "@", "$", "\"", ";"]
-for i in items_to_remove:
-    given_text = given_text.replace(i, "")
 
 # number of words
 words = len(given_text.split())
 print("Total words:", words)
 
 # split string into a list of sentences based on punctuation used to end a sentence.
-punctuation = [".","!","?"]
+punctuation = [". ","! ","? "]
 for i in punctuation:
     given_text = given_text.replace(i, "|")
 sentence = given_text.split("|")
-# print(*sentence, sep="\n") # testing
+print(*sentence, sep="\n") # testing
 
 sentences = len(sentence) #number of sentences
 print("Total sentences:", sentences)
 
 # ARI formula
 # If the result is a decimal, always round up
-score = math.ceil(4.71 * (characters / words) + 0.5 * (words / sentences) - 21.43)
+score = math.ceil(((4.71 * (characters / words)) + (0.5 * (words / sentences)))- 21.43)
+print(score)
 
 # if the result is higher than 14, it should be set to 14
 if score < 1:
