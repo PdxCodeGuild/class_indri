@@ -16,15 +16,20 @@ for i in items_to_remove:
     given_text = given_text.replace(i, "")
 
 # number of characters
-characters = len(given_text) 
+
+characters = len(''.join(given_text)) 
 print(f"Total characters: ", characters)
+
+
 
 # number of words
 words = len(given_text.split())
 print("Total words:", words)
 
-# split string into a list of sentences based on punctuation used to end a sentence.
-punctuation = [". ","! ","? "]
+
+# split string into a list of sentences based on punctuation used ends a sentence.
+punctuation = [".","!","?"]
+
 for i in punctuation:
     given_text = given_text.replace(i, "|")
 sentence = given_text.split("|")
@@ -36,7 +41,10 @@ print("Total sentences:", sentences)
 # ARI formula
 # If the result is a decimal, always round up
 score = math.ceil(((4.71 * (characters / words)) + (0.5 * (words / sentences)))- 21.43)
+
+
 print(score)
+
 
 # if the result is higher than 14, it should be set to 14
 if score < 1:
@@ -64,7 +72,7 @@ ari_scale = {
 
 # output
 print(f"""
-    The ARI for {url} is {score}.
-    This corresponds to a {ari_scale[score]['grade_level']} level of difficulty.
-    That is suitable for an average person {ari_scale[score]['ages']} years old.
+The ARI for {url} is {score}.
+This corresponds to a {ari_scale[score]['grade_level']} level of difficulty.
+That is suitable for an average person {ari_scale[score]['ages']} years old.
 """)
