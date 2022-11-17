@@ -1,41 +1,29 @@
-''' Let's compute the ARI for a given book. 
-The automated readability index (ARI) is a formula for computing the U.S. grade level for a given block of text. 
-'''
-
 import requests
 import math
 
 url = "https://www.gutenberg.org/cache/epub/120/pg120.txt"
 response = requests.get(url)
 response.encoding = 'utf-8'
-given_text = response.text
+book_end = response.text.find("*** END OF THE PROJECT")
+book_start = response.text.find("*** START OF THE PROJECT")
+book = response.text[book_start:book_end]
 
-# remove characters that may interfere with sentence detection.
-items_to_remove = ['"', "\t","\n","\r","\v","\f", ",", ":", "'", "-", "/", "*", "@", "$", "\"", ";"]
-for i in items_to_remove:
-    given_text = given_text.replace(i, "")
+
+book = book.replace("\n", "µ").replace("  ", " ").replace("\t", "µ").replace(" ", "µ").replace("'", "µ").replace('"',"µ")
 
 # number of characters
-characters = len(given_text) 
-print(f"Total characters: ", characters)
+characters = len(book) 
 
 # number of words
-words = len(given_text.split())
-print("Total words:", words)
+words = len(book.split("µ"))
 
 # split string into a list of sentences based on punctuation used to end a sentence.
-punctuation = [". ","! ","? "]
-for i in punctuation:
-    given_text = given_text.replace(i, "|")
-sentence = given_text.split("|")
-print(*sentence, sep="\n") # testing
-
-sentences = len(sentence) #number of sentences
-print("Total sentences:", sentences)
+sentences = book.count(".") + book.count("!") + book.count("?")
 
 # ARI formula
+ARI = 4.71 * (characters / words) + 0.5 * (words / sentences) - 21.43
 # If the result is a decimal, always round up
-score = math.ceil(((4.71 * (characters / words)) + (0.5 * (words / sentences)))- 21.43)
+score = math.ceil(ARI)
 print(score)
 
 # if the result is higher than 14, it should be set to 14
@@ -64,7 +52,11 @@ ari_scale = {
 
 # output
 print(f"""
-    The ARI for {url} is {score}.
-    This corresponds to a {ari_scale[score]['grade_level']} level of difficulty.
-    That is suitable for an average person {ari_scale[score]['ages']} years old.
+The ARI for {url} is {score}.
+This corresponds to a {ari_scale[score]['grade_level']} level of difficulty.
+That is suitable for an average person {ari_scale[score]['ages']} years old.
 """)
+
+print(characters)
+print(words)
+print(sentences)
