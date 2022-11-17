@@ -37,7 +37,7 @@ ari = round((4.71 * (characters / words)) + (0.5 * (words / sentences)) - 21.43)
 
 print(f'''
 ============================================================================
-The ARI for treasure-island.txt is {ari}
+The ARI for Treasure Island is {ari}
 This corresponds to a {ari_scale[ari]['grade_level']} level of difficulty
 that is suitable for an average person {ari_scale[ari]['ages']} years old.
 ============================================================================
