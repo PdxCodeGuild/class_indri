@@ -1,31 +1,45 @@
+"""
+
+Credi Card Validation Lab
+By Noah Wallis
+
+"""
+#taking input for card number
+card_number = input("Enter your credit card number: ")
 # Convert the input string into a list of ints
-from ctypes import c_double
+def make_number_list(number_string: str):
+    number_list = []
+    for number in number_string:
+        list_item = int(number)
+        number_list.append(list_item)
 
+    return number_list 
 
-card_number = [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
-print(card_number)
+card_number = make_number_list(card_number)
+
 # Slice off the last digit. That is the check digit.
 check_digit = card_number[-1]
 del card_number[-1]
-print(card_number)
+
 # Reverse the digits.
 card_number.reverse()
-print(card_number)
+
 # Double every other element in the reversed list.
-doubled = [i * 2 for i in card_number[0:15:2]]
-print (doubled)
+card_number[0::2] = [i * 2 for i in card_number[0::2]]
+
 # Subtract nine from numbers over nine.
-doubled_new = [n - 9 for n in doubled if n >= 9 ]
-print(doubled_new)
-    
+for i in range(len(card_number)):
+    if card_number[i] > 9:
+        card_number[i] = card_number[i] -9
+
 # Sum all values.
-total = [sum(doubled_new + card_number[1:15:2])]
-print(total)
+total = [sum(card_number)]
+total = str(total)
 
 # Take the second digit of that sum.
-second_of_sum = ""
+test_check_digit = int(total[2])
 # If that matches the check digit, the whole card number is valid.
-if second_of_sum == check_digit:
+if test_check_digit == check_digit:
     print("Your card number is valid!")
 else:
     print("Your card number is not valid!")
