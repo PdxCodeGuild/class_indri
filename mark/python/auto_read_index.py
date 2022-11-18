@@ -12,19 +12,27 @@ book = response.text[book_start:book_end]
 book = book.replace("\n", "µ").replace("  ", " ").replace("\t", "µ").replace(" ", "µ").replace("'", "µ").replace('"',"µ")
 
 # number of characters
+
 characters = len(book) 
+
+
 
 # number of words
 words = len(book.split("µ"))
 
+
 # split string into a list of sentences based on punctuation used to end a sentence.
 sentences = book.count(".") + book.count("!") + book.count("?")
+
 
 # ARI formula
 ARI = 4.71 * (characters / words) + 0.5 * (words / sentences) - 21.43
 # If the result is a decimal, always round up
+
 score = math.ceil(ARI)
+
 print(score)
+
 
 # if the result is higher than 14, it should be set to 14
 if score < 1:

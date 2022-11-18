@@ -1,0 +1,18 @@
+[
+  {
+    "username": "john",
+    "password": "321drowssap",
+    "salary": 80000,
+    "id": "HV3O19",
+    "job_title": "fullstack developer",
+    "clearance": 2
+  },
+  {
+    "username": "ceo",
+    "password": "321drowssap",
+    "salary": 1000000,
+    "id": "HV3O13",
+    "job_title": "ceo",
+    "clearance": 5
+  }
+]
