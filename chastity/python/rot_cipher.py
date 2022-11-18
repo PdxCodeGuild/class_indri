@@ -1,7 +1,17 @@
-# Python program to implement
-# ROT13 Caesar cipher
 '''
-Write a program that prompts the user for a string, and encodes it with ROT13. For each character, find the corresponding character, add it to an output string. Notice that there are 26 letters in the English language, so encryption is the same as decryption.'''
+
+ROT13 Caesar cipher Lab 05 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
+
+'''
+
+'''
+
+Write a program that prompts the user for a string, and encodes it with ROT13. 
+For each character, find the corresponding character, add it to an output string. 
+
+'''
 
 import string
 

@@ -1,7 +1,12 @@
-# Credit Card Validation Lab
 '''
-    If that matches the check digit, the whole card number is valid.
+
+Credit Card Validation Lab 04 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
+
 '''
+
+# If that matches the check digit, the whole card number is valid.
 
 # card_number = ('4556737586899855')
 

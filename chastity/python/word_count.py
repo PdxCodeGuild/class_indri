@@ -1,14 +1,12 @@
+'''
+
+Count Words Lab 06 - Python 
+Chastity Boykin 
+PDX Code Guild Class Indri
+
+'''
 import requests
 import string
-
-'''
-Count Words Lab
-
-write module to analyze a given text file containing a book for
-its vocabulary frequency and display the most frequent words to 
-the user in the terminal. 
-'''
-
 # send a request to get book 
 
 '''

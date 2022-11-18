@@ -1,4 +1,10 @@
-# Blackjack Advice
+'''
+
+Blackjack Advice Lab 02 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
+
+'''
     
 # Ask user for three playing cards
 player_card1 = input("What's your first card?: ")
