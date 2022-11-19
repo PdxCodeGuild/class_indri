@@ -2,7 +2,13 @@ import requests
 
 search_term = input("Enter a pokemon name: ")
 base_url = "https://pokeapi.co/api/v2/pokemon/"
-response = requests.get(base_url + search_term)
+
+headers = {
+    'accept': 'application/json',
+}
+
+response = requests.get(base_url + search_term, headers=headers)
+
 
 if response.status_code == 200:
     pokemon = response.json()
