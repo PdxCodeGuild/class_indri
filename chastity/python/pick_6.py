@@ -1,4 +1,11 @@
-# Pick 6 lottery simulator Lab
+'''
+
+Pick 6 lottery simulator Lab 03 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
+
+'''
+
 import random
 
 # Generate a list of 6 random numbers representing the winning tickets

@@ -1,8 +1,11 @@
 '''
-Automated Readability Index Lab
-Chastity Boykin
+
+Automated Readability Index Lab 07 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
 
 '''
+
 import requests, re, math
 
 file_name = "Men into Space"
