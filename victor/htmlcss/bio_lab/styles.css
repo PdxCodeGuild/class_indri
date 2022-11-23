@@ -4,7 +4,11 @@
 --middle-grey: #918b76ff;
 --rich-black-fogra-39: #0a090cff;
 --canary: #fffd82ff; */
-
+.flex-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
 body {
     max-width: 500px;
     margin: auto;
