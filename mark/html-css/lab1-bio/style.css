@@ -1,8 +1,6 @@
 
 body {
-    text-align:center;
     font-family:Arial, Helvetica, sans-serif;
-    margin: auto;
     background-image:url('https://wallpapercave.com/wp/wp2525958.jpg');
     background-size:cover;
     background-attachment: fixed;
@@ -16,8 +14,7 @@ body {
 .box {
     text-align: center;
     margin: auto;
-    width: 700px;
-    background-color: white; 
-    
-    padding: 10px
+    width: 650px;
+    background: rgba(255,255,255,0.6); 
+    padding: 20px
 }
