@@ -5,11 +5,25 @@ Chastity Boykin
 PDX Code Guild Class Indri
 
 '''
+import requests
 
-"""
-Use the Dad Joke API to get a dad joke and display it to the user. You may want to also use time.sleep to add suspense.
 
-Use the requests library to send an HTTP request to https://icanhazdadjoke.com/ with the accept header as application/json. 
-This will return a dad joke in JSON format. You can then use the .json() method on the response to get a dictionary. 
-Get the joke out of the dictionary and show it to the user.
-"""
+# requests library to send an HTTP request
+
+search_term = input("Would you like to hear a joke? Type 'yes' or 'no': ")
+url = "https://icanhazdadjoke.com/"
+
+# with the accept header as application/json.
+
+headers = {
+    'accept': 'application/json',
+}
+response = requests.get(url, headers=headers)
+if response.status_code == 200:
+    joke = response.json()
+
+    if search_term == 'yes':
+        print(f"{joke['joke']}")
+    
+    elif search_term == 'no':
+        print("Bye!")
