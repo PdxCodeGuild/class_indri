@@ -1,0 +1,60 @@
+/* CSS HEX */
+/* --royal-purple: #714b93ff;
+--vivid-sky-blue: #5dc2ecff;
+--middle-grey: #918b76ff;
+--rich-black-fogra-39: #0a090cff;
+--canary: #fffd82ff; */
+.flex-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+body {
+    max-width: 500px;
+    margin: auto;
+    text-justify: auto;
+    font-family: 'Anime Inept';
+    font-size: 26px;
+    color: #714b93ff;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ff343d78-9440-4843-bf87-73d4c9cb77e4/ddxditr-ec227bb3-7589-4803-849e-9cddcb3ec29f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZmMzQzZDc4LTk0NDAtNDg0My1iZjg3LTczZDRjOWNiNzdlNFwvZGR4ZGl0ci1lYzIyN2JiMy03NTg5LTQ4MDMtODQ5ZS05Y2RkY2IzZWMyOWYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ct6KlcEDAV8aBS-zLDoKicHz74EQg91BRPJGiud4M8w);
+    background-color: #5dc2ecff;
+    
+  }
+h1 {
+    width: 2000px;
+    margin-left: 280px;
+    color: #918b76ff;
+    /* background-color: #5dc2ecff; */
+}
+
+
+p {
+    padding: 10px;
+    color: #714b93ff;
+    background-color: #5dc2ecff;
+}
+h3 {
+    background-color: #5dc2ecff;
+}
+
+img {
+    border: solid black 3px;
+    border-radius: 50%;
+}
+.link {
+    color: #fffd82ff;
+}
+
+ul {
+    margin-left: 50px;
+    padding-left: 12%;
+    
+    text-justify: auto;
+    list-style-type: japanese-formal;
+    background-color: #5dc2ecff;
+
+}
+.quote {
+    font-family: kalam;
+    background-color: #5dc2ecff;
+}
