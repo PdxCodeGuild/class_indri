@@ -3,6 +3,7 @@ class ATM:
     def __init__(self,current_balance=0):
         self.current_balance=current_balance
         self.interest=.1
+        self.transactions=[]
         # initialize our class with a balance of 0 and an interest rate of 0.1
         ...
 
@@ -13,6 +14,8 @@ class ATM:
     def deposit(self, amount):
         #self.balance+=amount 
         self.current_balance=self.current_balance+amount
+        self.transactions.append(f'User deposit {amount}')
+        self.print_transactions()
 
         # add the given amount to the balance
         ...
@@ -28,6 +31,8 @@ class ATM:
     
     def withdraw(self, amount):
         self.current_balance=self.current_balance-amount
+        self.transactions.append(f'User withdrew {amount}')
+        self.print_transactions()
         return self.current_balance
 
         # removes the given amount from the balance and returns it
@@ -40,10 +45,8 @@ class ATM:
         # return the amount of interest added
         ...
     def print_transactions(self):
-
-        print(f'User deposited {amount}')
-        print(f'User withdrew {amount}')
-        ...
+        for transaction in self.transactions:
+            print(transaction)
 
 atm = ATM() # create an instance of our class
 print('Welcome to the ATM')
@@ -78,3 +81,9 @@ while True:
         break
     else:
         print('Command not recognized')
+
+
+    '''Have the ATM maintain a list of transactions. Every time the user makes a deposit or withdrawal, 
+    add a string to a list saying 'user deposited $15' or 'user withdrew $15'. 
+    Add a new method print_transactions() to your class for printing out the list of transactions.
+    '''
