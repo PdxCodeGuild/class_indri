@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .top-nav-list{
+            background:lightgreen;
+            list-style:none;
+            margin:0;
+            padding:1rem 0;
+            display:flex;
+            justify-content: flex-end
+
+        }
+        .top-nav-list li{
+            margin-right: 2rem;
+        }
+        .side-nav-list{
+            background:lightgrey;
+            list-style:none;
+            margin:0;
+            padding:1rem 0;
+            flex-direction: column;
+            width: 7%;
+        }
+        body { background-image: url('https://i.pinimg.com/originals/60/71/e2/6071e2c8b7ee89232a1d0323841e899c.jpg');background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        height: 100%;
+        }
+        .button-nav-list{
+            border-bottom: solid;
+            display: flex;
+            flex-direction: row;
+            list-style:none;
+            justify-content: center;
+            justify-content: space-around
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MasterChief Blog</h1>
+        <navbar>
+            <ul class="top-nav-list">
+                <li>Profile Picture</li>
+                <li>Friends</li>
+                <li>Alien Kills</li>
+            </ul>
+        </nav>
+    </header>
+    <nav>
+        <ul class="side-nav-list">
+            <li>Your Blog</li>
+            <li>Google Search</li>
+            <li>Settings</li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>
+                Todays Post
+            </h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis harum culpa nam cumque quos quisquam eligendi cum odit magnam mollitia quidem enim aperiam, earum ad. Inventore iste aperiam quo quod.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <ul class="button-nav-list">
+            <li>Follow Us</li>
+            <li>Contact Us</li>
+            <li>Donate</li>
+        </ul>
+    </footer>
+    
+    
+</body>
+</html>
+
+<!-- Let's make the template of a blog with a title, top-nav, side-nav, and multiple posts. 
+    Use flexbox and semantic elements (header, nav, section, and footer). You can use a custom font, 
+    fancy colors, and make generate fake content using an Ipsum. -->
