@@ -1,0 +1,34 @@
+body{
+    background: slategray;
+    padding: 20px;
+    font-family: Ariel;
+}
+
+.header {
+    padding: 10px;
+    /* font-size: 40px; */
+    text-align:center;
+    /* background: white; */
+}
+
+.navigation{
+}
+
+.mainbody {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.blogpost{
+    width: 100%;
+    background: white;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+
+}
