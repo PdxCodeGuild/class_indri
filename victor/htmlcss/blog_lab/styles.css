@@ -1,0 +1,50 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+    border-radius: 13px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.parent {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: ; */
+   
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    max-height: 175px;
+    max-width: 100px;
+    border-radius: 13px;
+    background-color: rgb(3, 4, 3);
+    padding: 5px;
+    margin-right: 15px;
+    font-size: 18px;
+}
+.sidenav {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sidenav a {
+    border: solid  rgb(141, 138, 138) 2px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    justify-content:center ;
+    padding: 2px;
+    border-radius: 8px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    background-color: darkkhaki;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+
+
+
