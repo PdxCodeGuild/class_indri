@@ -15,24 +15,3 @@ print(output)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-#Notes
-# def make_list():
-#     alphbait=[]
-#     letters=string.ascii_lowercase
-#     for letter in letters:
-#         alphbait.append(letter)
-#     return alphbait
-# letters=make_list()
-# print(letters)
-

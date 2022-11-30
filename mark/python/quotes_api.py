@@ -1,9 +1,6 @@
 # Quotes API
-
 import requests
 import json
-
-# The Favqs Quote API also supports getting a list of quotes associated with a given keyword https://favqs.com/api/quotes?page=<page>&filter=<keyword>
 
 # page counter and search term
 page = 1
