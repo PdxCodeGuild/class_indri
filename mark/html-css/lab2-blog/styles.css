@@ -9,6 +9,7 @@
 *{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: var(--White);
+    font-size: 16px;
 }
 
 
@@ -57,11 +58,24 @@ main {
 }
 
 .blogpost {
+    min-height: 120px;
     margin: 30px;
-    padding: 5px;
+    padding: 10px;
     border: 2px solid var(--White);
     border-radius: 8px;;
     color:#A89B9D;
+}
+
+.blogpost p{
+    display:inline;
+}
+
+.blogpost img{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 21%;
+    float:left;
 }
 
 footer {
