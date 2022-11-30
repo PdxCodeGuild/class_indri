@@ -61,12 +61,12 @@ nav.scrollmenu input[type=text] {
   
   .sidebar {
     width: 200px;
+    margin-bottom: 50%;
     position:inherit;
     z-index: 1;
     top: 5px;
     left: 5px;
     background: #a02a36;
-    overflow-x: hidden;
     padding: 8px 0;
     line-height: 50px;
   }
