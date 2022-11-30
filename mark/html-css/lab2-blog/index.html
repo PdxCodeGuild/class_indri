@@ -1,60 +1,69 @@
-<!-- Let's make the template of a blog with a title, top-nav, side-nav, and multiple posts.  -->
-<!-- Use flexbox and semantic elements (header, nav, section, and footer).  -->
-<!-- You can use a custom font, fancy colors, and make generate fake content using an Ipsum. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href ="styles.css">
 </head>
 <body>
     <!-- header -->
-    <div class="header">
+    <header class ="header">
+        <h1>So Blog! Much Very wow!</h1>
+    </header>
+
+    <!-- left nav bar -->
+    <nav class="left">
         <h1>This is my blog</h1>
-        <h2>There are many like it,</h2>
-        <h3>but this one is mine...</h3>
-    </div>
-    <div class = "mainbody">
-    <!-- nav bar -->
-    <div class ="navigation">
-        <nav>
-            <ul>
-                <a href="">Home</a>
-                <a href="">Login</a>
-                <a href="">Signup</a>
-            </ul>
-        </nav>
-    </div>
-    <!-- blog posts -->
-        <section_1 class = 'blogpost'>
-            <h2>Aliens abduct Donald Trump</h2>
-            <p>In an odd series of events... it seems as though the former president of the united states of america has been taken by an unknown & still unidentified space-faring species. Intentions are unknown and details are developing. Many are speculating but one thing is for sure, this is the biggest story of the year. Stay tuned!</p>
-        </section_1><br>
-        <section_2 class = 'blogpost'>
-            <h2>Dinosaurs return to earth</h2>
-            <p>with promises of peace and prosperity!</p>
-        </section_2><br>
-        <section_3 class = 'blogpost'>
-            <h2>Dwayne the Rock Johnson reveals secret</h2>
-            <p>Eats actual rocks for breakfast!</p>
-        </section_3><br>
-        <sectoin_4 class = 'blogpost'>
-            etc...
-        </sectoin_4>  
-    </div>
+        <h3>There are many like it</h3>
+        <h4>but this one is mine...</h4>
+        <div>
+            <a class="button" href="#">Explore</a>
+            <a class="button" href="">Engage</a>
+        </div>
+    </nav>
+
+    <!-- right nav bar -->
+    <nav class ="right">
+        <a class="button" href="">Sign up</a>
+        <a class="button" href="">Log in</a>
+        <a class="button"href="#">Settings</a>
+        <a class="button" href="">More...</a>
+    </nav>
+
+    <!-- main content -->
+    <main>
+        <div class = "blogpost">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mona_Lisa-restored.jpg/800px-Mona_Lisa-restored.jpg" width="auto" height="100px">
+            <h2>This life is nothing short of an awakening explosion of ancient consciousness.</h2>
+            <p>Throughout history, humans have been interacting with the universe via morphic resonance. Reality has always been beaming with warriors whose chakras are engulfed in potential. Our conversations with other lifeforms have led to a condensing of hyper-unlimited consciousness.</p>
+        </div>
+        <div class = "blogpost">
+            <h2>We can no longer afford to live with illusion.</h2>
+            <p>Our conversations with other storytellers have led to an evolving of supra-primordial consciousness. We are in the midst of a mythic deepening of inseparability that will become our stepping-stone to the planet itself. Throughout history, humans have been interacting with the dreamtime via supercharged waveforms.</p>
+        </div> 
+        <div class = "blogpost">
+            <h2>We exist as vibrations.</h2>
+            <p>By redefining, we live. This life is nothing short of an evolving revolution of ever-present energy. Although you may not realize it, you are technological.</p>
+        </div> 
+        <div class = "blogpost">
+            <h2>We can no longer afford to live with dogma.</h2>
+            <p>Illusion is the antithesis of grace. Desire is born in the gap where freedom has been excluded. You may be ruled by discontinuity without realizing it. Do not let it shatter the growth of your circuit.</p>
+        </div> 
+        <div class = "blogpost">
+            <h2>The goal of transmissions is to plant the seeds of freedom rather than illusion.</h2>
+            <p>We are being called to explore the stratosphere itself as an interface between nature and spacetime. We must learn how to lead mystical lives in the face of discontinuity. The future will be a spiritual unfolding of starfire.</p>
+        </div>
+    </main>
+
     <!-- footer -->
-    <div class = "footer">
-        <footer>
-            brought to you by: <ul>
-                <a href="">Owners</a>
-                <a href="">Donors</a>
-                <a href="">Support</a>
-                <a href="">Careers</a>
-            </ul>
-        </footer>
-    </div>
+    <footer class ="footer">
+        <a class="button" href="">Terms of Service</a>
+        <a class="button" href="">Privacy & Legal</a>
+        <a class="button" href="">Contact</a>
+        <a class="button" href="">Careers</a>
+        <a class="button" href="">News</a>
+    </footer>
 </body>
 </html>
