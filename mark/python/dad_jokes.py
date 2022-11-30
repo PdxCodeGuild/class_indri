@@ -16,12 +16,13 @@ while keep_playing == True:
     # pull search results from current page & return as a dictionary
     url = f"https://icanhazdadjoke.com/search?term={search_term}&page={page_num}"
     response = requests.get(url, headers={'accept':'application/json'}).json()
+    print(response)
 
     # check if the current page is in range
     if page_num > response['total_pages']: 
         print("End of results! Goodbye.")
         break
-    # prepare to check the next page on the next loop.
+    # prepare to check the next page.
     else:
         page_num += 1
 
