@@ -6,10 +6,15 @@ header {
     padding: 10px;
     margin-bottom: 20px;
 }
+.topnav {
+    height: 30px;
+    border-radius: 13px;
+    padding: 5px;
+    background-color: rgb(169, 161, 161);
+}
 .parent {
     display: flex;
     flex-direction: row;
-    /* justify-content: ; */
    
 }
 .menu {
