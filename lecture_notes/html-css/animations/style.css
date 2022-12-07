@@ -1,0 +1,79 @@
+body {
+  background-color: gray;
+}
+
+.btn {
+  box-shadow: 4px 4px 8px 0 rgba(49, 49, 49, 0.729);
+  transition: all 1s;
+}
+
+.btn:hover {
+  color: orange;
+  letter-spacing: 4px;
+}
+
+.btn:active {
+  box-shadow: 0 0 0 0 rgba(49, 49, 49, 0.729);
+  transform: translate(2px, 2px);
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+
+nav {
+  background-color: rgb(184, 184, 184);
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 8px 8px 0 rgba(42, 42, 42, 0.375);
+  animation-name: slide-down;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.51,-0.25, 1, 2.05);
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+article {
+  max-width: 54ch;
+  margin: 2rem auto;
+}
+
+@keyframes slide-right{
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+article:nth-child(odd){
+  animation: slide-right 2s cubic-bezier(0.42, 0, 0.58, 1.5);
+}
+
+@keyframes slide-left{
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+article:nth-child(even){
+  animation: slide-left 2s cubic-bezier(0.42, 0, 0.58, 1.5);
+}
