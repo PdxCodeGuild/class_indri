@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Forms</title>
+	</head>
+	<body style="background: dark-gray">
+		<form
+			action="https://webhook.site/b0dea063-9128-4325-8148-5ee6d8edc98d"
+			method="POST"
+		>
+			<label>
+				Username:
+				<input type="text" name="username" required />
+			</label>
+			<input
+				type="password"
+				name="password"
+				placeholder="Enter password here"
+				required
+			/>
+			<label for="email">Email:</label>
+			<input
+				id="email"
+				type="email"
+				name="email"
+				placeholder="example@mail.com"
+				required
+			/>
+
+			<!-- other input types -->
+			<label>
+				date
+				<input type="date" />
+			</label>
+			<label>
+				color
+				<input type="color" />
+			</label>
+			<br />
+			<label>
+				Size: 8
+				<input name="shoe-size" value="8" type="radio" />
+			</label>
+			<label>
+				Size: 9
+				<input name="shoe-size" value="9" type="radio" />
+			</label>
+			<label>
+				Size: 10
+				<input name="shoe-size" value="10" type="radio" />
+			</label>
+			<label>
+				Size: 11
+				<input name="shoe-size" value="11" type="radio" />
+			</label>
+			<br />
+			<label>
+				Pepperoni
+				<input name="pizza-toppings" type="checkbox" value="pepperoni"/>
+			</label>
+			<label>
+				Pineapple
+				<input name="pizza-toppings" type="checkbox" />
+			</label>
+			<label>
+				Bacon
+				<input name="pizza-toppings" type="checkbox" />
+			</label>
+			<label>
+        Anchovies
+				<input name="pizza-toppings" type="checkbox" />
+			</label>
+			<label>
+        Sausage
+				<input name="pizza-toppings" type="checkbox" />
+			</label>
+
+			<br />
+			<label>
+				range
+				<input type="range" min="0" max="10" />
+			</label>
+			<br />
+			<label>
+				number
+				<input type="number" min="0" max="10" />
+			</label>
+			<br />
+			<label>
+				time
+				<input type="time" />
+			</label>
+			<select name="pick-one">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+      <br>
+      
+			<button type="submit">Submit</button>
+			<button type="reset">clear form</button>
+      <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+		</form>
+    
+	</body>
+</html>
