@@ -1,0 +1,48 @@
+.body {
+    background-color: black;
+}
+
+header {
+    position: relative;
+    background:  rgb(222, 23, 23);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.header-left{
+    display: inline-flex
+}
+.logo {
+
+}
+
+.signin {
+    padding: 2rem;
+}
+
+
+main {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.splash {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 3rem;
+}
+
+.splash img {
+    width: 40%;
+    padding: 2rem;
+}
+
+
+.container{
+    border-top: 2px solid black;
+    padding: 3rem;
+    width: 80%;
+    margin: auto;
+}
