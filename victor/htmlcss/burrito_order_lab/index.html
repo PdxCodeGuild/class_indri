@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content=" valueth=device- valueth, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Burrito Order</title>
+  </head>
+  <body>
+
+    <div class="main">
+        <img src="https://cdn-icons-png.flaticon.com/128/3643/3643673.png" alt="Burrito PNG">
+        <div>
+
+            <h1>Customize your burrito!</h1>
+            <form
+            action="https://webhook.site/03a6d6df-c383-4870-872a-5bdfc1a4a538"
+            method="post"
+            >
+            Name: <input type="text" name="name" /> Password:
+            <input type="password" name="password" />
+            <br />
+            Tortilla:
+            <label
+            >White Flour
+            <input type="radio" name="tortilla" value="white" />
+        </label>
+        <label for="wheat">Wheat Flour</label
+            ><input type="radio" name="tortilla" value="wheat" />
+            <label for="spinach">Spinach</label
+                ><input type="radio" name="tortilla" value="spinach" />
+                <label for="corn">Corn</label
+                    ><input type="radio" name="tortilla" value="corn" />
+                    <br />
+                    Rice: <label for="cilantro lime">Cilantro Lime</label
+                        ><input type="radio" name="rice" value="cilantro lime" />
+                        <label for="brown">Brown Rice</label>
+                        <input type="radio" name="rice" value="brown" />
+                        <br />
+                        Beans: <label for="black">Black</label
+                            ><input type="radio" name="rice" value="black" />
+                            <label for="pinto">Pinto</label>
+                            <input type="radio" name="beans" value="pinto" />
+                            <br />
+                            Protein:
+                            <label
+                            >Chicken
+                            <input type="radio" name="protein" value="chicken" />
+                        </label>
+                        <label
+                        >Carne Asada
+                        
+                        <input type="radio" name="protein" value="carne asada" />
+                    </label>
+                    <label
+                    >Adobada
+                    
+                    <input type="radio" name="protein" value="adobada" />
+                </label>
+                <label
+                >Sofritas(Tofu)
+                
+                <input type="radio" name="protein" value="sofritas" />
+            </label>
+            <label
+            >None
+            
+            <input type="radio" name="protein" value="none" />
+        </label>
+        <br />
+        Additional Ingredients:
+        <label
+        >Cheese
+        <input type="checkbox" name="cheese" value="cheese" />
+    </label>
+    <label
+    >Sour Cream
+    <input type="checkbox" name="cheese" value="cheese" />
+</label>
+<br>
+<label> Delivery instructions:
+    <br>
+    
+    <textarea name="delivery instructions" cols="30" rows="10"></textarea>
+</label>
+<br /><input type="submit"/>
+</form>
+</div>
+</div>
+</body>
+</html>

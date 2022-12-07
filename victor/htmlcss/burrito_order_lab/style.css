@@ -1,0 +1,19 @@
+body {
+    background-color: slategrey;
+    color: antiquewhite;
+}
+
+.main {
+    max-width: 100vw;
+    height: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+}
