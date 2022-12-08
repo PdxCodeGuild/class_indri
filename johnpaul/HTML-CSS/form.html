@@ -35,9 +35,9 @@
 
       <div class="container-fluid">
         <!-- Links -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">MENU</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item activated-link">
+            <a class="nav-link" href="#">CUSTOMIZE PIZZA</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">SPECIALS</a>
@@ -54,8 +54,8 @@
     </nav>
     <nav class="navbar navbar-expand-sm bg-light">
       <div class="container">
-        <ul class="nav nav-pills">
-          <li class="nav-item activated-link">
+        <ul class="navbar-nav">
+          <li class="nav-item">
             <a class="nav-link " href="#">PIZZA</a>
           </li>
           <li class="nav-item">
@@ -79,69 +79,129 @@
         </ul>
       </div>
     </nav>
-    <div class="customize container-fluid">
+    <div class="customize container">
       <div class="row">
-        <div class="pizza-image col-lg-6 col-sm-1">
+        <div class="pizza-image col-lg-12 col-sm-12">
           <img src="https://www.papajohns.com/static-assets/a/img/builder/cut/Small-Original-Wedge-Cut-1.png" alt="">
         </div>
-        <div class="create-pizza col-lg-4 col-sm-8">
-          <h2>CREATE YOUR OWN PIZZA <br>270 cal/slice, 8 slices</h2>
-      </div>
     </div>
     </div>
     <h4 class="base-size" style="display: flex; justify-content: left;">Size</h4>
     <hr>
     <div class="pizza-size container-fluid">
-      <form action="https://webhook.site/d653d831-3aa0-49b7-af3e-b25aacf4a5b4" method="post">
+      <form action="https://webhook.site/f55b9966-a0c8-4b9e-8768-e2818b185fc9" method="post">
         <label class="small-base" style="padding-right: 200px;">
-          <input type="radio" name="base">
+          <input type="radio" name="base" value="small">
           Small
         </label>
         <label class="medium-base" style="padding-right: 200px;">
-          <input type="radio" name="base">
+          <input type="radio" name="base" value="medium">
           Medium
         </label>
         <label class="large-base" style="padding-right: 200px;">
-          <input type="radio" name="base">
+          <input type="radio" name="base" value="Large">
           Large
         </label>
         <label class="EL-base" style="padding-right: 200px;">
-          <input type="radio" name="base">
+          <input type="radio" name="base" value="Ex Large">
           Extra Large
         </label>
         <h4 class="base-crust" style="display: flex; justify-content: left;">Crust</h4>
         <label class="Orig-crust" style="padding-right: 100px; margin-top: 25px;">
-          <input type="radio" name="crust">
+          <input type="radio" name="crust" value="Orig. crust">
           Original Crust
         </label>
-        <label class="Epic-crust" style="padding-right: 200px;">
-          <input type="radio" name="crust">
-          Epic Pepperoni-Stuffed Crust
+        <label class="Epic-crust" style="padding-right: 150px;">
+          <input type="radio" name="crust" value="pep stuffed crust">
+          Pepperoni-Stuffed Crust
         </label>
         <label class="NY-crust" style="padding-right: 200px;">
-          <input type="radio" name="crust">
+          <input type="radio" name="crust" value="NY style crust">
           NY Style Crust
         </label>
         <label class="EL-crust" style="padding-right: 200px;">
-          <input type="radio" name="crust">
+          <input type="radio" name="crust" value="gluten free crust">
           Gluten-Free Crust
         </label>
-        <h4 class="cheese-tops" style="display: flex; justify-content: left;">How much cheese?</h4>
-        <label class="cheese-amount" style="padding-right: 100px; margin-top: 25px;">
-          <input type="checkbox" name="cheese-amount">
-          Normal Cheese
+        <label class="Thin-crust" style="padding-right: 200px;">
+          <input type="radio" name="crust" value="thin crust">
+          Thin Crust
         </label>
-        <label class="Epic-crust" style="padding-right: 200px;">
-          <input type="checkbox" name="cheese-amount">
-          Light Cheese
+        <label class="stuffed-crust" style="padding-right: 200px;">
+          <input type="radio" name="crust" value="thin crust">
+          Stuffed Crust
         </label>
-        <label class="NY-crust" style="padding-right: 200px;">
-          <input type="checkbox" name="cheese-amount">
+        <h4 class="cheese-header" style="display: flex; justify-content: left;">Cheese Toppings?</h4>
+        <label class="no-cheese" style="padding-right: 100px; margin-top: 25px;">
+          <input type="radio" name="cheese-amount" value="Orig. crust">
           No Cheese
         </label>
+        <label class="light-cheese" style="padding-right: 150px;">
+          <input type="radio" name="cheese-amount" value="pep stuffed crust">
+          Light Cheese
+        </label>
+        <label class="Norm-cheese" style="padding-right: 200px;">
+          <input type="radio" name="cheese-amount" value="NY style crust">
+          Normal Cheese
+        </label>
+        <label class="p-romano" style="padding-right: 200px;">
+          <input type="radio" name="cheese-amount" value="gluten free crust">
+          Parmesan Romano
+        </label>
+        <label class="ext-cheese" style="padding-right: 200px;">
+          <input type="radio" name="cheese-amount" value="thin crust">
+          Extra Cheese
+        </label>
+        <label class="cheese-blend" style="padding-right: 200px;">
+          <input type="radio" name="cheese-amount" value="stuffed crust">
+          3-Cheese Blend
+        </label>
+        <h4 class="meats" style="display: flex; justify-content: left;">Meats</h4>
+        <label class="meat-type" style="padding-right: 100px; margin-top: 25px;">
+          <input type="checkbox" name="meat" value="grilled chicken">
+          Grilled Chicken
+        </label>
+        <label class="salami" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="salami">
+          Salami
+        </label>
+        <label class="ItalianSau" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="sausage">
+          Sausage
+        </label>
+        <label class="canbacon" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="bacon">
+          Bacon
+        </label>
+        <label class="beef" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="beef">
+          Beef
+        </label>
+        <label class="meatballs" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="meatball">
+          Meatballs
+        </label>
+        <label class="pepperoni" style="padding-right: 200px;">
+          <input type="checkbox" name="meat" value="pepperoni">
+          Pepperoni
+        </label><br><br><br>
+        <h6>Delivery Instructions:</h6>
+          <textarea name="delivery-instructions" id="d-instructions" placeholder="write any delivery instructions here" cols="50" rows="10"></textarea><br><br><br>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" placeholder="example@mail.com" required="required">
+        </div><br>
+        <div class="form-group">
+          <div class="secretPW">
+            <label>Password</label>
+            <a href="#" class="float-right text-muted"><small>Forgot?</small></a>
+          </div>                            
+          <input type="password" class="form-control" required="required">
+        </div>
+        <br>
+        <button class="login-button btn btn-primary btn-dark"><span>Log In </span></button>
       </form>
     </div>
-    <hr>
   </div>
 
 </body>
