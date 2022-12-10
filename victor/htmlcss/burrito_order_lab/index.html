@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content=" valueth=device- valueth, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/3643/3643673.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Questrial&family=Unbounded&display=swap" rel="stylesheet">
+    <title>Burrito Order</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="img-heading">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/3643/3643673.png"
+          alt="Burrito PNG"
+        />
+        <h1>BURRITO SPOT!</h1>
+      </div>
+      <br>
+
+      <form
+        action="https://webhook.site/03a6d6df-c383-4870-872a-5bdfc1a4a538"
+        method="post"
+      ><div class="name-number">
+          
+            Name: <input type="text" name="name" required />
+            Phone Number:
+            <input type="tel" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx"required />
+      </div>
+        <br />
+        Tortilla:
+
+        <div class="options">
+            <label
+              >White Flour
+              <input type="radio" name="tortilla" value="white" />
+            </label>
+            <label>Wheat Flour
+                <input type="radio" name="tortilla" value="wheat" />
+
+            </label>
+            <label>Spinach
+
+                <input type="radio" name="tortilla" value="spinach" />
+            </label>
+            <label>Corn
+                <input type="radio" name="tortilla" value="corn" />
+
+                </label>
+            <br />
+        </div>
+        <div class="options">
+            Rice: <br><label>Cilantro Lime
+            
+            <input type="radio" name="rice" value="cilantro lime" />
+        </label>
+        <label>Brown Rice
+            
+            <input type="radio" name="rice" value="brown" />
+        </label>
+    </div>
+        <br />
+        <div class="options">
+
+            Beans: <br> <label>Black
+                
+                <input type="radio" name="rice" value="black" />
+            </label>
+            <label>Pinto
+                <input type="radio" name="beans" value="pinto" />
+                
+            </label>
+        </div>
+        <br />
+        <div class="options">
+
+            Protein: <br>
+            <label
+            >Chicken
+            <input type="radio" name="protein" value="chicken" />
+        </label>
+        <label
+        >Carne Asada
+        
+        <input type="radio" name="protein" value="carne asada" />
+    </label>
+    <label
+    >Adobada
+    
+    <input type="radio" name="protein" value="adobada" />
+</label>
+<label
+>Sofritas(Tofu)
+
+<input type="radio" name="protein" value="sofritas" />
+</label>
+<label
+>None
+
+<input type="radio" name="protein" value="none" />
+</label>
+</div>
+        <br />
+        <div class="options">
+
+            Additional Ingredients:
+            <label
+            >Cheese
+            <input type="checkbox" name="cheese" value="cheese" />
+        </label>
+        <label
+        >Sour Cream
+        <input type="checkbox" name="sourcream" value="sourcream" /></label>
+        <label
+            >Lettuce
+            <input type="checkbox" name="lettuce" value="lettuce" /></label>
+            <label
+            >Salsa
+            <input type="checkbox" name="salsa" value="salsa" /></label>
+            <label
+            >Guacamole (50c extra charge)
+            <input type="checkbox" name="guacamole" value="guacamole" /></label>
+    </label>
+</div>
+    <br />
+        <label>
+          Delivery instructions:
+          <br />
+
+          <textarea name="delivery instructions" cols="30" rows="10"></textarea>
+        </label>
+        <br /><button type="submit">Order Your Burrito</button>
+      </form>
+    </div>
+  </body>
+</html>
