@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <title>Todos</title>
+</head>
+<body>
+  <form action="/add-todo" method="POST">
+    <input type="text" placeholder="Enter todo here" name="todo_text">
+    <select name="priority">
+      <option value="3">High</option>
+      <option value="2">Medium</option>
+      <option value="1">Low</option>
+    </select>
+    <button type="submit">Add</button>
+  </form>
+  <main>
+    <!-- Todos go here -->
+    <ul>
+      {% for todo in todos %}
+        <li>{{ todo['priority'] }} -- {{ todo.text }}</li>
+        <a href="/remove-todo/{{ todo.text }}">delete</a>
+        {% endfor  %}
+    </ul>
+  </main>
+</body>
+</html>
