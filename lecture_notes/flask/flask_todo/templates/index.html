@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+</head>
+<body>
+  <h1>Welcome to the Todo App</h1>
+
+  Hello {{ name }} it is {{ temp }} degrees!
+
+  {% if temp > 90 %}
+    <p style="color: red">It is hot!</p>
+  {% elif temp > 70 %}
+    <p style="color: orange;">Its warm</p>
+  {% else %}
+    <p style="color: blue;">It is chilly</p>
+  {% endif %}
+
+
+  {% for color in colors %}
+  <div style="color: {{color}};">
+    <p>
+      {{ color }}
+    </p>
+  </div>
+  {% endfor %}
+
+
+</body>
+</html>
