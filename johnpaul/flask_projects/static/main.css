@@ -1,0 +1,51 @@
+/* Static files like CSS and JS is saved in a static directory */
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+  background-image: url('https://images.pexels.com/photos/416974/pexels-photo-416974.jpeg?auto=compress&cs=tinysrgb&w=600');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #050101;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: xx-large;
+
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  font-size:xx-large;
+  color: black;
+}
+
+form{
+  line-height: 20px;
+  color: rgb(32, 2, 2);
+  font-size: xx-large;
+}
