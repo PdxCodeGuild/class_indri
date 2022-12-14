@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROT Cipher</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        h1 {
+            margin: 0 auto;
+            
+        }
+    </style>
+
+</head>
+<body class="container">
+    <h1>Welcome to the ROT Cipher!</h1>
+    <h2>Please enter the phrase you'd like to encrypt</h2>
+    <form action="/enter-phrase" method="POST">
+    
+        <input type="text" placeholder="Enter phrase here!" name="phrase" required>
+        <input type="number" placeholder="Enter shift amount"name="shift" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
