@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from .models import Question, Choice
 
@@ -18,7 +18,10 @@ def detail(request, question_id):
     
 # Display the results of the poll
 def results(request, question_id):
-    return HttpResponse(f"You're looking at the results for question {question_id}")
+
+    question = get_object_or_404(Question, id=question_id)
+    context = {'question': question}
+    return render(request, 'polls/results.html', context)
 # Handle interaction of voting
 def vote(request, question_id):
 
@@ -31,4 +34,4 @@ def vote(request, question_id):
     choice.save()
 
 
-    return HttpResponse(f"This choice has {choice.votes} vote(s)")
+    return redirect('results', question_id=question_id)
