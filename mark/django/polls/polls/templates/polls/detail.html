@@ -1,0 +1,25 @@
+{% extends 'polls/base.html' %}    
+
+{% block title%}
+{{ question.question_text}}
+{% endblock %}
+
+{% block content %}
+    <!-- the header is the text of the question -->
+    <h1>{{ question.question_text }}</h1>
+
+    <!-- create a form that points to the url function vote associated with a question based on id. Post results -->
+    <form action="{% url 'vote' question.id %}" method="POST">
+        <!-- token to submit -->
+        {% csrf_token %}
+        <!-- display  -->
+        {%for choice in question.choice_set.all %}
+        <label>
+            <input type="radio" name="choice" value="{{ choice.id }}">
+            {{ choice.choice_text }}
+        </label>
+        {%endfor%}
+        <button type="submit">Vote</button>
+    </form>
+
+{% endblock %}
