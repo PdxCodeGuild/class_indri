@@ -5,23 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
-<body>
+<body class='container'>
     <header>
         <h1>Welcome to the Meter Unit converter!</h1>
     </header>
-
     <main>
         <h2>Please enter the value and unit that you would like to convert to meters.</h2>
-        <form action="" method="post">
+        <form action="/results" method="POST">
             <textarea name="Value" placeholder="Enter Value"></textarea>
             <select name="Unit">
-                <option>Feet</option>
-                <option>Miles</option>
-                <option>Kilometers</option>
-                <option>Yard</option>
-                <option>Inches</option>
+                <option value="ft">Feet</option>
+                <option value="mi">Miles</option>
+                <option value="km">Kilometers</option>
+                <option value="yd">Yard</option>
+                <option value="in">Inches</option>
             </select>
             <br>
             <button type="submit">Convert to Meter</button>
@@ -29,7 +28,9 @@
     </main>
 
     <footer>
-        footer
+        {% if result%}
+        {{ value }} {{ unit }} is {{ result }} Meters
+        {% endif %}
     </footer>
 </body>
 </html>
