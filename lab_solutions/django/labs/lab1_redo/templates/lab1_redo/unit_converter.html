@@ -1,0 +1,32 @@
+{% extends 'lab1_redo/base.html' %}
+
+{% block title %}
+Unit Converter
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label>
+        Input distance:
+        <input type="number" name="distance" required min="0" step=".1">
+    </label>
+    <label>
+        Input unit:
+        <select name="unit">
+            <option value="ft">Feet</option>
+            <option value="m">Meters</option>
+            <option value="km">Kilometers</option>
+            <option value="mi">Miles</option>
+            <option value="yd">Yards</option>
+            <option value="in">Inches</option>
+        </select>
+    </label>
+    <button type="submit">Convert</button>
+</form>
+
+{% if result %}
+<p>Result: {{result}}m</p>
+{% endif %}
+
+{% endblock %}

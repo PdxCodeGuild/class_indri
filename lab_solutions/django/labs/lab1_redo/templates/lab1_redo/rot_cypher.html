@@ -1,0 +1,21 @@
+{% extends 'lab1_redo/base.html' %}
+
+{% block title %}
+ROT Cypher
+{% endblock %}
+
+{% block content %}
+
+<form action="{% url 'potato' %}" method="POST">
+    {% csrf_token %}
+    <label>
+        Enter message here:
+        <input type="text" name="message" required>
+    </label>
+
+    <button type="submit">ROTATE!</button>
+</form>
+
+<p>{{ output }}</p>
+
+{% endblock %}
