@@ -14,14 +14,46 @@
             <div class="logo">
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreshburritos.fr%2Fwp-content%2Fthemes%2Ffreshburritos%2Fassets%2Fimages%2Ffreshburrito-maron.png&f=1&nofb=1&ipt=1805885bf55cb755b50eea610316dae0ca27129afd5406c92bfa01998393f6db&ipo=images" alt="">
             </div>
-            <div class="signin">
-                <input type='text'>Username<br>
-                <input type='password'>Password
-            </div>
+            <form action="" class="signin">
+                <input type='text' name="username">Username<br>
+                <input type='password' name="password">Password<br>
+                <button type="submit">Login</button>
+            </form>
         </div>
 
         <div class="header-right">
-            <h3>Delivery address</h3>
+            <button class="open-button" onclick="openForm()"><h2>Delivery Address</h2></button>
+            
+            <div class="form-popup" id="delivery-address">
+                <form action="" class="form-container">
+
+                <label for="Street">Street address:</label>
+                <input type="text" name="Street" placeholder="123 burrito ave" required>
+
+                <label for="City">City:</label>
+                <input type="text" name="City" placeholder="Chorizo City" required>
+
+                <label for="State">State:</label>
+                <input type="text" name="State" placeholder="CA" required>
+
+                <label for="Zip">Zip:</label>
+                <input type="text" name="Zip" placeholder="00000-0000" required>
+
+                <button type="submit" class="btn">Save</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                  document.getElementById("delivery-address").style.display = "block";
+                }
+                
+                function closeForm() {
+                  document.getElementById("delivery-address").style.display = "none";
+                }
+            </script>
+            
             <a class ="button" href="https://webhook.site/#!/62a0c2e1-295a-403e-a674-c8533654eba8/99471885-5d1e-4f5e-873c-bcca3b8c8f6c/1"><img src="https://cdn-icons-png.flaticon.com/512/4952/4952853.png" alt=""></a>
         </div>
     </header>
@@ -37,7 +69,7 @@
             </span>
         </div>
         <!--  -->
-        <form action="https://webhook.site/62a0c2e1-295a-403e-a674-c8533654eba8" method="post">
+    <form action="https://webhook.site/62a0c2e1-295a-403e-a674-c8533654eba8" method="post">
             <div class="selector">
                 <h2>Tortilla</h2>
                 <div class="items">
@@ -169,14 +201,14 @@
 
                 <h2>Delivery Instructions</h2>
                 <div class="delivery-instructions">
-                    <input type="text" name="delvery-instructions" value="" style="width:70%; height:3rem;">
+                    <input type="text" name="delvery-instructions" value="" style="width:50%; height:2rem;">
                 </div>
             </div>
-        </main>
+    </main>
         
-        <footer>
-            <input type="submit" value="Add to Bag">
-        </footer>
+    <footer>
+        <input type="submit" value="Add to Bag">
+    </footer>
     </form>
 </body>
 </html>
