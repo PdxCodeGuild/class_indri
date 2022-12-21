@@ -1,0 +1,44 @@
+{% extends 'redo/base.html' %}
+
+{% block title %}
+Unit converter
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the unit converter</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+        <label>
+            <input type="number" name="value" placeholder="value">
+        </label>
+        
+        
+        <label>To unit:
+            <select name="to_unit">
+                <option value="ft">Feet</option>
+                <option value="m">Meters</option>
+                <option value="km">Kilometers</option>
+                <option value="mi">Miles</option>
+                <option value="yd">Yards</option>
+                <option value="in">Inches</option>
+            </select>
+        </label>
+        <label>From Unit:
+            <select name="from_unit">
+                <option value="ft">Feet</option>
+                <option value="m" selected>Meters</option>
+                <option value="km">Kilometers</option>
+                <option value="mi">Miles</option>
+                <option value="yd">Yards</option>
+                <option value="in">Inches</option>
+            </select>
+        </label>
+        
+        <button type="submit">Convert</button>
+</form>
+
+{% if result %}
+<p>{{ value }} {{ from_unit }} is equalivant to {{ result }} {{ to_unit }}</p>
+{% endif %}
+{% endblock %}
