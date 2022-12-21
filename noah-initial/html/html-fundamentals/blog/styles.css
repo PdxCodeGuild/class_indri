@@ -1,0 +1,51 @@
+:root {
+    background-color: slategray;
+    font-size: 15px;
+}
+
+body {
+    color: white;
+    border: 2px solid white;
+    
+}
+
+header {
+    background-color: aqua;
+    font-size: 2em;
+    
+}
+
+nav {
+    background-color: green;
+    
+    
+}
+
+aside {
+    background-color: red;
+}
+
+main {
+    background-color: purple;
+}
+
+article {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+footer {
+    background-color: orange;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 200px auto 200px;
+    
+}
+
+h2 {
+    border: 2px solid white;
+}
