@@ -1,0 +1,50 @@
+:root {
+    --bg-color: #f1f2f5;
+    --text-color: #0b0b0c;
+    --accent-color: #294D4A;
+  }
+  
+h1 {
+    font-size: 5em;
+}
+h2 {
+    font-size: 1.50em;
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1.10em;
+     
+}
+
+header {  
+    padding-top: 10px;
+    text-align: center;
+    font-family: cursive;
+    color: #D33F49 ;
+    background-color: var(--accent-color);
+    
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.form, label {
+
+    text-align: left;
+    display: flow-root;
+   
+}
+
+
+footer {
+    border-top: 1px solid #0b0b0c;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: #D33F49;
+}
