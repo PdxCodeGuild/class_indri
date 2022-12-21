@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import random
 from string import ascii_letters, digits, punctuation, ascii_lowercase, ascii_uppercase
 from .helpers import unit_converter as uc # renaming unit_converter to uc because we already have a unit_converter function in this file
@@ -56,3 +57,44 @@ def unit_converter(request):
         unit = request.POST['unit']
         result = uc(distance, unit)
         return render(request, 'lab1_redo/unit_converter.html', {'result': result})
+
+history = []
+results = {
+    "wins": 0,
+    "losses": 0
+}
+
+
+def rps(request):
+    context = {
+        "history": history,
+        "wins": results['wins'],
+        "losses": results['losses']
+    }
+    return render(request, 'lab1_redo/rps.html', context)
+
+
+def rps_game(request, user_choice):
+
+    choices = ["rock", "paper", "scissors"]
+
+    cpu = random.choice(choices)
+
+    if user_choice not in choices:
+        history.append("Invalid choice.")
+    elif user_choice == cpu:
+        history.append("You tied.")
+    elif (user_choice == "paper" and cpu == "scissors") or (user_choice == "rock" and cpu == "paper") or (user_choice == "scissors" and cpu == "rock"):
+        history.append("You lost.")
+        results['losses'] += 1
+    else:
+        history.append("You win!")
+        results['wins'] += 1
+
+    context = {
+        "history": history,
+        "wins": results['wins'],
+        "losses": results['losses']
+    }
+
+    return render(request, 'lab1_redo/rps.html', context)

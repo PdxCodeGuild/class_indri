@@ -5,5 +5,9 @@ Lab1 Redo
 {% endblock %}
 
 {% block content %}
-    <h1>Welcome to Lab 1: Django Redo</h1>
+<h1>Welcome to Lab 1: Django Redo</h1>
+<div><a href="{% url 'password_generator' %}">Password Generator</a></div>
+<div><a href="{% url 'rot_cypher' %}">ROT Cypher</a></div>
+<div><a href="{% url 'demonllama' %}">Unit Converter</a></div>
+<div><a href="{% url 'rps' %}">Rock Paper Scissors</a></div>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'lab1_redo/base.html' %}
+
+{% block title %}
+Rock Paper Scissors
+{% endblock %}
+
+{% block content %}
+<h1>Rock Paper Scissors</h1>
+<div>
+    <a href="{% url 'rps_game' 'rock' %}"><button>Rock</button></a>
+    <a href="{% url 'rps_game' 'paper' %}"><button>Paper</button></a>
+    <a href="{% url 'rps_game' 'scissors' %}"><button>Scissors</button></a>
+</div>
+<p>Wins: {{wins}}</p>
+<p>Losses: {{losses}}</p>
+{% for game in history %}
+    <p>{{ game }}</p>
+{% endfor %}
+{% endblock %}
