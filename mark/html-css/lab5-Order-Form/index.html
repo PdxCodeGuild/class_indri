@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Burrito Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+
+        <div class="header-left">
+            <div class="logo">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreshburritos.fr%2Fwp-content%2Fthemes%2Ffreshburritos%2Fassets%2Fimages%2Ffreshburrito-maron.png&f=1&nofb=1&ipt=1805885bf55cb755b50eea610316dae0ca27129afd5406c92bfa01998393f6db&ipo=images" alt="">
+            </div>
+            <div class="signin">
+                <input type='text'>Username<br>
+                <input type='password'>Password
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="delivery">
+                Delivery location
+            </div>
+            <div class="checkout">
+                insert checkout link as an icon
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="splash">
+
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdeltaco.com%2Ffiles%2Fmenu%2Fitem%2Fmachocomboburrito.png&f=1&nofb=1&ipt=d60bfb018a4cd67d7ef04f9e24df09ff443d4bd41d7ca602f234bc1d5586f62e&ipo=images" alt="">
+            <span>
+                <h5>BUILD YOUR</h5>
+                <h2>BURRITO</h2>
+                <p>Your choice of rice, black beans, protein and extras on tortilla.</p>
+            </span>
+        </div>
+        <!--  -->
+        <form action="myurl" method="post">
+            <div class="selector">
+                <h3>Tortilla</h3>
+                <div class="tortilla">
+                        <label>
+                            <input type="radio" name="tortilla" value="white flour"><div class="card">
+                                <h2>White Flour</h2>
+                                <img src="http://shop.latortilla.de/WebRoot/Store/Shops/80025728/46BB/2526/A498/3430/6EFD/D472/5212/EED7/Weizentortillas_ml.png" alt="">
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="tortilla" value="wheat flour"><div class="card">
+                                <h2>Wheat Flour</h2>
+                                <img src="https://www.mirancho.com/wp-content/uploads/2016/02/4_flourtortillas.png" alt="">
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="tortilla" value="spinach"><div class="card">
+                                <h2>Spinach</h2>
+                                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aladdinbakers.com%2Fretail%2FewExternalFiles%2FWrap%2520Spinach%2520Loose%2520iStock-517219791.png&f=1&nofb=1&ipt=3809da39f405f583acca829a917f064743dda0ba4f81ca73ad98a1cbd7ff3c08&ipo=images" alt="">
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="tortilla" value="corn">
+                                <div class="card">
+                                    <h2>Corn</h2>
+                                    <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fshop.latortilla.de%2FWebRoot%2FStore%2FShops%2F80025728%2F469F%2F30A6%2F7737%2FA00A%2F987D%2FD472%2F5212%2FDA3F%2FMaistortillas_Nixtamal.png&f=1&nofb=1&ipt=a6ba7e32bd0cf9bf65887d9d30033d56b024ae1cad5bb304caba617866d275a5&ipo=images" alt="">
+                                </div>
+                        </label>
+                </div>
+                <h3>Rice</h3>
+                <div class="rice">
+                    <div>
+                        <input type='radio' name="rice" value='white rice'>White Rice<br>
+                        <input type='radio' name="rice" value='brown Rice'>Brown Rice<br>
+                    </div>
+                    <div>
+                        <img src="https://purepng.com/public/uploads/medium/purepng.com-ricericeseedgrainfood-14115286537100jltn.png" alt="">
+                    </div>
+                </div>
+                <h3>Beans</h3>
+                <div class="beans">
+                    <div>
+                        <input type='radio' name="beans" value="black Beans">Black Beans<br>
+                        <input type='radio' name="beans" value="pinto Beans">Pinto Beans<br>
+                    </div>
+                    <div>
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fedisongrainery.com%2Fwp-content%2Fuploads%2F2020%2F11%2FBBK_Black-Beans.png&f=1&nofb=1&ipt=5e3c7f5a71222416be7c1f0de97c72aec1fc0cffd43d0dcf7e06a42583d23835&ipo=images" alt="">
+                    </div>
+                </div>
+                <h3>Protein</h3>
+                <div class="protein">
+                    <div>
+
+                        <label><input type="radio" name="protein" value="barbacoa">
+                            <img src="" alt="">
+                            </label>
+                            <input type="radio" name="protein" value="carnitas">Carnitas<br>
+                            <input type="radio" name="protein" value="chicken">Chicken<br>
+                            <input type="radio" name="protein" value="sofritas">Sofritass<br>
+                            <input type="radio" name="protein" value="none">None<br>
+                        </label>
+                    </div>
+                    <div>
+                        <img src="https://www.polloregio.com/wp-content/uploads/2021/03/DTX_PolloRegio-OLO161-1536x1024.png" alt="">
+                    </div>
+                </div>
+                <h3>Add-ons</h3>
+                <p>Choose up to two.</p>
+                <div class="addon">
+
+                    <div>
+                        <input type="checkbox" name="add on" value="cheese">Cheese<br>
+                        <input type="checkbox" name="add on" value="sour cream">Sour Cream<br>
+                        <input type="checkbox" name="add on" value="lettuce">Lettuce<br>
+                        <input type="checkbox" name="add on" value="pico de gallo">Pico de gallo<br>
+                        <input type="checkbox" name="add on" value="guacamole">Guacamole<br>
+                    </div>
+                    <div>
+                        <img src="https://www.pikpng.com/pngl/b/591-5914515_shredded-cheese-png.png" alt="">
+                    </div>
+                </div>
+                <div class="delivery-instructions">
+                    <input type="textarea" name="notes" value="">Delivery Instructions
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <button type="submit">submit</button>
+    </footer>
+</body>
+</html>

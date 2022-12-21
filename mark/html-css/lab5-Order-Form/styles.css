@@ -1,0 +1,153 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: rgb(233, 233, 233);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background:  rgb(222, 23, 23);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.header-left{
+    display: inline-flex
+}
+
+.signin {
+    padding: 2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    display: block;
+    
+}
+
+.splash {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.splash img {
+    width: 40%;
+    padding: 2rem;
+}
+
+
+.selector{
+    border-top: 2px solid black;
+    padding: 3rem;
+    width: 80%;
+    margin: auto;
+}
+/* ------------------ */
+.delivery-instructions {
+    width: 5rem;
+
+}
+
+/* ------------------ */
+
+.card {
+    border: 2px solid rgba(38, 38, 38, 0.876);
+    border-radius: 2px;
+    width: 500px;
+    height: 130px; 
+    overflow: hidden;
+    margin: 15px;
+    opacity: 0.6;
+    background-color: rgb(232, 232, 232);
+}
+
+/* ------------------ */
+
+
+.tortilla h2 {
+    text-align: center;
+}
+
+.tortilla img {
+    position: relative;
+    max-width: 80%;
+    height: auto;
+    margin-left: -30%;
+}
+/* ------------------ */
+.rice {
+    display: inline-flex;
+    height:20%;
+}
+
+.rice div {
+    margin: auto ;
+}
+
+.rice img {
+    width: 30%;
+}
+/* ------------------ */
+.beans {
+    display: inline-flex;
+    height:20%;
+}
+
+.beans div {
+    margin: auto ;
+}
+
+.beans img {
+    width: 30%;
+}
+/* ------------------ */
+.protein {
+    display: inline-flex;
+    height:20%;
+}
+
+.protein div {
+    margin: auto 0;
+}
+
+.protein img {
+    width: 30%;
+}
+/* ------------------ */
+.addon {
+    display: inline-flex;
+    height:20%;
+}
+
+.addon div {
+    margin: auto ;
+}
+
+.addon img {
+    width: 30%;
+}
+/* ------------------ */
+
+[type=radio] {
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + .card {
+    cursor: pointer;
+}
+
+[type=radio]:checked + .card {
+    border: 3px solid rgb(151, 52, 19);
+    border-radius: 2px;
+    opacity: 1;
+}
