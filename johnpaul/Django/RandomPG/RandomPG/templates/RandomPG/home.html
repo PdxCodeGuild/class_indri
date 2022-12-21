@@ -4,6 +4,6 @@
       {% csrf_token %}
       {{ form.as_p }}
       <button class="btn btn-danger">Submit</button>
-    </form>
-{{password}}
+    </form><br>
+<p>Your password: {{password}}</p> 
 {% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import InputForm
 import random
 from string import ascii_letters, digits, punctuation
@@ -12,11 +12,30 @@ def home(request):
             character = ascii_letters + digits + punctuation
             password = random.choices(character, k=password_length)
             password = ''.join(password)
-            return render(request, 'RandomPG/home.html', {'password': password})
+            return render(request, 'RandomPG/home.html',{'password': password, 'form': form})
     else:
-        form = InputForm
+        form = InputForm()
         return render(request, 'RandomPG/home.html', {'form': form})
        
 
 def about(request):
     return render(request, 'RandomPG/about.html', {'title': 'About'})
+
+
+def rps(request):
+    return render(request, 'RandomPG/rps.html')
+
+outcome = ""
+def rps_game(request, user_choice):
+    choices = ['rock', 'paper', 'scissors']
+    cpu = random.choices(choices)
+    if user_choice == 'scissors' and cpu == 'scissors':
+        outcome = 'Game tied'
+    elif user_choice == 'rock' and cpu == 'paper' or user_choice == 'paper' and cpu == 'scissor':
+        outcome = 'You lost!'
+    else:
+        outcome = 'You win!'
+    return render(request, 'RandomPG/rps.html', {'outcome': outcome})
+        
+
+

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'RandomPG.apps.RandompgConfig',
+    'rps',
 ]
 
 MIDDLEWARE = [

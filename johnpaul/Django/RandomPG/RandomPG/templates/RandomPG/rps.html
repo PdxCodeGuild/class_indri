@@ -1,0 +1,6 @@
+{% extends 'RandomPG/base.html' %}
+{% block content %}
+    <a href="{% url 'rps_game' 'rock' %}"><button>Rock</button></a>
+    <a href="{% url 'rps_game' 'paper' %}"><button>Paper</button></a>
+    <a href="{% url 'rps_game' 'scissors' %}"><button>Scissors</button></a>
+{% endblock %}
