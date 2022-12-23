@@ -1,0 +1,24 @@
+{% extends 'TodoApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Todo App
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Todo lab: Django Todo</h1>
+
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Todo Items</legend>
+      {{ form|crispy }}
+      {% for uncompleted in uncompleted_todo_item %}
+      {{uncompleted.text}}{{uncompleted.created_date|date:"F d, Y"}}
+      {% endfor %}
+    </fieldset>
+    <div class="form-button"><button class="btn btn-outline-info" type="submit">Add</button></div>
+  </form>
+</div>
+{% endblock %}
