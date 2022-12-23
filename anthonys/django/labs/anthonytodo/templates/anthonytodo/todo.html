@@ -1,0 +1,15 @@
+{% extends "anthonytodo/base.html" %}
+
+{% block content %}
+<h>To Do List Maker</h>
+<form action="" method='POST'>
+    {% csrf_token %}
+    <label>
+        To Do List:
+        <input name="user_input" type="number" placeholder="At lest 5 characters" min="5" required>
+    </label>
+    <button type="submit">Create Password</button>
+</form>
+<p>{{Password}}</p>
+
+{% endblock %}
