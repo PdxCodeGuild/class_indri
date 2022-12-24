@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} 
+{% block content %}
+<form action="/" method="POST">
+  <div>
+    <label>
+      What is the distance?
+      <input type="number" placeholder="Enter distance" name="distance" /> </label
+    ><br /><br />
+  </div>
+  <div>
+    <label>
+      What are the units?
+      <input type="text" placeholder="Enter unit" name="units"/> </label
+    ><br /><br />
+  </div>
+  <div>
+    <button class="btn btn-secondary">Submit</button>
+  </div>
+</form>
+{% endblock content %}
+
+
+

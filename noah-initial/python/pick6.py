@@ -16,13 +16,26 @@ def pick_6():
 
 
 def num_matches(winning_numbers,ticket):
+    matches = 0
     for i in range(len(winning_numbers)):
-        print(winning_numbers[i] == ticket[i]) #start here tomorrow
+        if winning_numbers[i] == ticket[i]:
+            matches += 1
+         
+    return matches
 
-        
+
+payouts = {
+    1: 4,
+    2: 7,
+    3: 100,
+    4: 50000,
+    5: 1000000,
+    6: 25000000
+}
+
+
 # Generate a list of 6 random numbers representing the winning tickets
 winning_numbers = pick_6()
-print(winning_numbers)
 
 # Start your balance at 0
 
@@ -37,14 +50,16 @@ ticket_counter = 0
 
 while ticket_counter < 100000:
     ticket = pick_6()
+
     ticket_counter = ticket_counter + 1
+
     balance = balance - 2
-
-
 #find how many numbers match
-
-
+    matches = num_matches(winning_numbers, ticket)
 # Add to your balance the winnings from your matches
+    balance += payouts.get(matches, 0)
+
+
 
 
 

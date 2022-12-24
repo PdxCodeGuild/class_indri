@@ -1,0 +1,100 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(219, 160, 88);
+    border-radius: 13px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+body {
+    background-color: rgb(110, 95, 75);
+}
+
+.topnav {
+    height: 1rem;
+    border-radius: 13px;
+    padding: 1rem;
+    
+}
+
+.topnav a {
+    border: solid  rgb(141, 138, 138) 2px;
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    padding: .5rem;
+    margin: .75rem;
+    border-radius: 8px;
+}
+
+.topnav a:hover {
+    color: coral;
+    border: solid coral 2px;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+   
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    max-height: 175px;
+    max-width: 100px;
+    border-radius: 13px;
+    background-color: rgb(15, 16, 15);
+    padding: .5rem;
+    margin-right: 1rem;
+    font-size: 18px;
+}
+.sidenav {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sidenav a {
+    border: solid  rgb(141, 138, 138) 2px;
+    text-decoration: none;
+    margin-bottom: 1.2rem;
+    color: whitesmoke;
+    padding: .15rem;
+    border-radius: 8px;
+}
+.sidenav a:hover {
+    color: coral;
+    border: solid coral 2px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    background-color: darkkhaki;
+    border-radius: 12px;
+    padding: .5rem;
+}
+
+.post1 {
+    background-color: sienna;
+    border-radius: 12px;
+    padding: .75rem;
+    margin-bottom: 1.25rem;
+}
+
+.post2 {
+    background-color: burlywood;
+    border-radius: 12px;
+    padding: .75rem;
+    margin-bottom: 20px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(150, 201, 188, 0.884);
+    border-radius: 12px;
+    padding: .75rem;
+}
+
+

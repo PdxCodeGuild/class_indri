@@ -33,11 +33,33 @@ Staff:
 ### Assigned Labs:
 
 <details open>
+  <summary>HTML/CSS/Flask</summary>
+
+| Title | Due Date |
+| ----- | -------- |
+| [Bio](https://python-documenation-site.deno.dev/htmlcss/labs/bio) | 07 DEC |
+| [Company Landing Page](https://python-documenation-site.deno.dev/htmlcss/labs/company) | 10 DEC |
+| [Blog](https://python-documenation-site.deno.dev/htmlcss/labs/blog) | 12 DEC |
+| [Burrito Order Form](https://python-documenation-site.deno.dev/htmlcss/labs/burrito-order-form) | 20 DEC |
+| [Flask Redo](https://python-documenation-site.deno.dev/htmlcss/labs/flask-redo) | 24 DEC |
+
+</details>
+
+<details>
   <summary>Python</summary>
 
 | Title | Due Date |
 | ----- | -------- |
 | [Unit Converter](https://python-documenation-site.deno.dev/python/labs/unit-converter) | 02 NOV |
+| [Blackjack Advice](https://python-documenation-site.deno.dev/python/labs/blackjack-advice) | 03 NOV |
+| [Pick6](https://python-documenation-site.deno.dev/python/labs/pick-6) | 08 NOV |
+| [Credit Card Validation](https://python-documenation-site.deno.dev/python/mob/credit-card-validation) | 11 NOV |
+| [ROT13](https://python-documenation-site.deno.dev/python/labs/rotation-cipher) | 15 NOV |
+| [Count Words](https://python-documenation-site.deno.dev/python/labs/count-words) | 17 NOV |
+| [ARI](https://python-documenation-site.deno.dev/python/labs/ari) | 23 NOV |
+| [ATM](https://python-documenation-site.deno.dev/python/mob/atm) | 28 NOV |
+| [Dad Joke API](https://python-documenation-site.deno.dev/python/labs/dad-joke-api) | 30 NOV |
+| [Quotes API](https://python-documenation-site.deno.dev/python/labs/quotes-api) | 02 DEC |
 
 </details>
 

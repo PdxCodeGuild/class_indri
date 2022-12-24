@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Merriweather:ital,wght@1,300;1,400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+);
+
+:root {
+  --bg-color: #c0b7b1;
+  --text-color: #001021;
+  --accent-color: #9883e5;
+}
+
+*{
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  /* font-family: 'Amatic SC', cursive; */
+}
+
+body {
+  background-color: snow;
+  color: var(--text-color);
+
+  min-height: 100vh;
+  /* border: 2px solid var(--accent-color); */
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 50px auto 50px;
+}
+
+nav {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: snow;
+  height: 5rem;
+  /* width: auto; */
+}
+
+#header-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: var(--accent-color);
+  /* text-shadow: 1px 1px var(--accent-color); */
+  height: 10rem;
+  width: 25rem;
+  font-size: 1.5rem;
+}
+
+#header-links{
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  text-align: center;
+  height: 10rem;
+  width: 7rem;
+  font-size: 64px;
+
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  /* font-family: 'BhuTuka Expanded One', cursive; */
+  text-align: center;
+  /* color: white; */
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid white;
+
+
+}
+
+.comment{
+  font-size: 12px;
+  color: #b1b1b1;
+}

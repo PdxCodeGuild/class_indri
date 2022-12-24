@@ -1,0 +1,109 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+ 
+nav.scrollmenu {
+display: flex;
+flex-flow: row wrap;
+justify-content:space-between;
+list-style: none;
+background-color: #333;
+overflow: auto;
+white-space: nowrap;
+}
+
+nav.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+nav.scrollmenu a:hover {
+  background-color: #777;
+}
+/* Styling search bar */
+nav.scrollmenu input[type=text] {
+  float: right;
+  padding: 9px;
+  margin-top: 8px;
+  margin-right: 10px;
+  border: none;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+  .header {
+    padding: 1px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    line-height: 10px;
+    text-align: left;
+    background: #a02a36;
+    color: white;
+    font-size: 30px;
+  }
+
+  .header img{
+    padding: 0px;
+    height: 90px;
+    float: right;
+  
+  }
+
+  /* wraps the main and side bar */
+  .side-by-side{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .sidebar {
+    width: 200px;
+    margin-bottom: 50%;
+    position:inherit;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+    background: #a02a36;
+    padding: 8px 0;
+    line-height: 50px;
+  }
+  
+  .sidebar a {
+    padding: 3px 7px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #d8dce3;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #064579;
+  }
+
+  .side-bar-head{
+    text-align: left;
+    padding: 10px;
+    line-height: 15px;
+    color:cornsilk;
+    
+  }
+/* Page Content */
+.content {
+  padding:20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  
+}
+
+footer {
+  text-align: center;
+  padding: 0px;
+ 
+  color: #81a8ec;
+  text-align: left;
+}

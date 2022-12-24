@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ShortenerApp
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to the Shortener App</h1>
+
+<form action="{% url 'save_url' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+
+<!-- 'objects' comes from the key in our context dictionary -->
+<table>
+    <tr>
+        <thead>
+            <th>Count</th>
+            <th>Code</th>
+            <th>URL</th>
+        </thead>
+    </tr>
+    {% for url in objects %}
+    <tr>
+        <td>{{ url.counter }}</td>
+        <td>{{ url.code }}</td>
+        <td>{{ url.url }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    
+
+
+{% endblock %}

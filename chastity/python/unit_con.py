@@ -1,4 +1,10 @@
-# Unit Converter
+'''
+
+Unit Converter Lab 01 - Python
+Chastity Boykin 
+PDX Code Guild Class Indri
+
+'''
 
 # dictonary listing out convertions for meters
 distance_units = {

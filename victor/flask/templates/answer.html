@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROT Cipher</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .buttons {
+            display: flex;
+            padding-bottom: 1rem;
+        
+        }
+    </style>
+
+
+</head>
+<body class="container">
+    <h1>Welcome to the ROT Cipher!</h1>
+    <main>
+        <h3>Your decrypted phrase is <strong>{{ output }}</strong>!</h3>
+        <form action="try-again" method="POST">
+            <!-- <div class="grid"> -->
+
+                <p>Would you like to try again?</p>
+                <div class="buttons">
+                <label>Yes <input type="radio" name="choice" value="yes" required></label>
+                <label>No <input type="radio" name="choice" value="no" required></label>
+            </div>
+            </div>
+                <button type="submit">Submit</button>
+        </form>
+    </main>
+    
+</body>
+</html>
