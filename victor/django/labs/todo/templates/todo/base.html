@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"
+    />
+    <style>
+      body {
+        color: #cbafd7;
+        background: radial-gradient(
+          ellipse at right bottom,
+          #eeb1bf 5%,
+          #d42dab 25%,
+          #4d1d63 50%,
+          #030243 100%
+        );
+      }
+      h1 {
+        color: #cbafd7;
+      }
+    </style>
     <title>{% block title %}Home Page{% endblock %}</title>
-</head>
-<body class='container'>
-    {% block content %}
-    
-    {% endblock %}
-    
-</body>
+  </head>
+  <body style="text-align: center;">
+    {% block content %} {% endblock %}
+  </body>
 </html>

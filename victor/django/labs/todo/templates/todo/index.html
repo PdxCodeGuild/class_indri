@@ -12,7 +12,14 @@
     <button type="submit">Submit</button>
 </form>
 {% for item in todo %}
-<div>{{ item.text }}<a href=""><button>Complete</button></a></div>
+<div>
+    {{ item.text }} <a href="{% url 'delete_todo' item.id %}"><button>Delete</button></a><a href="{% url 'complete_todo' item.id %}"><button>Complete</button></a>
+</div>
+{% endfor %}
+{% for item in todones %}
+    <div style="text-decoration: line-through; color: rgb(108, 108, 108);">
+        {{ item.text }}
+    </div>
 {% endfor %}
 
 {% endblock %}
