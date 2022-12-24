@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Todo app
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to the ToDo tracker</h1>
+
+<form action="{% url 'save_todo' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type='submit'>Add</button>
+</form>
+
+<table>
+    <tr>
+        <thead>
+            <th>Completed:</th>
+            <th>To Do:</th>
+            <th>Created:</th>
+        </thead>
+    </tr>
+    {% for each in all_todos %}
+    <tr>
+        <td>{{ each.completed }}</td>
+        <td>{{ each.entry }}</td>
+        <td>{{ each.created }}</td>
+    </tr>
+    {% endfor %}
+    
+
+</table>
+
+
+
+{% endblock %}
