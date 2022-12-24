@@ -14,19 +14,47 @@
             <div class="logo">
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffreshburritos.fr%2Fwp-content%2Fthemes%2Ffreshburritos%2Fassets%2Fimages%2Ffreshburrito-maron.png&f=1&nofb=1&ipt=1805885bf55cb755b50eea610316dae0ca27129afd5406c92bfa01998393f6db&ipo=images" alt="">
             </div>
-            <div class="signin">
-                <input type='text'>Username<br>
-                <input type='password'>Password
-            </div>
+            <form action="" class="signin">
+                <input type='text' name="username">Username<br>
+                <input type='password' name="password">Password<br>
+                <button type="submit">Login</button>
+            </form>
         </div>
 
         <div class="header-right">
-            <div class="delivery">
-                Delivery location
+            <button class="open-button" onclick="openForm()"><h2>Delivery Address</h2></button>
+            
+            <div class="form-popup" id="delivery-address">
+                <form action="" class="form-container">
+
+                <label for="Street">Street address:</label>
+                <input type="text" name="Street" placeholder="123 burrito ave" required>
+
+                <label for="City">City:</label>
+                <input type="text" name="City" placeholder="Chorizo City" required>
+
+                <label for="State">State:</label>
+                <input type="text" name="State" placeholder="CA" required>
+
+                <label for="Zip">Zip:</label>
+                <input type="text" name="Zip" placeholder="00000-0000" required>
+
+                <button type="submit" class="btn">Save</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
             </div>
-            <div class="checkout">
-                insert checkout link as an icon
-            </div>
+
+            <script>
+                function openForm() {
+                  document.getElementById("delivery-address").style.display = "block";
+                }
+                
+                function closeForm() {
+                  document.getElementById("delivery-address").style.display = "none";
+                }
+            </script>
+            
+            <a class ="button" href="https://webhook.site/#!/62a0c2e1-295a-403e-a674-c8533654eba8/99471885-5d1e-4f5e-873c-bcca3b8c8f6c/1"><img src="https://cdn-icons-png.flaticon.com/512/4952/4952853.png" alt=""></a>
         </div>
     </header>
 
@@ -36,105 +64,151 @@
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdeltaco.com%2Ffiles%2Fmenu%2Fitem%2Fmachocomboburrito.png&f=1&nofb=1&ipt=d60bfb018a4cd67d7ef04f9e24df09ff443d4bd41d7ca602f234bc1d5586f62e&ipo=images" alt="">
             <span>
                 <h5>BUILD YOUR</h5>
-                <h2>BURRITO</h2>
+                <h1>BURRITO</h1>
                 <p>Your choice of rice, black beans, protein and extras on tortilla.</p>
             </span>
         </div>
         <!--  -->
-        <form action="myurl" method="post">
+    <form action="https://webhook.site/62a0c2e1-295a-403e-a674-c8533654eba8" method="post">
             <div class="selector">
-                <h3>Tortilla</h3>
-                <div class="tortilla">
+                <h2>Tortilla</h2>
+                <div class="items">
                         <label>
-                            <input type="radio" name="tortilla" value="white flour"><div class="card">
-                                <h2>White Flour</h2>
-                                <img src="http://shop.latortilla.de/WebRoot/Store/Shops/80025728/46BB/2526/A498/3430/6EFD/D472/5212/EED7/Weizentortillas_ml.png" alt="">
-                            </div>
+                            <input type="radio" name="tortilla" value="white flour">
+                                <div class="card" style="background-image: url('https://dph95f73vdxmz.cloudfront.net/uploads/White_Tortilla.png');">
+                                    <h2>White Flour</h2>
+                                </div>
                         </label>
 
                         <label>
-                            <input type="radio" name="tortilla" value="wheat flour"><div class="card">
-                                <h2>Wheat Flour</h2>
-                                <img src="https://www.mirancho.com/wp-content/uploads/2016/02/4_flourtortillas.png" alt="">
-                            </div>
+                            <input type="radio" name="tortilla" value="wheat flour">
+                                <div class="card" style="background-image: url('https://www.mirancho.com/wp-content/uploads/2016/02/4_flourtortillas.png')">
+                                    <h2>Wheat Flour</h2>
+                                </div>
                         </label>
 
                         <label>
-                            <input type="radio" name="tortilla" value="spinach"><div class="card">
-                                <h2>Spinach</h2>
-                                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aladdinbakers.com%2Fretail%2FewExternalFiles%2FWrap%2520Spinach%2520Loose%2520iStock-517219791.png&f=1&nofb=1&ipt=3809da39f405f583acca829a917f064743dda0ba4f81ca73ad98a1cbd7ff3c08&ipo=images" alt="">
-                            </div>
+                            <input type="radio" name="tortilla" value="spinach">
+                                <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aladdinbakers.com%2Fretail%2FewExternalFiles%2FWrap%2520Spinach%2520Loose%2520iStock-517219791.png&f=1&nofb=1&ipt=3809da39f405f583acca829a917f064743dda0ba4f81ca73ad98a1cbd7ff3c08&ipo=images')">
+                                    <h2>Spinach</h2>
+                                </div>
                         </label>
 
                         <label>
                             <input type="radio" name="tortilla" value="corn">
-                                <div class="card">
+                                <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fshop.latortilla.de%2FWebRoot%2FStore%2FShops%2F80025728%2F469F%2F30A6%2F7737%2FA00A%2F987D%2FD472%2F5212%2FDA3F%2FMaistortillas_Nixtamal.png&f=1&nofb=1&ipt=a6ba7e32bd0cf9bf65887d9d30033d56b024ae1cad5bb304caba617866d275a5&ipo=images')">
                                     <h2>Corn</h2>
-                                    <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fshop.latortilla.de%2FWebRoot%2FStore%2FShops%2F80025728%2F469F%2F30A6%2F7737%2FA00A%2F987D%2FD472%2F5212%2FDA3F%2FMaistortillas_Nixtamal.png&f=1&nofb=1&ipt=a6ba7e32bd0cf9bf65887d9d30033d56b024ae1cad5bb304caba617866d275a5&ipo=images" alt="">
                                 </div>
                         </label>
                 </div>
-                <h3>Rice</h3>
-                <div class="rice">
-                    <div>
-                        <input type='radio' name="rice" value='white rice'>White Rice<br>
-                        <input type='radio' name="rice" value='brown Rice'>Brown Rice<br>
-                    </div>
-                    <div>
-                        <img src="https://purepng.com/public/uploads/medium/purepng.com-ricericeseedgrainfood-14115286537100jltn.png" alt="">
-                    </div>
+                <h2>Rice</h2>
+                <div class="items">
+                    <label>
+                        <input type="radio" name="rice" value="white-rice">
+                            <div class="card" style="background-image: url('https://purepng.com/public/uploads/medium/purepng.com-ricericeseedgrainfood-14115286537100jltn.png')">
+                                <h2>White Rice</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="rice" value="brown-rice">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngarts.com%2Ffiles%2F3%2FBrown-Rice-PNG-Image.png&f=1&nofb=1&ipt=fbbebaf5a8e18603fcb69a564db0bd32cfb12742264fb7d3a771d0b3216b0e0e&ipo=images')">
+                                <h2>Brown Rice</h2>
+                            </div>
+                    </label>
                 </div>
-                <h3>Beans</h3>
-                <div class="beans">
-                    <div>
-                        <input type='radio' name="beans" value="black Beans">Black Beans<br>
-                        <input type='radio' name="beans" value="pinto Beans">Pinto Beans<br>
-                    </div>
-                    <div>
-                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fedisongrainery.com%2Fwp-content%2Fuploads%2F2020%2F11%2FBBK_Black-Beans.png&f=1&nofb=1&ipt=5e3c7f5a71222416be7c1f0de97c72aec1fc0cffd43d0dcf7e06a42583d23835&ipo=images" alt="">
-                    </div>
+                <h2>Beans</h2>
+                <div class="items">
+                    <label>
+                        <input type="radio" name="beans" value="black-beans">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Fgreen-valley%2Fwp-content%2Fuploads%2F2015%2F08%2F13104016%2Fgreen-valley-black-beans-bowl.png&f=1&nofb=1&ipt=cd1730fe28d572dff9adedf3772987e108a692f43557f240e4f359a7ae3c3943&ipo=images')">
+                                <h2>Black Beans</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="beans" value="pinto-beans">
+                            <div class="card" style="background-image: url('https://s3.amazonaws.com/green-valley/wp-content/uploads/2019/06/27133857/green-valley-pinto-beans-bowl-1026x1100.png')">
+                                <h2>Pinto Beans</h2>
+                            </div>
+                    </label>
                 </div>
-                <h3>Protein</h3>
-                <div class="protein">
-                    <div>
+                <h2>Protein</h2>
+                <div class="items">
+                    <label>
+                        <input type="radio" name="protein" value="steak">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Fsteak%2Fsteak_PNG38.png&f=1&nofb=1&ipt=d4849b789064e4db881adda889cdd5f00c1c9ef450fa71b946a5140942c9be9e&ipo=images')">
+                                <h2>Steak</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="protein" value="barbacoa">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aFYkpOT1Tqx1cbs3Qdyd-gHaE8%26pid%3DApi&f=1&ipt=2e035f3ea54e6d2865477ffc4c26f666f43b30d60bc129ed6eab44f3ae52dbb6&ipo=images')">
+                                <h2>Barbacoa</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="protein" value="chicken">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0085%2F1171%2F7440%2Ft%2F2%2Fassets%2FDicedChicken-1589660683631.png&f=1&nofb=1&ipt=fbee485e17d135955522870ff67fa91759554d77781f7aa551c8d616f110bd63&ipo=images')">
+                                <h2>Chicken</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="protein" value="sofritass">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffreebeacon.com%2Fwp-content%2Fuploads%2F2016%2F01%2F0004_Sofritas.png&f=1&nofb=1&ipt=d2b4d18b05863986c659d5c37e53eb802b928d41e9f8bbb1c40d6edbd7f97510&ipo=images')">
+                                <h2>Sofritas</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="protein" value="none">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2Fdc8%2F6ML%2Fdc86MLBki.png&f=1&nofb=1&ipt=78517f03d2e4730d2f41bf6b64cd8dade9c6e5ba2e75503aecf9f0d2732ff7dc&ipo=images')">
+                                <h2>None</h2>
+                            </div>
+                    </label>
 
-                        <label><input type="radio" name="protein" value="barbacoa">
-                            <img src="" alt="">
-                            </label>
-                            <input type="radio" name="protein" value="carnitas">Carnitas<br>
-                            <input type="radio" name="protein" value="chicken">Chicken<br>
-                            <input type="radio" name="protein" value="sofritas">Sofritass<br>
-                            <input type="radio" name="protein" value="none">None<br>
-                        </label>
-                    </div>
-                    <div>
-                        <img src="https://www.polloregio.com/wp-content/uploads/2021/03/DTX_PolloRegio-OLO161-1536x1024.png" alt="">
-                    </div>
                 </div>
-                <h3>Add-ons</h3>
-                <p>Choose up to two.</p>
-                <div class="addon">
+                <h2>Add-ons</h2>
+                <div class="items">
+                    <label>
+                        <input type="checkbox" name="add-on" value="cheese">
+                            <div class="card" style="background-image: url('https://www.pikpng.com/pngl/b/591-5914515_shredded-cheese-png.png')">
+                                <h2>Cheese</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="add-on" value="sour-cream">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.highgravitybrew.com%2Fstore%2Fpc%2Fcatalog%2Fsour-cream-detail.png&f=1&nofb=1&ipt=575adecbe5b8f78a0a5ab35cd4b3f4ede40d0b779e2264a0ba3ebf724841f5e9&ipo=images')">
+                                <h2>Sour Cream</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="add-on" value="lettuce">
+                            <div class="card" style="background-image: url('https://www.papakelseysaz.com/images/icon_lettuce.png')">
+                                <h2>Lettuce</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="add-on" value="pico">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.picadeli.com%2Fimagebank%2F10816-1024x1024.png&f=1&nofb=1&ipt=93f2a1ad94df0c1efb31f2a5d937a9e1d3aee351bbf174dfcca25caa28d0cc0d&ipo=images')">
+                                <h2>Pico de gallo</h2>
+                            </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="add-on" value="guacamole">
+                            <div class="card" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Feb%2F35%2F3d%2Feb353deb081b85b4462809abe0fd6204.png&f=1&nofb=1&ipt=b368d5cecc13466b3a8d765ea701dfcdf5865fed68c563ebb55243486d7cf73d&ipo=images')">
+                                <h2>Guacamole</h2>
+                            </div>
+                    </label>
+                </div>
 
-                    <div>
-                        <input type="checkbox" name="add on" value="cheese">Cheese<br>
-                        <input type="checkbox" name="add on" value="sour cream">Sour Cream<br>
-                        <input type="checkbox" name="add on" value="lettuce">Lettuce<br>
-                        <input type="checkbox" name="add on" value="pico de gallo">Pico de gallo<br>
-                        <input type="checkbox" name="add on" value="guacamole">Guacamole<br>
-                    </div>
-                    <div>
-                        <img src="https://www.pikpng.com/pngl/b/591-5914515_shredded-cheese-png.png" alt="">
-                    </div>
-                </div>
+                <h2>Delivery Instructions</h2>
                 <div class="delivery-instructions">
-                    <input type="textarea" name="notes" value="">Delivery Instructions
+                    <input type="text" name="delvery-instructions" value="" style="width:50%; height:2rem;">
                 </div>
             </div>
-        </form>
     </main>
-
+        
     <footer>
-        <button type="submit">submit</button>
+        <input type="submit" value="Add to Bag">
     </footer>
+    </form>
 </body>
 </html>

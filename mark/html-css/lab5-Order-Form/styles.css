@@ -1,11 +1,12 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background: rgb(233, 233, 233);
 }
 
+/* --------------------- */
 header {
     position: sticky;
     top: 0;
@@ -13,35 +14,82 @@ header {
     background:  rgb(222, 23, 23);
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    z-index: 1;
 }
 
 .header-left{
-    display: inline-flex
+    display: flex;
+    padding: 1rem 2rem;
 }
 
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+}
+
+.header-right img{
+    width: 3rem;
+    height: auto;
+    margin: 0 3rem;
+}
+
+/* sign in formatting */
 .signin {
     padding: 2rem;
 }
 
+/* delivery address pop out form */
+.open-button {
+    background-color: rgba(131, 131, 131, 0);
+    color: black;
+    padding: 16px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 110px;
+    right: 150px;
+    border: 3px solid black;
+    z-index: 1;
+}
+
+.form-container {
+    min-width: 300px;
+    padding: 10px;
+    background-color: white;
+    display:grid;
+    text-align: left;
+    
+  }
+/* --------------------- */
+/* --------------------- */
 main {
     max-width: 1200px;
     margin: auto;
-    display: block;
+    
     
 }
 
 .splash {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    margin: auto;
+    justify-content: center;
     gap: 3rem;
 }
 
 .splash img {
-    width: 40%;
-    padding: 2rem;
+    width: 30%;
+    padding: 2rem 0;
 }
-
 
 .selector{
     border-top: 2px solid black;
@@ -49,92 +97,57 @@ main {
     width: 80%;
     margin: auto;
 }
-/* ------------------ */
-.delivery-instructions {
-    width: 5rem;
 
-}
-
-/* ------------------ */
 
 .card {
     border: 2px solid rgba(38, 38, 38, 0.876);
-    border-radius: 2px;
-    width: 500px;
-    height: 130px; 
+    border-radius: 3px;
+    width: 400px;
+    height: 100px; 
     overflow: hidden;
     margin: 15px;
-    opacity: 0.6;
+    opacity: 0.7;
     background-color: rgb(232, 232, 232);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: -20%;
+    display: flex;
+    align-items: center;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items h2 {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 12rem;
+}
+
+/* --------------------- */
+
+.delivery-instructions {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+
+footer {
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background:  rgb(222, 23, 23);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    z-index: 1;
 }
 
 /* ------------------ */
-
-
-.tortilla h2 {
-    text-align: center;
-}
-
-.tortilla img {
-    position: relative;
-    max-width: 80%;
-    height: auto;
-    margin-left: -30%;
-}
-/* ------------------ */
-.rice {
-    display: inline-flex;
-    height:20%;
-}
-
-.rice div {
-    margin: auto ;
-}
-
-.rice img {
-    width: 30%;
-}
-/* ------------------ */
-.beans {
-    display: inline-flex;
-    height:20%;
-}
-
-.beans div {
-    margin: auto ;
-}
-
-.beans img {
-    width: 30%;
-}
-/* ------------------ */
-.protein {
-    display: inline-flex;
-    height:20%;
-}
-
-.protein div {
-    margin: auto 0;
-}
-
-.protein img {
-    width: 30%;
-}
-/* ------------------ */
-.addon {
-    display: inline-flex;
-    height:20%;
-}
-
-.addon div {
-    margin: auto ;
-}
-
-.addon img {
-    width: 30%;
-}
-/* ------------------ */
-
 [type=radio] {
     position:absolute;
     opacity: 0;
@@ -147,6 +160,23 @@ main {
 }
 
 [type=radio]:checked + .card {
+    border: 3px solid rgb(151, 52, 19);
+    border-radius: 2px;
+    opacity: 1;
+}
+
+[type=checkbox] {
+    position:absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=checkbox] + .card {
+    cursor: pointer;
+}
+
+[type=checkbox]:checked + .card {
     border: 3px solid rgb(151, 52, 19);
     border-radius: 2px;
     opacity: 1;
