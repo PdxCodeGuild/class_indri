@@ -26,7 +26,11 @@ def detail(request, question_id):
     
 # Display the results of a poll
 def results(request, question_id):
-    return HttpResponse (f"You are looking at the results for {question_id}")
+    question = get_object_or_404(Question, id=question_id)
+
+    ctx = {"question": question}
+
+    return render(request, "polls/results.html", ctx)
 
 #Handle interaction of voting
 def vote(request, question_id):
