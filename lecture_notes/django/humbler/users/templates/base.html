@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    {% include '_imports.html' %}
 </head>
-<body>
+<body class="bg-slate-800 text-white">
+    {% include '_navbar.html' %}
     <main>
         {% block content %}
         {% endblock content %}

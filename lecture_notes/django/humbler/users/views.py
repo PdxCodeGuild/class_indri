@@ -1,17 +1,37 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .forms import RegistrationForm
+from django.contrib.auth import authenticate, login as user_login, logout as user_logout
+from django.contrib.auth.decorators import login_required
+from .forms import RegistrationForm, BaseForm as LoginForm
 
 
 # login
 def login(request):
-    return HttpResponse("This is the login page.")
+    if request.method == "GET":
+        form = LoginForm()
+    else:
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username_input = form.cleaned_data['username']
+            password_input = form.cleaned_data['password']
+            user = authenticate(
+                request, username=username_input, password=password_input)
+            if user is not None:
+                user_login(request, user)
+                previous_page = request.GET.get('next')
+                if previous_page is not None:
+                    return redirect(previous_page)
+                else:
+                    return redirect('profile')
+
+    return render(request, "users/login.html", {"form": form})
 
 
 # logout
 def logout(request):
-    return HttpResponse("This is the logout page.")
+    user_logout(request)
+    return redirect('login')
 
 
 # register/signup
@@ -30,6 +50,8 @@ def register(request):
                 user = User()
                 user.username = username
                 user.email = email
+                # Do not store the plain text password on the user model.
+                # user.password = password
                 user.set_password(password)
                 user.save()
                 return redirect('profile')
@@ -38,5 +60,6 @@ def register(request):
 
 
 # profile
+@login_required
 def profile(request):
-    return HttpResponse("This is the profile page.")
+    return render(request, 'users/profile.html')
