@@ -1,17 +1,36 @@
-from django.shortcuts import render, redirect
-from .models import TodoItem
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from .forms import TodoForm
+from .models import TodoItem
+from django.views.generic.edit import CreateView, UpdateView
 
 
 def TodoApp(request):
-  uncompleted_todo_item = TodoItem.objects.all()
+  uncompleted_todo_item = TodoItem.objects.all().order_by('-created_date')
   return render(request, 'TodoApp/index.html', {'uncompleted_todo_item': uncompleted_todo_item})
 
-def SaveToDoItem(request):
-  form = TodoForm(request.POST)
-  print((request.POST))
-  if form.is_valid():
-    save_todo_item = TodoItem()
-    save_todo_item = form.cleaned_data('text')
-    save_todo_item.save()
-  return redirect('home')
+
+#USING CRUD operations: Create, Retrive, Update, Delete
+class TodoCreateView(CreateView):
+  form_class = TodoForm
+  template_name = 'todo_create.html'
+  success_url = '/home/'
+  
+ 
+  
+
+class TodoUpdateView(UpdateView):
+    pass
+
+
+
+ 
+
+  
+# class TodoDeleteView(DeleteView):
+#   model = TodoItem
+#   fields = ['text', 'created_date', 'date_due']
+
+
+
+

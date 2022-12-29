@@ -3,3 +3,11 @@ body {
   color: whitesmoke;
   margin-top: 5rem;
 }
+
+table, th, td {
+  border:1px solid rgb(38, 186, 102);
+}
+
+/* div .todo-create-form{
+  width: 20px;
+} */

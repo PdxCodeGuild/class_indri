@@ -1,0 +1,23 @@
+{% extends 'TodoApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+New Task
+{% endblock %}
+
+{% block content %}
+<h1>Todo App: Adding new task</h1>
+
+<div class="todo-create-form">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">New Task</legend>
+      {{ form|crispy }}
+    </fieldset><br>
+    <div class="form-button">
+      <a href="#"><button class="btn btn-outline-info" type="submit">Add new Todo Item</button></a>
+    </div>
+  </form>
+</div>
+{% endblock %}
