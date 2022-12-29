@@ -1,0 +1,22 @@
+{% extends 'users_app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Sign Up  
+{% endblock title %}
+
+
+{% block content %}
+  <form action="" method="POST">
+    <fieldset class="form-group">
+      <legend>Create your Account: </legend>
+      {{ form|crispy }} <br>
+      <div>
+        <button type="submit">Sign UP</button>
+      </div>
+    </fieldset>
+    <small>
+      <p>Already have an account? <a href="#">login</a></p>
+    </small>
+  </form>
+{% endblock %}
