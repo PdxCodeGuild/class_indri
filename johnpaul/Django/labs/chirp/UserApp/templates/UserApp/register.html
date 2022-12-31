@@ -7,17 +7,19 @@
 
 
 {% block content %}
-  <form action="" method="POST">
-    {% csrf_token %}
-    <fieldset class="form-group">
-      <legend>Create your Account: </legend>
-      {{ form|crispy }} <br>
-      <div>
-        <button class="btn btn-secondary" type="submit">Sign Up</button>
-      </div>
-    </fieldset>
-    <small>
-      <p>Already have an account? <a href="#">login</a></p>
-    </small>
-  </form>
+  <div class="container register-form">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Create your Account: </legend>
+        {{ form|crispy }} <br>
+        <div>
+          <button class="btn btn-secondary" type="submit">Sign Up</button>
+        </div>
+      </fieldset><br>
+      <small>
+        <p>Already have an account? <a href="#">login</a></p>
+      </small>
+    </form>
+  </div>
 {% endblock %}
