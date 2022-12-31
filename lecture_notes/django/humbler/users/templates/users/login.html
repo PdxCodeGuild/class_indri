@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Humbler - Login
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="bg-blue-300 text-blue-600 btn" type="submit">Login</button>
+</form>
+{% endblock %}
