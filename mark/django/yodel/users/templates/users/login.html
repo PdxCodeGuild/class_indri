@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Yodel - Login
+{% endblock %}
+
+{% block content %}
+<h1>This is the Login page</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button class="submit">Login</button>
+</form>
+{% endblock %}

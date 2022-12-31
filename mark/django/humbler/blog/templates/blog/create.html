@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<h1>create new blogpost</h1>
+<form action="{% url 'post' %}" method="POST">
+    {{ form }}
+
+</form>
+{% endblock %}

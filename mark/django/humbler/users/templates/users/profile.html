@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Humblr - {{request.user.username}}
+{%endblock%}
+
+{% block content %}
+<h1>Welcome {{ request.user.username }}</h1>
+
+{% for post in posts %}
+<h1>{{post.title}}</h1>
+<p>{{post.body}}</p>
+<p>{{post.user.username}}</p>
+<p>{{post.date_edited}}</p>
+{%endblock%}

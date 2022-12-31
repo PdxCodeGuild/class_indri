@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Humblr
+{% endblock %}
+
+
+{% block content %}
+<h2>{{post.title}}</h2>
+{% for post in posts %}
+<h1>{{post.title}}</h1>
+{%if post.image %}
+<img src="{{post.image.url}}" alt="">
+{% endif %}
+<p>{{post.body}}</p>
+<p>{{post.user.username}}</p>
+<p>{{post.date_edited}}</p>
+{% endfor %}
+{% endblock %}
