@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
-Humbler - {{ request.user.username }}
+Humbler
 {% endblock %}
 
-
 {% block content %}
-<h1>Welcome {{ request.user.username }}</h1>
+<h1>Humbler</h1>
 
 {% for post in posts %}
 <h2>{{post.title}}</h2>
+{% if post.image %}
+<img src="{{post.image.url}}" alt="">
+{% endif %}
 <p>{{post.body}}</p>
 <p>{{post.user.username}}</p>
 <p>{{post.edited_date}}</p>
-<a href="{% url 'edit' post.id %}">Edit</a>
 <hr>
 {% endfor %}
-
 {% endblock %}
