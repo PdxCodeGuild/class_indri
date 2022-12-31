@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}First Django Lab{% endblock %}</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
 <body>
+
+    {% block content %}
+        <h1>Welcome to Lab 1: First Django Lab</h1>
+    {% endblock %}
     <nav>
         <a
         <a href="{% url 'password_maker' %}">Password Generator</a>
-        {% comment %} <a href="{% url 'rock_paper_game' %}">Rock Paper Scissors Game</a> {% endcomment %}
+        <a href="{% url 'homepage' %}">Home</a>
+        <a href="{% url 'rps_score' %}">Rock Paper Scissors Game</a>
+        
     </nav>
+
     <main class="container">
-        {% block content %}
-        {% endblock %}
+        {% comment %} {% block content %}
+        {% endblock %} {% endcomment %}
     </main>
 </body>
 </html>
