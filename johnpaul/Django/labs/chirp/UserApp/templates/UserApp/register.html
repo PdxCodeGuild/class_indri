@@ -1,18 +1,19 @@
-{% extends 'users_app/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
 {% block title %}
-  Sign Up  
+  Sign Up Page 
 {% endblock title %}
 
 
 {% block content %}
   <form action="" method="POST">
+    {% csrf_token %}
     <fieldset class="form-group">
       <legend>Create your Account: </legend>
       {{ form|crispy }} <br>
       <div>
-        <button type="submit">Sign UP</button>
+        <button class="btn btn-secondary" type="submit">Sign Up</button>
       </div>
     </fieldset>
     <small>
