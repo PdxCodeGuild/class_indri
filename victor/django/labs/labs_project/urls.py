@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('rot_ciph.urls')),
     path('todo/', include('todo.urls')),
+    path('users/', include('users.urls')),
 ]
