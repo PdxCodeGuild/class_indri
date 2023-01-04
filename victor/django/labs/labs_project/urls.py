@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('rot_ciph.urls')),
     path('todo/', include('todo.urls')),
     path('users/', include('users.urls')),
+    path('hoot/', include('hoot.urls'))
 ]

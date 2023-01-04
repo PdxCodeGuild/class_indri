@@ -10,10 +10,11 @@
 
 {% for post in posts %}
 <h2>{{ post.title }}</h2>
-<p>{{ post.body }}</p>
+<p>{{ post.hoot }}</p>
 <p>{{ post.user.username }}</p>
-<p>{{ post.edited_date }}</p>
-<a href="{% url 'edit' post.id %}">Edit Hoot</a>
+<hr>
+
+
 {% endfor %}
    
 {% endblock  %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rot_ciph',
     'todo',
     'users',
+    'hoot',
     
 ]
 

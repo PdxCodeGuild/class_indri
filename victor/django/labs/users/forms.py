@@ -1,5 +1,4 @@
 from django import forms
-from .models import Hoot
 
 
 class BaseForm(forms.Form):
@@ -12,8 +11,3 @@ class RegistrationForm(BaseForm):
     email = forms.EmailField()
     password_confirmation = forms.CharField(required=True, widget=forms.PasswordInput(), min_length=8, max_length=32)
 
-
-class HootForm(forms.ModelForm):
-    class Meta:
-        model = Hoot
-        fields = ('title', 'hoot', 'public')

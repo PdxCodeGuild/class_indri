@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import BaseForm as LoginForm, RegistrationForm
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
+from django.contrib.auth.decorators import login_required
+from hoot.models import Hoot
 
 
 def login(request):
@@ -19,6 +21,8 @@ def login(request):
                 previous_page = request.GET.get('next')
 
                 if previous_page is not None:
+                    return redirect(previous_page)
+                else:
                     return redirect('profile')
     return render(request, 'users/login.html', {'form': form})
 
@@ -47,5 +51,11 @@ def register(request):
                 return redirect('profile')
 
     return render(request, 'users/register.html', {'form': form})
+
+@login_required
+def profile(request):
+    posts = Hoot.objects.filter(user=request.user).order_by('-created_date')
+    return render(request, 'users/profile.html', {'posts': posts})
+
 
     

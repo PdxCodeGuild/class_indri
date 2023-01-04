@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>Give a Hoot and a holler today!</h1>
-    <form action="{% url 'register' %}">
+    <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="reset">Cancel</button>
