@@ -8,4 +8,4 @@ class TodoItem(models.Model):
     created_date=models.DateTimeField(blank=True, null=True)
     # Define the return the text
     def __str__(self):
-        return self.text + " -- " + self.create_date
+        return self.text + " -- " + self.created_date

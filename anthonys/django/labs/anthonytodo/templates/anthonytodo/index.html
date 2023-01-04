@@ -7,25 +7,22 @@ To Do List Django Lab
 {% block content %}
     <h1>Welcome to Lab 2: Django To Do List</h1>
 
-    <form action="{% url 'save_url' %}" method="POST">
+    <form action="{% url 'list' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Submit</button>
-    </form>
-    
-    <!-- 'objects' comes from the key in our context dictionary -->
+    </form> 
     <table>
         <tr>
             <thead>
-                <th>Text</th>
+                <th>Task</th>
                 <th>Date</th>
             </thead>
         </tr>
-        {% for url in objects %}
+        {% for todo in todos_list %}
         <tr>
-            <td>{{ url.counter }}</td>
-            <td>{{ url.code }}</td>
-            <td>{{ url.url }}</td>
+            <td>{{ todo.text }}</td>
+            <td>{{ todo.created_date }}</td>
         </tr>
         {% endfor %}
     </table>

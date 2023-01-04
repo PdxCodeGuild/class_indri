@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import TodoItem
 from .forms import ToDoForm
+from django.utils import timezone
 
 # Create your views here.
 def index(request):
-    return render (request, 'anthonytodo/index.html')
+    todo_form = ToDoForm()
+    todos = TodoItem.objects.all()
+    return render (request, 'anthonytodo/index.html', {"form": todo_form, "todos_list": todos})
 def make_list(request):
     # Create a new URLForm object using the POST data from the request
     form = ToDoForm(request.POST)
@@ -14,16 +17,12 @@ def make_list(request):
         # Create a new ShortenedURL object
         To_Do_Items = TodoItem()
         # Set the 'url' field to the URL entered in the form
-        To_Do_Items.text = form.cleaned_data['text']
-        # Generate a random 6-character code using ascii letters and digits
-        To_Do_Items.created_date = DateField()
+        To_Do_Items.text = form.cleaned_data['to_do']
+        # Generate
+        To_Do_Items.created_date = timezone.now()
         # Save the To_Do_Items object to the database
         To_Do_Items.save()
 
     # Redirect the user back to the index page
-    return redirect('index')
-
-
-
-    return render (request, 'anthonytodo/todo.html')
+    return redirect('/todo')
 
