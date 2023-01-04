@@ -10,5 +10,10 @@ Yodel - {{ request.user.username }}
 {% for post in posts %}
     <p>{{post.user.username}} - {{post.date_created}}</p>
     <p>{{post.body}}</p>
+    <form method="POST" action="{% url 'delete-post' post.id %}">
+        {% csrf_token %}
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 {% endfor %}
 {% endblock %}

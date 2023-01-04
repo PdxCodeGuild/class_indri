@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import LoginForm, SignUpForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
@@ -77,3 +77,8 @@ def profile(request):
     }
     
     return render(request, "users/profile.html", context)
+
+def delete_post(request, id):
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect('profile')

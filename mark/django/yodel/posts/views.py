@@ -36,6 +36,3 @@ def compose(request):
             
             
     return render(request, 'posts/compose.html', {"form":form})
-
-def edit(request):
-    return render(request, "posts/edit.html")
