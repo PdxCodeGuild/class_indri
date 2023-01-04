@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Yodel - Home
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to Yodel!</h1>
+{% for post in posts %}
+<p>{{post.user.username}} - {{post.date_created}}</p>
+<p>{{post.body}}</p>
+{% endfor %}
+
+{% endblock %}

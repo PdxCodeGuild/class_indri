@@ -7,6 +7,6 @@ class LoginForm(forms.Form):
     
     
 class SignUpForm(LoginForm):
-    email = forms.EmailField()
     password_confirm = forms.CharField(
         widget=forms.PasswordInput(), min_length=6, max_length=32, ) 
+    email = forms.EmailField()
