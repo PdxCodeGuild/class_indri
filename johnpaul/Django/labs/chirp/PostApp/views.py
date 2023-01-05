@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
+
 posts = [{
     'author': 'Mike64',
     'title': 'My first blog post',
@@ -32,10 +33,16 @@ def post_create(request):
     return render(request, 'PostApp/post_create.html')
 
 
+
+# Detail
+def post_detail(request):
+    return render(request, 'PostApp/post_detail.html')
+
+
+
 # Update
 
 
 # Delete
 
 
-# Detail
