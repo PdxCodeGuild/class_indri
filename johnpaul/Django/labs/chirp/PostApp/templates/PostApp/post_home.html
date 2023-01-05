@@ -1,5 +1,4 @@
 {% extends 'UserApp/base.html' %}
-{% load static %}
 
 
 {% block title %}
@@ -8,11 +7,46 @@
 
 
 {% block content %}
-  <div class="mainchirp">
-    {% for post in posts %}
-      </h1>{{ post.title }}</h1>
-      <p>By {{post.author }} on {{ post.date_posted}}</p>
-      <p>{{ post.content }}</p>
-    {% endfor %}
+  <div class="container main-body">
+    <div class="row">
+      {% for post in posts %}
+        <div class="col-md-8 card" style="width: 20rem;">
+          <h5  style="line-height: 10px;" class="card-text">{{post.author }}</h5><small>{{ post.date_posted}}</small><br>
+          </h4 class="card-title"><span style="font-weight: bolder;">Title:</span> {{ post.title }}</h4>
+          <p class="card-text">{{ post.content }}</p>
+        </div>
+      {% endfor %}
+      <div class="col-md-4 card " style="width: 18rem;">
+        <div class="card-header">
+          Featured post
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
   </div>
+  <!-- next through pages -->
+  {% if is_paginated %} 
+    {% if page_obj.has_previous %}
+      <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number}}">Previous</a>
+    {% endif %} 
+
+    {% for num in page_obj.paginator.page_range %} 
+      {% if page_obj.number == num %}
+        <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %} 
+        <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+      {% endif %} 
+    {% endfor %} 
+
+    {% if page_obj.has_next %}
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages}}">Last</a>
+    {% endif %} 
+  {% endif %} 
+<!-- Adding ability to next through pages -->
 {% endblock  %}

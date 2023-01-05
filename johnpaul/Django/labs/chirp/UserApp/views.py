@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from  . forms import SignUpForm, BaseForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
-from django.contrib import messages
 
 
 
@@ -65,4 +64,6 @@ def logout(request):
 def profile(request):
   return render(request, 'UserApp/profile.html')
 
-
+#create post
+def new_post(request):
+  return render(request, 'UserApp/post_home.html')

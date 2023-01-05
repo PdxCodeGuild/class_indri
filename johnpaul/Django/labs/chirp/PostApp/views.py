@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 
+
 posts = [{
     'author': 'Mike64',
     'title': 'My first blog post',
@@ -23,6 +24,7 @@ def post_home(request):
         'posts': posts
     }
     return render(request, 'PostApp/post_home.html', context)
+
 
 
 # Create
