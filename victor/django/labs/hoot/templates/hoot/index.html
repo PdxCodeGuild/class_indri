@@ -7,6 +7,8 @@
 
 {% block content %}
 <h1>Hoot!</h1>
+{% if not request.user.is_anonymous %}
+
 {% for post in posts %}
 <h2>{{ post.title }}</h2>
 {{ post.title }}
@@ -17,4 +19,7 @@
 </em>
 <hr>
 {% endfor %}
+{% else %}
+
+{% endif %}
 {% endblock %}
