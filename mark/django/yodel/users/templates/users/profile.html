@@ -8,6 +8,7 @@ Yodel - {{ request.user.username }}
 <h1>Welcome, {{ request.user.username }}!</h1>
 
 {% for post in posts %}
+<div class="flex flex-col mx-auto w-9/12 p-10">
     <p>{{post.user.username}} - {{post.date_created}}</p>
     <p>{{post.body}}</p>
     <form method="POST" action="{% url 'delete-post' post.id %}">
@@ -15,5 +16,6 @@ Yodel - {{ request.user.username }}
         <input type="hidden" name="_method" value="DELETE">
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
+</div>
 {% endfor %}
 {% endblock %}

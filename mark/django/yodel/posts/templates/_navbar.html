@@ -1,4 +1,4 @@
-<nav>
+<nav class="flex flex-col">
     <a href="{% url 'home' %}" class="">Home</a>
     {% if request.user.is_anonymous %}
     <a href="{% url 'signup' %}">Sign Up</a>

@@ -7,8 +7,10 @@ Yodel - Home
 {% block content %}
 <h1>Welcome to Yodel!</h1>
 {% for post in posts %}
-<p>{{post.user.username}} - {{post.date_created}}</p>
-<p>{{post.body}}</p>
+<div class="p-5">
+    <p>{{post.user.username}} - {{post.date_created}}</p>
+    <p>{{post.body}}</p>
+</div>
 {% endfor %}
 
 {% endblock %}

@@ -6,7 +6,7 @@ Yodel - Login
 
 {% block content %}
 <h1>This is the Login page</h1>
-<form action="" method="POST">
+<form action="" method="POST" class="flex flex-col mx-auto w-9/12 p-10">
     {% csrf_token %}
     {{ form }}
     <button class="submit">Login</button>

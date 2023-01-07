@@ -6,7 +6,7 @@ Yodel - compose
 
 {% block content %}
 <h1>Create a new Yodel!</h1>
-<form action="{% url 'compose' %}" method="POST">
+<form action="{% url 'compose' %}" method="POST" class="flex flex-col mx-auto">
     {% csrf_token %}
     {{ form }}
     <button class="submit">Post</button>
