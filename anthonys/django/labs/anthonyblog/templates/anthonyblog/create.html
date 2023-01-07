@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Humbler - Create New Post
+{% endblock %}
+
+
+{% block content %}
+<h1>Create</h1>
+
+<div>
+{% for blog in blogs %} 
+    <div>
+    <h2><a href="#">{{blog.title}}</a></h2>
+        <p>{{blog.body}}</p>
+        <p>{{blog.date}}</p>
+    </div>
+{% endfor %}
+</div>
+<form action="{% url '' %}" method="POST">
+    {% csrf_token %}
+    {% comment %} {{ form|crispy }} {% endcomment %}
+    <button type="submit">Post</button>
+</form>
+{% endblock %}
