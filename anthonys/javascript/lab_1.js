@@ -1,7 +1,4 @@
-let choices = {
-    rock: 'rock',
-    paper: 'paper',
-    scissors: 'scissors'}
+let choices = [ 'rock', 'paper', 'scissors']
 
 function greeting(){
     alert(`Hello, lets play a rock paper scissors game.`)
@@ -14,23 +11,24 @@ function userInput(){
 
 
 function game(userInput){
-    const aiChoice = Math.floor(Math.random() * choices.length)
-    if (aiChoice=== userInput){
-        playagain=prompt('You Tie! Do you want to play? Yes/No')
+    const aiChoice = choices[Math.floor(Math.random() * 3)]
+    console.log(aiChoice, userInput)
+    if (aiChoice===userInput){
+        playagain=prompt(`Computer chose ${aiChoice}, You Tie! Do you want to again? Yes/No`).toLowerCase()
         return playagian
     } else if (aiChoice === 'rock' && userInput === 'scissors' || aiChoice === 'paper' && userInput === 'rock' || aiChoice === 'scissors' && userInput === 'paper'){
-        playagain=prompt('You Lose! Do you want to play? Yes/No')
+        playagain=prompt(`Computer chose ${aiChoice}, You Lose! Do you want to again? Yes/No`).toLowerCase()
         return playagain
     } else {
-        playagain=prompt('You Win! Do you want to play? Yes/No')
+        playagain=prompt(`Computer chose ${aiChoice}, You Win! Do you want to play again? Yes/No`).toLowerCase()
         return playagain
     }
 }
 greeting()
-userInput()
-let result =game()
+const userChoice=userInput()
+let result =game(userChoice)
 do {
     userInput()
     result=game()
   }
-  while (result =="Yes");
+  while (result =="yes");
