@@ -1,0 +1,64 @@
+{% extends 'TodoApp/base.html' %} {% load crispy_forms_tags %} {% block title %}
+Todo App {% endblock %} {% block content %}
+<h1>Welcome to Todo lab: Django Todo</h1>
+
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Todo Items</legend>
+      {{ form|crispy }}
+      <table class="table-style" style="width: 100%">
+        <tr>
+          <thead>
+            <th><small>--</small></th>
+            <th>Task #</th>
+            <th>Todo Items</th>
+            <th>Date added</th>
+            <th>Date due</th>
+            <th>Time due</th>
+            <th>Status</th>
+          </thead>
+        </tr>
+        {% for uncompleted in uncompleted_todo_item %}
+        <tr>
+          <td>
+            <input type="checkbox" name="item" id="todo-checkbox" />
+          </td>
+          <td>{{uncompleted.item_number}}</td>
+          <td>{{uncompleted.task}}</td>
+          <td>{{uncompleted.created_date|date:"F d, Y"}}</td>
+          <td>{{uncompleted.date_due|date:"F d, Y"}}</td>
+          <td>{{uncompleted.time_due|time:"g:i A"}}</td>
+          <td>
+            <select name="todo_staus">
+              <option value="Select">Select</option>
+              <option value="Completed" id="complete">Completed</option>
+              <option value="InComplete" id="incomplete">Incomplete</option>
+            </select>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </fieldset>
+    <br />
+    <div class="form-button">
+      <a href="{% url 'todo_create' %}"
+        ><button class="btn btn-outline-info" type="submit">Add</button></a
+      >
+      <a href="#"
+        ><button class="btn btn-outline-info" type="submit">Update</button></a
+      >
+      <a href="#"
+        ><button
+          type="submit"
+          class="btn btn-outline-info btn-xs"
+          onclick="deleteSelected()"
+        >
+          Delete
+        </button></a
+      >
+    </div>
+  </form>
+</div>
+{% endblock %}
