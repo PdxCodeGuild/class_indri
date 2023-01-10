@@ -1,0 +1,37 @@
+{% extends 'UserApp/base.html' %}
+
+
+{% block title %}
+  Chirp Home Page
+{% endblock title %}
+
+{% block content %}
+<div></div><br>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
+        {% for post in posts %}
+        <a class="mr-2" href="#detail"></h4 class="card-title"><span style="font-weight: bolder;">Title:</span> {{ post.title }}</h4></a>
+        <p style="margin-top:5px;" class="card-text">{{post.author }} <small>{{post.date_posted}}</small></p>
+        <p class="card-text">{{ post.content }}</p>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+      <div class="content-section">
+        <ul class="list-group">
+            <a href="">
+              <li class="list-group-item list-group-item-dark">Latest Posts</li>
+            </a>
+            <a href="">
+              <li class="list-group-item list-group-item-light">Announcements</li>
+            </a>
+            <a href="">
+              <li class="list-group-item list-group-item-light">Calendars</li>
+            </a>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock  %}

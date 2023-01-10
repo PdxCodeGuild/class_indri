@@ -1,0 +1,28 @@
+{% extends 'UserApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Login Page 
+{% endblock title %}
+
+
+{% block content %}
+  <div class="container register-form">
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend>Log In: </legend>
+        {{ form|crispy }} <br>
+        <div>
+          <button class="btn btn-secondary" type="submit">Login</button>
+          <small class="text-muted ml-2">
+            <a href="#">Forgot password?</a>
+          </small>
+        </div>
+      </fieldset><br>
+      <small>
+        <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+      </small>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'UserApp/base.html' %}
+{% block content %}
+  <div class="fas fa-users-class">
+    <h2>Welcome, {{ user.username }}!</h2><br>
+    <p>First name: {{ user.first_name }}.</p>
+    <p>Last name: {{ user.first_name }}.</p>
+    <p>Email address: {{ user.email }}.</p>
+  </div>
+{% endblock %}

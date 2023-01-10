@@ -1,0 +1,15 @@
+
+body{
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: 'poppins' sans-serif;
+  background-color: white;
+}
+
+.chirp-logo{
+  margin-top: 20px;
+}
+
+.main-body{
+  line-height: 30px;
+}
