@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+  
+{% endblock %}
+
+
+{% block content %}
+<h1>Hoot!</h1>
+{% if not request.user.is_anonymous %}
+
+{% for post in posts %}
+<h2>{{ post.title }}</h2>
+{{ post.title }}
+{{ post.hoot }}
+<br>
+<em>{{ post.user.username }}
+    {{ post.created_date }}
+</em>
+<hr>
+{% endfor %}
+{% else %}
+
+{% endif %}
+{% endblock %}

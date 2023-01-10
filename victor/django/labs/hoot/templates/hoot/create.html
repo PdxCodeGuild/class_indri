@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hoot!</h1>
+<form action="{% url 'create' %}" method="POST">
+{% csrf_token %}
+{{ form }}
+<button type="reset">Clear</button>
+<button type="submit">Post</button>
+
+</form>
+
+
+{% endblock %}

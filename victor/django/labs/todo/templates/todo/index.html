@@ -1,0 +1,25 @@
+{% extends "todo/base.html" %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<h1>Welcome to the TODO App!</h1>
+<form action="{% url 'save_todo' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+{% for item in todo %}
+<div>
+    {{ item.text }} <a href="{% url 'delete_todo' item.id %}"><button>Delete</button></a><a href="{% url 'complete_todo' item.id %}"><button>Complete</button></a>
+</div>
+{% endfor %}
+{% for item in todones %}
+    <div style="text-decoration: line-through; color: rgb(108, 108, 108);">
+        {{ item.text }}
+    </div>
+{% endfor %}
+
+{% endblock %}

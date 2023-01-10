@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Hoot - Login
+{% endblock %}
+
+{% block content %}
+<h1>Welcome back to Hoot!</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+<button type="submit">Submit</button>
+</form>
+{% endblock  %}

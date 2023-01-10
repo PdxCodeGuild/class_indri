@@ -4,8 +4,8 @@
 <h1>Welcome to the ROT Cipher!</h1>
    <form action="{% url 'results' %}" method="post">
     {% csrf_token %}
-    <input type="text" placeholder="Enter your message" name="phrase" required>
-    <input type="number" placeholder="Enter your shift amount" name="shift" required>
+    <input class="text-box" type="text" placeholder="Enter your message" name="phrase" required>
+    <input class="text-box" type="number" placeholder="Enter your shift amount" name="shift" required>
     <button type="submit">Submit</button>
    </form>
 {% endblock %}
