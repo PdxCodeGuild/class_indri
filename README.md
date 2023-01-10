@@ -33,6 +33,27 @@ Staff:
 ### Assigned Labs:
 
 <details open>
+  <summary>JavaScript</summary>
+
+| Title | Due Date |
+| ----- | -------- |
+| [Redo](https://python-documenation-site.deno.dev/javascript/labs/javascript-redo) | 20 JAN |
+
+</details>
+
+<details>
+  <summary>Django</summary>
+
+| Title | Due Date |
+| ----- | -------- |
+| [Polls](https://python-documenation-site.deno.dev/django/mob/polls) | 28 DEC |
+| [Redo](https://python-documenation-site.deno.dev/django/labs/django-redo) | 30 DEC |
+| [Todo List](https://python-documenation-site.deno.dev/django/labs/todo) | 06 JAN |
+| [Chirp](https://python-documenation-site.deno.dev/django/labs/chirp) | 13 JAN |
+
+</details>
+
+<details>
   <summary>HTML/CSS/Flask</summary>
 
 | Title | Due Date |
