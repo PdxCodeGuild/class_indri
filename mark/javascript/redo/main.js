@@ -12,15 +12,10 @@ let convert = {
     "in" : 0.0254
 }
 
-// # ask the user for the value
-// const value = prompt("Enter a value to convert to meters: ")
+// get input from value box
 let userValue = document.querySelector("#userValue")
-// # ask the user for the unit
-// const unit = prompt("Enter a unit (): ")
+// get input from unit box
 let userUnit = document.querySelector("#userUnit")
-
-let displayResult = document.getElementById("displayResult")
-console.log(displayResult)
 
 // # Convert the user value from user unit to meters
 // # return the result
@@ -35,11 +30,10 @@ function returnResult(){
     
     if (resulttest === false){
         displayResult.textContent = `${value} ${unit} is ${result} meters`}
-        else
+    else
         alert("Invalid! Try again.")
         
         userValue.value = ""
-        userUnit.value = ""
     }
     
 convertBtn.addEventListener("click", returnResult)

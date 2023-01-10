@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
     <script defer src="main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
-<body>
+<body class="container">
     <h1>Welcome to the unit converter.</h1>
     <h2>Convert the value & unit to meters.</h2>
     <form>
@@ -15,9 +16,15 @@
         <input type="text" id="userValue" placeholder="10000">
 
         <h3>Unit</h3>
-        <input type="text" id="userUnit" placeholder="ft, mi, km, yd, in">
+        <select id="userUnit">
+            <option value="ft">Feet</option>
+            <option value="mi">Miles</option>
+            <option value="km">Kilometers</option>
+            <option value="yd">Yards</option>
+            <option value="in">Inches</option>
+        </select> 
         <button id="convertBtn">Convert</button>
     </form>
-    <h2 id="displayResult">test</h2>
+    <h2 id="displayResult"></h2>
 </body>
 </html>
