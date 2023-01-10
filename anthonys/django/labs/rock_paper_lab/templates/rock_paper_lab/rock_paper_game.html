@@ -1,0 +1,19 @@
+{% extends 'rock_paper_lab/base.html' %}
+
+{% block title %}
+Rock Paper Scissors
+{% endblock %}
+
+{% block content %}
+<h1>Rock Paper Scissors</h1>
+<div>
+    <a href="{% url 'game' 'rock' %}"><button>Rock</button></a>
+    <a href="{% url 'game' 'paper' %}"><button>Paper</button></a>
+    <a href="{% url 'game' 'scissors' %}"><button>Scissors</button></a>
+</div>
+<p>Wins: {{wins}}</p>
+<p>Losses: {{losses}}</p>
+{% for game in score_history %}
+    <p>{{ game }}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<nav class="bg-slate-600 text-3xl p-4 flex justify-end gap-8">
+    {% if request.user.is_anonymous %}
+    <a class="text-gray-200 hover:text-white hover:underline" href="{% url 'register' %}">Register</a>
+    <a class="text-gray-200 hover:text-white hover:underline" href="{% url 'login' %}">Login</a>
+    {% else %}
+    <a class="text-gray-200 hover:text-white hover:underline" href="{% url 'profile' %}">Profile</a>
+    <a class="text-gray-200 hover:text-white hover:underline" href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+</nav>
