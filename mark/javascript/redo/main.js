@@ -13,13 +13,33 @@ let convert = {
 }
 
 // # ask the user for the value
-const value = prompt("Enter a value to convert to meters: ")
-
+// const value = prompt("Enter a value to convert to meters: ")
+let userValue = document.querySelector("#userValue")
 // # ask the user for the unit
-const unit = prompt("Enter a unit (ft, mi, km, yd, in): ")
+// const unit = prompt("Enter a unit (): ")
+let userUnit = document.querySelector("#userUnit")
 
 // # Convert the user value from user unit to meters
-let result = (value * convert[unit])
+// # return the result
+function returnResult(){
+    let value = userValue.value
+    let unit = userUnit.value
+    
+    if (value != "" && unit != ""){
+        let result = (value * convert[unit])
+    
+        alert(value + " " + unit + " is " + result + " meters")}
+    else
+        alert("Invalid! Try again.")
+        
+    userValue.value = ""
+    userUnit.value = ""
+}
 
-// #return the result
-alert(value + " " + unit + " is " + result + " meters")
+convertBtn.addEventListener("click", returnResult)
+
+converter.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        returnResult()
+    }
+})
