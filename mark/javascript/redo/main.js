@@ -19,9 +19,13 @@ let userValue = document.querySelector("#userValue")
 // const unit = prompt("Enter a unit (): ")
 let userUnit = document.querySelector("#userUnit")
 
+let displayResult = document.getElementById("displayResult")
+console.log(displayResult)
+
 // # Convert the user value from user unit to meters
 // # return the result
 function returnResult(){
+    event.preventDefault();
     let value = userValue.value
     let unit = userUnit.value
     let result = (value * convert[unit])
@@ -30,14 +34,14 @@ function returnResult(){
     // console.log(resulttest)
     
     if (resulttest === false){
-        alert(value + " " + unit + " is " + result + " meters")}
-    else
+        displayResult.textContent = `${value} ${unit} is ${result} meters`}
+        else
         alert("Invalid! Try again.")
-
-    userValue.value = ""
-    userUnit.value = ""
-}
-
+        
+        userValue.value = ""
+        userUnit.value = ""
+    }
+    
 convertBtn.addEventListener("click", returnResult)
 
 // we do not need to control for enter input here
