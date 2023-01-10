@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+URL shortener
+{% endblock %}
+
+{% block content %}
+<h1>Welcome to URL shortener</h1>
+<form action="{% url 'save_url' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Shorten!</button>
+</form>
+
+<table>
+    <tr>
+        <thead>
+            <th>Count</th>
+            <th>Code</th>
+            <th>url</th>
+        </thead>
+    </tr>
+    
+    {% for url in objects %}
+    <tr>
+        <td>{{ url.counter }}</td>
+        <td>{{ url.code }}</td>
+        <td>{{ url.url }}</td>
+    </tr>
+    {% endfor %}
+    
+</table>
+{% endblock %}
