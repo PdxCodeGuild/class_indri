@@ -17,34 +17,21 @@ validateBtn.addEventListener("click", function(){
    // Reverse the digits.
    newUserInput.reverse()
    // Double every other element in the reversed list.
-   for (let nums in newUserInput){
-      if (nums % 2 == 0) {
-         newUserInput[nums] = newUserInput[nums]*2
-         console.log(newUserInput)
-      } 
+   for (let index = 0; index < newUserInput.length; index+2) {
+      newUserInput[index] = newUserInput[index] * 2;
+      // Subtract nine from numbers over nine.
+
+   }
+   for (let i in newUserInput) {
+      if (newUserInput[i] > 9) {
+         newUserInput[i] -= 9
       }
+   }
 })
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Subtract nine from numbers over nine.
 
 
 
@@ -60,7 +47,6 @@ validateBtn.addEventListener("click", function(){
 
 
 // Take the second digit of that sum.
-
 
 
 
