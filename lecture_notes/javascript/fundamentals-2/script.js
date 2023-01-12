@@ -40,14 +40,14 @@ let library_user = {
 let books = library_user.books
 
 // for in iterates over indexes
-// for (let book in books){ // for i in range()
-//     console.log(book)
-// }
+for (let book in books){ // for i in range()
+    console.log(book)
+}
 
 // for of iterates over elements
-// for (let book of books){ // for book in books
-//     console.log(book.author)
-// }
+for (let book of books){ // for book in books
+    console.log(book.author)
+}
 
 // Iterate given number of times using a counter
 // let counter = 0
@@ -61,9 +61,9 @@ let books = library_user.books
 // }
 
 // Iterate given number of times using a counter
-// for(let counter = 0; counter < 100; counter++){
-//     console.log("TGIF", counter)
-// }
+for(let counter = 0; counter < 100; counter++){
+    console.log("TGIF", counter)
+}
 
 
 // Arrays
