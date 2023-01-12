@@ -11,21 +11,24 @@ let validateBtn = document.querySelector('#validateBtn');
 
 validateBtn.addEventListener("click", function(){
    // using .split('') turns the user input into individual value of an array
-   let newUserInput = userEnteredInput.value.split('')
+   let userInput = userEnteredInput.value.split('')
    // Slice off the last digit. That is the check digit.
-   newUserInput.pop()
+   let checkedDigit = userInput.pop()
    // Reverse the digits.
-   newUserInput.reverse()
+   let reverseDigit = userInput.reverse()
    // Double every other element in the reversed list.
-   for (let index = 0; index < newUserInput.length; index+2) {
-      newUserInput[index] = newUserInput[index] * 2;
-      // Subtract nine from numbers over nine.
-
-   }
-   for (let i in newUserInput) {
-      if (newUserInput[i] > 9) {
-         newUserInput[i] -= 9
+   let sum = 0
+    for (let num in reverseDigit){
+      if (num % 2 == 0){
+         reverseDigit[num] *= 2
       }
+      // Subtract nine from numbers over nine.
+      if (reverseDigit[num] > 9) {
+         reverseDigit[num] -= 9
+      }
+      // Sum all values.
+      sum += reverseDigit[num]
+      console.log(sum)
    }
 })
 
@@ -38,7 +41,6 @@ validateBtn.addEventListener("click", function(){
 
 
 
-// Sum all values.
 
 
 
