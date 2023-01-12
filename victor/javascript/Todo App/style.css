@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(184, 156, 112);
+    height: 100vh;
+}
+
+.container {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.todowrapper {
+    height: 40vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
