@@ -12,16 +12,23 @@
 
     <div class='container'>
         <h1>Welcome to the better TODO App!</h1>
-        <label>What do you need to get done? <input placeholder='Type it in here!'id="todo" type="text" required></label>
-        <button id="btn">Add it to the List!</button>
+        <div class="input-wrap">
+            <input placeholder='What do you need to get done?'id="todo" type="text" required>
+            <button id="btn">Add it to the List!</button>
+        </div>
     </div>
     <div class="todo-wrapper">
         <div>
             <h2>TODO List</h2>
-            <span id="todo-item"></span>
+            <ol class="todo-list">
+                
+            </ol>
         </div>
-        <div id="done-item">
-            <h2>TODONE List</h2>
+        <div>
+            <h2>DONE List</h2>
+            <ol id="done-item">
+
+            </ol>
         </div>
     </div>
     </body>
