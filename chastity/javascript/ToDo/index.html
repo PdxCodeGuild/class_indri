@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+          <h1 class="app-title">To Do's</h1>
+          <ul class="todo-list js-todo-list"></ul>
+          <div class="empty-state">
+            <svg class="checklist-icon"><use href="#checklist-icon"></use></svg>
+            <h2 class="empty-state__title">Add your first To Do</h2>
+            <p class="empty-state__description">What do you want to get done today?</p>
+          </div>
+         
+          <form class="todo-form js-form">
+            <input autofocus type="text" aria-label="Enter a new to do item" placeholder="E.g. Walk the Dog" class="js-todo-input">
+          </form>
+        </div>
+      </main>
+   
+</body>
+</html>
