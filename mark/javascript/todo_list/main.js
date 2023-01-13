@@ -5,12 +5,20 @@ let doneList = document.querySelector('#doneList')
 let submitBtn = document.querySelector("#submitBtn")
 let deleteBtn = document.querySelector('#deleteBtn')
 let completedBtn = document.querySelector('#completedBtn')
+let selectAll = document.querySelector('#selectAll')
 
 
 
 submitBtn.addEventListener("click", addToDo)
 deleteBtn.addEventListener("click", deleteToDo)
 completedBtn.addEventListener("click", completeToDo)
+
+selectAll.addEventListener("click", function(){
+    let grabAll = todoList.querySelectorAll(".toDoItem")
+    grabAll.forEach(function(toDo){
+        toDo.lastChild['checked'] = true
+    })
+})
 
 // add an item to the list
 function addToDo(){
@@ -25,8 +33,8 @@ function addToDo(){
     selected.type = "checkbox"
     selected.className = "selectedBox"
     
-    todoList.appendChild(toDo)
     toDo.appendChild(selected)
+    todoList.appendChild(toDo)
     userInput.value = ""
 }
 
