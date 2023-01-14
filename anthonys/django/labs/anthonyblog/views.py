@@ -14,6 +14,7 @@ from .models import BlogData
 from .forms import NewBlogForm
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 
 # Index view - show all public posts
@@ -52,7 +53,7 @@ def create(request):
             return redirect('profile')
 
     # If this is a GET (or any other method) render the default form
-    return render(request, 'blog/create.html', {"form": form})
+    return render(request, 'anthonyblog/create.html', {"form": form})
 
 
 # Edit view - edit an existing post (only for logged in users)
@@ -92,4 +93,4 @@ def edit(request, blog_id):
         'blog': blog,
         'form': form
     }
-    return render(request, 'blog/edit.html', context)
+    return render(request, 'anthonyblog/edit.html', context)

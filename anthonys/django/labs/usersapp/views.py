@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
 from django.contrib.auth.decorators import login_required
-from .forms import CreateProfileForm, BaseForm as LoginForm
-from blog.models import BlogPost
+from .forms import CreateProfileForm , BaseForm as LoginForm
+from anthonyblog.models import BlogData
 
-
+CreateProfileForm
 # Login Function
 def login(request):
     if request.method == "Get":
@@ -45,12 +45,12 @@ def logout(request):
 def register(request):
     # If this is a GET request then create the default form
     if request.method == "GET":
-        form = RegistrationForm()
+        form = CreateProfileForm()
 
     # If this is a POST request then process the Form data
     else:
         # Create a form instance and populate it with data from the request:
-        form = RegistrationForm(request.POST)
+        form = CreateProfileForm(request.POST)
         # Check if the form is valid:
         if form.is_valid():
             # Process the data in form.cleaned_data as required
@@ -78,11 +78,11 @@ def register(request):
 @login_required
 def profile(request):
     # Get all blogposts by user from db
-    posts = BlogPost.objects.filter(
+    posts = BlogData.objects.filter(
         user=request.user).order_by('-created_date')
     # Put all posts into context
     context = {
         "posts": posts
     }
     # Pass context into template
-    return render(request, 'users/profile.html', context)
+    return render(request, 'usersapp/profile.html', context)
