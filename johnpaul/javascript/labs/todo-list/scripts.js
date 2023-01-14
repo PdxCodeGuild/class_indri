@@ -49,11 +49,9 @@ function todo(){
   // mark an item as completed
   completedBtn.addEventListener('click', function(){
     let itemChecked = document.querySelectorAll('#checkedId')
-    console.log(itemChecked);
     for (let i = 0; i < itemChecked.length; i++) {
       if (itemChecked[i].checked == true) {
         containerRow.removeChild(itemChecked[i].parentElement)
-        // let completedList = document.createElement('div')
         console.log(itemChecked[i].parentElement.innerText.concat(' => completed'));
       }
     }
