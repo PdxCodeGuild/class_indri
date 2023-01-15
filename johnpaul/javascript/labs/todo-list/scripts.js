@@ -47,14 +47,14 @@ function todo(){
     }
   })
   // mark an item as completed
+  compItems = []
   completedBtn.addEventListener('click', function(){
     let itemChecked = document.querySelectorAll('#checkedId')
-    for (let i = 0; i < itemChecked.length; i++) {
-      if (itemChecked[i].checked == true) {
-        containerRow.removeChild(itemChecked[i].parentElement)
-        console.log(itemChecked[i].parentElement.innerText.concat(' => completed'));
-      }
+    for (let i in itemChecked) {
+      compItems.push(itemChecked[i])
+      console.log(compItems)
     }
+
   })
 }
 
