@@ -34,6 +34,7 @@ function todo(){
     containerRow.appendChild(myDiv);
     // clears the textarea after adding input
     inputarea.value = "";
+
   })
   
   // remove an item from the list
@@ -41,20 +42,23 @@ function todo(){
     let itemChecked = document.querySelectorAll('#checkedId')
     for (let i = 0; i < itemChecked.length; i++) {
       if (itemChecked[i].checked == true) {
-        // console.dir(itemChecked[i])
+        console.dir(itemChecked[i])
         containerRow.removeChild(itemChecked[i].parentElement)
       }
     }
   })
+  
   // mark an item as completed
-  compItems = []
   completedBtn.addEventListener('click', function(){
+    let checkedCompleted = document.querySelector('#todoparagraph')
+    completedList.append(checkedCompleted.innerText.concat(' => completed'))
     let itemChecked = document.querySelectorAll('#checkedId')
-    for (let i in itemChecked) {
-      compItems.push(itemChecked[i])
-      console.log(compItems)
+    for (let i = 0; i < itemChecked.length; i++) {
+      if (itemChecked[i].checked == true) {
+        console.dir(itemChecked[i])
+        containerRow.removeChild(itemChecked[i].parentElement)
+      }
     }
-
   })
 }
 

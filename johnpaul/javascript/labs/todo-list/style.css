@@ -8,12 +8,14 @@ body{
 }
 
 /* checked box and inputed text display on same line */
-#checkedId, #todoparagraph {
+#checkedId, #todoparagraph{
   display: inline-block;
   font-size: 2rem;
 }
 
-#todoContainer{
-  justify-content: center;
-  line-height: 0px;
+
+#completedList {
+  display: inline-block;
+  font-size: 2rem;
+  color: brown;
 }
