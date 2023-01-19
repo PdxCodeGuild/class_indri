@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome!</h1>
+        <h2>Create and manage your To Do List</h2>
+    </header>
+
+    <form>
+        <input type="text" id="userInput">
+        <button id="submitBtn">Submit to List</button>
+    </form>
+
+    <div class="container">    
+        <div class="manageList">
+            <button id="completedBtn">Completed</button>
+            <button id="deleteBtn">Delete</button>
+        </div>
+
+        <h3 id="toDoHeader">To Do</h3>
+        <div id="todoList">
+            <button id="selectAll">Select All</button>
+            <!-- <p class="toDoItem">
+                Hello
+                <input type="checkbox" class="selectedBox">
+            </p>
+            <p class="toDoItem">
+                World
+                <input type="checkbox" class="selectedBox">
+            </p> -->
+        </div>
+        
+        <h3 id="completedHeader">Completed</h3>
+        <div id="doneList">
+            <!-- <p class="toDoItem completedStyle">Goodbye</p> -->
+        </div>
+        
+    </div>
+</body>
+</html>

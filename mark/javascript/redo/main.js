@@ -12,14 +12,37 @@ let convert = {
     "in" : 0.0254
 }
 
-// # ask the user for the value
-const value = prompt("Enter a value to convert to meters: ")
-
-// # ask the user for the unit
-const unit = prompt("Enter a unit (ft, mi, km, yd, in): ")
+// get input from value box
+let userValue = document.querySelector("#userValue")
+// get input from unit box
+let userUnit = document.querySelector("#userUnit")
 
 // # Convert the user value from user unit to meters
-let result = (value * convert[unit])
+// # return the result
+function returnResult(){
+    event.preventDefault();
+    let value = userValue.value
+    let unit = userUnit.value
+    let result = (value * convert[unit])
+    let resulttest = isNaN(result)
+    
+    // console.log(resulttest)
+    
+    if (resulttest === false){
+        displayResult.textContent = `${value} ${unit} is ${result} meters`}
+    else
+        alert("Invalid! Try again.")
+        
+        userValue.value = ""
+    }
+    
+convertBtn.addEventListener("click", returnResult)
 
-// #return the result
-alert(value + " " + unit + " is " + result + " meters")
+// we do not need to control for enter input here
+// Because the convert button is inside a form, whenever Enter is pressed it will click the button
+
+// converterForm.addEventListener("keydown", function(event){
+//     if(event.key === "Enter"){
+//         returnResult()
+//     }
+// })

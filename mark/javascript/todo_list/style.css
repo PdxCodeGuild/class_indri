@@ -1,0 +1,105 @@
+body {
+    background-image: linear-gradient( rgb(18, 21, 25),  rgb(0, 0, 0));
+    height: 100vmin;
+    color:rgb(227, 218, 233);
+    width: 564px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+#userInput {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* buttons */
+
+button {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    background: darkslategrey;
+    color:azure;
+    transition: all 0.25s;
+}
+
+button:hover {
+    background: rgb(90, 141, 141)
+}
+
+
+
+
+.manageList {
+    margin-top: 0.3rem;
+    display: flex;
+}
+
+/* To Do section */
+
+#toDoHeader {
+    margin-left: 1.5rem;
+    
+}
+
+#todoList {
+    border-top: 2px solid rgb(140, 149, 149);
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#selectAll {
+    display: flex;
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    width:15%
+}
+
+#selectAll:hover {
+    cursor: pointer;
+}
+
+.toDoItem {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    gap: 1rem;
+    margin-left: 1rem;
+    
+}
+button.click.toDoItem {
+    transition: 1s;
+}
+
+/* Completed Section */
+
+#completedHeader {
+    display: flex;
+    justify-content: left;
+    margin-left: 1.5rem;
+}
+
+.completedStyle {
+    text-decoration: line-through;
+    color:rgb(129, 123, 138);
+}
+
+#doneList {
+    border-top: 2px solid rgb(140, 149, 149);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
