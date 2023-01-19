@@ -10,10 +10,9 @@ Blogger
 
 {% for blog in blogs %}
 <h2>{{blog.title}}</h2>
-
 <p>{{blog.body}}</p>
 <p>{{blog.user.username}}</p>
-<p>{{blog.edited_date}}</p>
+<p>{{blog.edited_date}}</p> 
 <hr>
 {% endfor %}
 {% endblock %}

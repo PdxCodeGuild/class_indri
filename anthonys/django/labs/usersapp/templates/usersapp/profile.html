@@ -10,11 +10,12 @@ Blog - {{ request.user.username }}
 
 {% for post in posts %}
 <h2>{{post.title}}</h2>
-<p>{{post.body}}</p>
-<p>{{post.user.username}}</p>
-<p>{{post.edited_date}}</p>
+{% comment %} For assignement we don't need theses {% endcomment %}
+{% comment %} {% comment %} <p>{{post.body}}</p>
+<p>{{post.user.username}}</p> {% endcomment %}
+{% comment %} <p>{{post.edited_date}}</p> {% endcomment %}
 <a href="{% url 'edit' post.id %}">Edit</a>
 <hr>
 {% endfor %}
-
+<a href="{% url 'create' %}">Create A New Post</a>
 {% endblock %}
