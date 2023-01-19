@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  <script src="https://kit.fontawesome.com/c20fdd6f62.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'UserApp/main.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand fa-brands fa-twitter" style="letter-spacing: 2px;" href="{% url 'home' %}"> Chirp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          {% if request.user.is_authenticated %}
+          <a class="nav-item nav-link active" href="{% url 'profile' %}">Profile</a>
+          <a class="nav-item nav-link" href="#">Following</a>
+          {% endif %}
+        </div>
+        <form class="container" style="width: 30%;">
+          <input class="form-control" type="search" placeholder="Search">
+        </form>
+        <div class="navbar-nav ml-auto">
+          <!-- add if user.is_authenticated statement to only display logout if user is logged in and display login and register if user is logged out -->
+          {% if request.user.is_anonymous %}
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+          {% else %}
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.0/dist/umd/popper.min.js" integrity="sha384-Q2kY5FgF5b5pJtZbuO/aG/7Vd+9oFVhOJL0o+pwuVu1K8z1xV0MZJzv3+rE2QI+A" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>   
+</body>
+</html>
