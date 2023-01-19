@@ -1,0 +1,21 @@
+body{
+  background-color:aliceblue;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+/* checked box and inputed text display on same line */
+#checkedId, #todoparagraph{
+  display: inline-block;
+  font-size: 2rem;
+}
+
+
+#completedList {
+  display: inline-block;
+  font-size: 2rem;
+  color: brown;
+}
