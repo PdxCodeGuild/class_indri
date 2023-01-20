@@ -8,8 +8,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="secrets.js"></script>
     <script defer src="main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
-<body>
-    <h2>Weather for TODO: User Location</h2>
+<body class="container">
+    <h2>Weather for <span id='user-location'></span></h2>
+    <h1 id="outside-temp"></h1>
+    <h3 id="weather-conditions"></h3>
+    <p id="wind-conditions"></p>
 </body>
 </html>
