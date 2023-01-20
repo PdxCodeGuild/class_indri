@@ -43,7 +43,7 @@ function returnWeather(position) {
             let tempCelsius = (Math.round(tempKelvin - 273.15))
             let tempFahrenheit = (Math.round(tempCelsius) * 9 / 5 + 32)
             
-            outsideTemp.textContent = tempFahrenheit
+            outsideTemp.textContent = `${tempFahrenheit}º`
             
             // weather
             weatherConditions.textContent = weatherData.weather[0].description
@@ -51,30 +51,27 @@ function returnWeather(position) {
             // wind
             let windSpeed = weatherData.wind['speed']
             let windDeg = Math.abs(weatherData.wind['deg'])
-            let windDirection = findDirection(windDeg)
+            let windDirection = ""
 
-            windConditions.textContent = `Wind Speed: ${windSpeed} Direction: ${windDirection}`
+            heading = Math.abs(windDeg % 360)
+
+            compass.forEach((object) => {
+
+                if (heading == object.minDegree || heading == object.maxDegree){
+                    console.log(object.direction)
+                    windDirection = object.direction;}
+
+                if (heading > object.minDegree && heading < object.maxDegree) {
+                    console.log(object.direction)
+                    windDirection = object.direction;}
+            
+                }
+            )
+
+            windConditions.textContent = `Wind Speed: ${windSpeed}mph, Heading: ${windDeg}º, Direction: ${windDirection}`
 
             console.log(weatherData)
         })
 }
 
 // 
-
-
-function findDirection(heading) {
-    heading = Math.abs(heading % 360)
-
-        compass.forEach((object) => {
-
-            if (heading == object.minDegree || heading == object.maxDegree){
-                console.log(object.direction)
-                return object.direction;}
-
-            if (heading > object.minDegree && heading < object.maxDegree) {
-                console.log(object.direction)
-                return object.direction;}
-            
-            }
-        )
-    }
