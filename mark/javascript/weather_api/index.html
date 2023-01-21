@@ -8,12 +8,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="secrets.js"></script>
     <script defer src="main.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="container">
-    <h2>Weather for <span id='user-location'></span></h2>
-    <h1 id="outside-temp"></h1>
-    <h3 id="weather-conditions"></h3>
-    <p id="wind-conditions"></p>
+<body>
+    <nav>
+        <a href="">Home</a>
+        <!-- <input type="textbox" placeholder="00000-0000"> -->
+    </nav>
+    <main>
+        <div id="weather-current">
+            <h2 id='user-location'></h2>
+            <h3 id='user-time'></h3>
+            <h1 id="outside-temp"></h1>
+            <h3 id="weather-conditions"></h3>
+            <p id="min-max-temp"></p>
+            <p id="wind-conditions"></p>
+        </div>
+        <div id="weather-forecast"></div>
+    </main>
 </body>
 </html>
