@@ -18,15 +18,20 @@
 </head>
 
 <body>
-  <div class="container">
-    <h2>Weather API</h2>
-  </div>
-  <div class="container">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="height: 90px;">
     <div>
-      <input id="locationInput" type="text" placeholder="enter your city/zipcode" />
-      <button id="submitBtn">Submit</button>
+      <h1>Weather API</h1>
+    </div class="container">
+      <input id="locationInput" type="text" placeholder="enter your city/zipcode"/>
+      <button class="btn btn-primary subBtn" id="submitBtn">Submit</button>
+  </nav>
+  <div class="card" style="width: 60rem;">
+    <div class="card-header">
+      <h2><span id="spanCityName"></span></h2>
     </div>
-    <div id="divResult"></div>
+    <ul class="list-group list-group-flush">
+      <div class="list-group-item" id="divResult"></div>
+    </ul>
   </div>
 </body>
 
