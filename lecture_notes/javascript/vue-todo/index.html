@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Todo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="newTodoText">
+        <button v-on:click="addTodo">Add Todo</button>
+
+        <div>
+            <h2>Todos:</h2>
+            <p v-for="todo in todos">
+                <span v-if="todo.completed === false">
+                    {{ todo.text }}
+                    <button v-on:click="completeTodo(todo)">&check;</button>
+                    <button v-on:click="deleteTodo(todo)">delete</button>
+                </span>
+            </p>
+        </div>
+        <div>
+            <h2>Completed:</h2>
+            <p v-for="todo in todos">
+                <span v-if="todo.completed === true">
+                    {{ todo.text }}
+                    <button v-on:click="deleteTodo(todo)">delete</button>
+                </span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
