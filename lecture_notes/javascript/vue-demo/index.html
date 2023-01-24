@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <p>The best class is class {{ bestClass }}</p>
+        <input type="text" placeholder="Enter your grade" v-model="grade">
+        <p>You entered: {{grade}}</p>
+        <div v-bind:class="textColor">
+            <p v-if="grade > 90">You got an A</p>
+            <p v-else-if="grade > 80">You got a B</p>
+            <p v-else-if="grade > 70">You got a C</p>
+            <p v-else-if="grade > 60">You got a D</p>
+            <p v-else>You got a F</p>
+        </div>
+    </div>
+</body>
+</html>
