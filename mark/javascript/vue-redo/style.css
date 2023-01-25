@@ -1,0 +1,43 @@
+body {
+    background: rgb(4, 0, 10);
+}
+
+#app {
+    background-color: rgb(9, 37, 69);
+    padding: 5rem;
+    margin: auto;
+    width: 420px;
+    min-height: 100vh;
+    text-align: center;
+    color: rgb(185, 205, 226);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+table, th {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 420px;
+    margin-top: 1rem;
+}
+
+td {
+    border: 2px solid black;
+}
+
+.choice {
+    width: 25%;
+}
+
+button {
+    background: slategray;
+    border: 2px solid black;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+button:hover {
+    background-color: rgb(66, 80, 93);
+}
