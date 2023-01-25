@@ -11,7 +11,6 @@ generateLocation.addEventListener("click", function(){
         let weather= await getweather(latitude, longitude)
         renderdiv(weather)
     })
-    
 })
 
 function getweather(latitude, longitude){
