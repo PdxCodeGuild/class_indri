@@ -25,7 +25,7 @@ to_unit = input("what are the output units? ")
 meters = int(user_distance) * convert[from_unit]
 
 # Convert from meters to the desired unit
-result = meters * (1/convert[to_unit])
+result = round((meters * (1/convert[to_unit])), 2)
 
 #return the result
 print(f"{user_distance} {from_unit} is {result} {to_unit}")

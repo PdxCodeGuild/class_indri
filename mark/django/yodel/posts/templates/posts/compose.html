@@ -9,6 +9,7 @@ Yodel - compose
 <form action="{% url 'compose' %}" method="POST" class="flex flex-col mx-auto">
     {% csrf_token %}
     {{ form }}
+    
     <button class="submit">Post</button>
 </form>
 

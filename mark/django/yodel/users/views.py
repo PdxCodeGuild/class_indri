@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import LoginForm, SignUpForm
+from .forms import LoginForm, SignUpForm, UploadForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as user_login, logout as user_logout
 from django.contrib.auth.decorators import login_required
 from posts.models import Post
-
+from . models import UserProfile
 # ----------------------------------------------
 #  Sign up for Yodel
 def signup(request):
@@ -68,17 +68,36 @@ def logout(request):
 # return the profile page
 @login_required
 def profile(request):
-    
     posts = Post.objects.filter(
         user=request.user)
-    
+    avatar = ""
+    if request.method == "POST":
+        upload_form = UploadForm(request.POST, request.FILES)
+        if upload_form.is_valid():
+                avatar = upload_form.cleaned_data.get('image')
+            
     context = {
         "posts":posts,
+        "avatar":avatar, 
     }
+    
     
     return render(request, "users/profile.html", context)
 
+# ----------------------------------------------
+# delete the current post
 def delete_post(request, id):
     post = get_object_or_404(Post, id=id)
     post.delete()
     return redirect('profile')
+
+def avatar(request):
+    if request.method == "POST":
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile_picture = form.cleaned_data.get('image')
+          
+        context = {
+            "avatar":profile_picture
+        }
+        return render(request, "users/profile.html", context)

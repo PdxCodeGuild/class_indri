@@ -9,6 +9,9 @@ Yodel - Home
 {% for post in posts %}
 <div class="p-5">
     <p>{{post.user.username}} - {{post.date_created}}</p>
+    {% if post.image %}
+    <img src="{{post.image.url}}" class="">
+    {% endif %}
     <p>{{post.body}}</p>
 </div>
 {% endfor %}

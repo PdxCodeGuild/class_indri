@@ -9,3 +9,4 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     public = models.BooleanField(default=True)
     date_created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to="post_images/")

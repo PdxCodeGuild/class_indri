@@ -67,4 +67,4 @@ function completeToDo(){
     })
 }
 
-// Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with a line through them.
+// Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with a line through them.  
