@@ -17,32 +17,27 @@ let userValue = document.querySelector("#userValue")
 // get input from unit box
 let userUnit = document.querySelector("#userUnit")
 
-// # Convert the user value from user unit to meters
 // # return the result
 function returnResult(){
     event.preventDefault();
     let value = userValue.value
     let unit = userUnit.value
+    // # Convert the user value from user unit to meters
     let result = (value * convert[unit])
+
+    // test if the result is Not a Number
     let resulttest = isNaN(result)
     
     // console.log(resulttest)
     
+    // if result is a number.
     if (resulttest === false){
         displayResult.textContent = `${value} ${unit} is ${result} meters`}
     else
         alert("Invalid! Try again.")
         
+        // reset user value
         userValue.value = ""
     }
     
 convertBtn.addEventListener("click", returnResult)
-
-// we do not need to control for enter input here
-// Because the convert button is inside a form, whenever Enter is pressed it will click the button
-
-// converterForm.addEventListener("keydown", function(event){
-//     if(event.key === "Enter"){
-//         returnResult()
-//     }
-// })

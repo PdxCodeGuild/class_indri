@@ -6,16 +6,32 @@ Yodel - {{ request.user.username }}
 
 {% block content %}
 <h1>Welcome, {{ request.user.username }}!</h1>
+{% if profile_picture %}
+<img src="{% static '{{ object.image.url }} %}">
+
+<div class="">
+    <!-- upload profile picture -->
+    <form action="{% url 'profile' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="file" name="profile_picture" accept="image/*">
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
 
 {% for post in posts %}
-<div class="flex flex-col mx-auto w-9/12 p-10">
-    <p>{{post.user.username}} - {{post.date_created}}</p>
-    <p>{{post.body}}</p>
-    <form method="POST" action="{% url 'delete-post' post.id %}">
-        {% csrf_token %}
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
+<div class="flex flex-col mx-auto">
+    <div class="w-9/12">
+        <!-- user posts -->
+        <p>{{post.user.username}} - {{post.date_created}}</p>
+        <p>{{post.body}}</p>
+        <!-- delete post button -->
+        <form method="POST" action="{% url 'delete-post' post.id %}">
+            {% csrf_token %}
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}

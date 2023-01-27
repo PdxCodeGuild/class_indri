@@ -20,6 +20,16 @@ const compass = [
         {minDegree: 337.6, maxDegree:360 , direction: "North"},
 ]
 
+// TODO add toggle to switch between F and C
+// convert to celsius
+function toCelsius(kelvin) {
+    return (Math.round(kelvin - 273.15))
+}
+
+// convert to fahrenheit
+function toFahrenheit(kelvin) {
+    return (Math.round((kelvin - 273.15) * 9 / 5 + 32))
+}
 
 // Current Weather
 navigator.geolocation.getCurrentPosition(currentWeather)
@@ -59,16 +69,6 @@ function currentWeather(position) {
             let minTemp = weatherData.main.temp_min
             let maxTemp = weatherData.main.temp_max
             
-            // TODO add toggle to switch between F and C
-            // convert to celsius
-            function toCelsius(kelvin) {
-                return (Math.round(kelvin - 273.15))
-            }
-
-            // convert to fahrenheit
-            function toFahrenheit(kelvin) {
-                return (Math.round((kelvin - 273.15) * 9 / 5 + 32))
-            }
 
             currentTemp.textContent = `${toFahrenheit(temp)}º F`
             minMaxTemp.textContent = `High: ${toFahrenheit(maxTemp)}º F | Low: ${toFahrenheit(minTemp)}º F`
@@ -147,17 +147,6 @@ function forecastWeather(position) {
                     let forecastTemp = document.createElement('h1')
                     
                     let temp = forecastData.list[i].main.temp
-                    let minTemp = forecastData.list[i].main.temp_min
-                    let maxTemp = forecastData.list[i].main.temp_max
-                    
-                    function toCelsius(kelvin) {
-                        return (Math.round(kelvin - 273.15))
-                    }
-        
-                    function toFahrenheit(kelvin) {
-                        return (Math.round((kelvin - 273.15) * 9 / 5 + 32))
-                    }
-        
                     
                     forecastTemp.innerHTML = `${toFahrenheit(temp)}º F`
                     dailyForecast.appendChild(forecastTemp)

@@ -6,4 +6,4 @@ class NewPost(forms.ModelForm):
         
         model = Post
         
-        fields = ("body", "public")
+        fields = ("body", "public", "image")
