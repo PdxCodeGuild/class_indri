@@ -3,7 +3,6 @@ const { createApp } = Vue
 const app = createApp({
   data() {
     return {
-      convertNumber: '',
       numPhrase: {
         single_digits: {
           0: "zero",
@@ -52,6 +51,8 @@ const app = createApp({
       let numLength = numStr.length
       let numPhrase = ''
       let numArray = numStr.split('')
+
+
 
       if (numLength == 1) {
         numPhrase = this.numPhrase.single_digits[numArray[0]]
