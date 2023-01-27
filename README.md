@@ -38,10 +38,13 @@ Staff:
 | Title | Due Date |
 | ----- | -------- |
 | [Redo](https://python-documenation-site.deno.dev/javascript/labs/javascript-redo) | 20 JAN |
+| [Todo List](https://python-documenation-site.deno.dev/javascript/labs/javascript-todo) | 25 JAN |
+| [Weather API](https://python-documenation-site.deno.dev/javascript/labs/weather-api) | 01 FEB |
+| [Vue Redo](https://python-documenation-site.deno.dev/javascript/labs/vue-redo) | 06 FEB |
 
 </details>
 
-<details>
+<details open>
   <summary>Django</summary>
 
 | Title | Due Date |
@@ -50,10 +53,11 @@ Staff:
 | [Redo](https://python-documenation-site.deno.dev/django/labs/django-redo) | 30 DEC |
 | [Todo List](https://python-documenation-site.deno.dev/django/labs/todo) | 06 JAN |
 | [Chirp](https://python-documenation-site.deno.dev/django/labs/chirp) | 13 JAN |
+| [Student API](https://python-documenation-site.deno.dev/django/labs/student-api) | 09 FEB |
 
 </details>
 
-<details>
+<details open>
   <summary>HTML/CSS/Flask</summary>
 
 | Title | Due Date |
@@ -66,7 +70,7 @@ Staff:
 
 </details>
 
-<details>
+<details open>
   <summary>Python</summary>
 
 | Title | Due Date |
