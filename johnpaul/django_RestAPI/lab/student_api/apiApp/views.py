@@ -5,7 +5,8 @@ from .serializers import StudentSerializer
 
 
 
-class StudentList(generics.ListCreateAPIView):
+
+class StudentCreate(generics.ListCreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
@@ -14,12 +15,10 @@ class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = StudentSerializer
 
 
-class StudentFilter(generics.ListAPIView):
+class StudentList(generics.ListAPIView):
+    queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
     def get_queryset(self):
-        queryset = Student.objects.all()
-        capstone = self.request.query_params.get('capstone', None)
-        if capstone is not None:
-            queryset = queryset.filter(name=capstone)
-        return queryset
+        first_name = self.kwargs['first_name']
+        return Student.objects.filter(first_name=first_name)
