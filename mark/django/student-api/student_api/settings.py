@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-d3$g-&k45tu7!w932rf$b5ir4el*()sn&6-!jflc(=m=k4g+oo
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*"
+    "*",
+    "localhost:8000"
 ]
 
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'students',  
+    'api',
 ]
 
 MIDDLEWARE = [
