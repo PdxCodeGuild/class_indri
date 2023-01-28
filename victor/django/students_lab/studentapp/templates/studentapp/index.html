@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.min.js" integrity="sha512-JEXkqJItqNp0+qvX53ETuwTLoz/r1Tn5yTRnZWWz0ghMKM2WFCEYLdQnsdcYnryMNANMAnxNcBa/dN7wQtESdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="{% static 'studentapp/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'studentapp/style.css' %}">
     <title>Students</title>
 </head>
 <body class="bg-dark text-light">
@@ -19,8 +20,10 @@
         <div class ='' v-for="student in students">
             <div class="card text-bg-success mb-3 p-2">
                 <h2 class="card-header">[[ student.first_name ]]</h2>
-                <h3>Primary Language: [[ student.favorite_language ]]</h3>
-                <a class='link-dark'href="#"><h4>[[ student.capstone ]]</h4></a>
+                <div class="card-body">
+                    <h3>Primary Language: [[ student.favorite_language ]]</h3>
+                    <a class='link-dark'href="#"><h4>[[ student.capstone ]]</h4></a>
+                </div>
             </div>
             <hr>
         </div>
