@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="Vue_style.css"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="Vue_Redo.js"></script>
+    <title>Vue Lab</title>
+</head>
+<body>
+    <div id="app">
+        <div class="user-display">
+            <h1>Lets Play Rock Paper Scissors</h1>
+            <button v-on:click="gamefuction('paper')">Paper</button>
+            <button v-on:click="gamefuction('scissors')">Scissors</button>
+            <button v-on:click="gamefuction('rock')">Rock</button>
+        </div>
+        <div class="endgame">
+            <h2 v-if="outcome">You picked {{ userChoice }}. The computer picked {{ computer }}</h2>
+            <h1>{{ outcome }}</h1>
+        </div>
+    </div>
+
+</body>
+</html>
