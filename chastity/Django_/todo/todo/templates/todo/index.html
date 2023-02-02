@@ -1,0 +1,24 @@
+{% extends 'todo/base.html'%}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Your To Do List</h1>
+
+<form action="{% url 'save_tasks' %}" method="POST"> 
+    {% csrf_token %}
+    {{ form }} 
+    <button type="submit">Add</button>   
+</form>
+
+{% for item in tasks %}
+<div>
+    {{ item.text }} 
+    <a href="{% url 'remove_tasks' item.id %}"><button>Remove</button></a>
+    <a href="{% url 'finished_tasks' item.id %}"><button>Finished</button></a>
+</div>
+{% endfor %}
+
+{% endblock %}
+
