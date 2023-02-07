@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <title>Number to phrase</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <h1>Number to phrase</h1><br>
+    <input type="text" placeholder="enter number" v-model = "convertNumber">
+    <button class="btn btn-primary" v-on:click="convert">Generate</button><br><br>
+    <div>
+      <h3>Generated phrase</h3>
+      {{}}
+    </div>
+  </div>
+</body>
+</html>

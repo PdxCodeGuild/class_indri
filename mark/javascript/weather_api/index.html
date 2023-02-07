@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js" integrity="sha512-L4lHq2JI/GoKsERT8KYa72iCwfSrKYWEyaBxzJeeITM9Lub5vlTj8tufqYk056exhjo2QDEipJrg6zen/DDtoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="secrets.js"></script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="">Home</a>
+        <!-- <input type="textbox" placeholder="00000-0000"> -->
+    </nav>
+    <main>
+        <div id="weather-current">
+            <h2 id='user-location'></h2>
+            <h3 id='user-time'></h3>
+            <h1 id="outside-temp"></h1>
+            <h3 id="weather-conditions"></h3>
+            <p id="min-max-temp"></p>
+            <p id="wind-conditions"></p>
+        </div>
+        <div id="weather-forecast"></div>
+    </main>
+</body>
+</html>

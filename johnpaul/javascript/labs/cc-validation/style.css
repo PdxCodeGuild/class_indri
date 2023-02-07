@@ -1,0 +1,11 @@
+*{
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
+
+.user-entry{
+  text-align: center;
+  font-weight: 600;
+  font-size: xx-large;
+  
+}

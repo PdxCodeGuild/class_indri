@@ -27,5 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('rock_paper_lab.urls')),
     path('todo/', include('anthonytodo.urls')),
-    path('blog/', include('anthonyblog.url'))
+    path('blog/', include('anthonyblog.urls')),
+    path('usersapp/', include('usersapp.urls'))
 ]

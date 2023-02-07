@@ -1,0 +1,12 @@
+body {
+    font-family: 'Nunito', sans-serif; 
+    color:black
+}
+
+
+#id_title{
+    color: black !important;
+}
+#id_body{
+    color: black !important;
+}

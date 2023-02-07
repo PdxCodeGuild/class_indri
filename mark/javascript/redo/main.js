@@ -12,14 +12,32 @@ let convert = {
     "in" : 0.0254
 }
 
-// # ask the user for the value
-const value = prompt("Enter a value to convert to meters: ")
+// get input from value box
+let userValue = document.querySelector("#userValue")
+// get input from unit box
+let userUnit = document.querySelector("#userUnit")
 
-// # ask the user for the unit
-const unit = prompt("Enter a unit (ft, mi, km, yd, in): ")
+// # return the result
+function returnResult(){
+    event.preventDefault();
+    let value = userValue.value
+    let unit = userUnit.value
+    // # Convert the user value from user unit to meters
+    let result = (value * convert[unit])
 
-// # Convert the user value from user unit to meters
-let result = (value * convert[unit])
-
-// #return the result
-alert(value + " " + unit + " is " + result + " meters")
+    // test if the result is Not a Number
+    let resulttest = isNaN(result)
+    
+    // console.log(resulttest)
+    
+    // if result is a number.
+    if (resulttest === false){
+        displayResult.textContent = `${value} ${unit} is ${result} meters`}
+    else
+        alert("Invalid! Try again.")
+        
+        // reset user value
+        userValue.value = ""
+    }
+    
+convertBtn.addEventListener("click", returnResult)

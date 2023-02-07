@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container teext-center">
+    <div class="row">
+        <div class="col-8">
+
+    
+            <h1>Chirp!!</h1>
+<br/>
+    {% for chirp in chirps %}
+        <div class="alert alert-light" role="alert">
+            {{ chirp.body }}
+        </div><br/>
+
+    {% endfor %}
+
+</div>
+
+<div class="col-4">
+    <br/><br/><br/>
+{% if form %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit" class="btn btn-secondary">Chirp!</button>
+      </form>
+{% endif %}
+</div>
+
+{% endblock %}

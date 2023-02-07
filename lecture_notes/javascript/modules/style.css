@@ -12,14 +12,14 @@ body {
 }
 
 .btn {
-    height: 20vh;
-    width: 20vh;
+    height: 20vmin;
+    width: 20vmin;
     outline: 2px solid white;
     border-radius: 8px;
     background: none;
     font-size: 16vh;
     border: none;
-    transition: all 1s;
+    transition: outline 1s;
 }
 
 .btn:hover {

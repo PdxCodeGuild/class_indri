@@ -1,0 +1,39 @@
+:root {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 30px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin: 0 auto;
+    height: 60vh;
+    width: 80vw;
+    gap: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper button{
+    font-size: 7rem;
+    border-radius: 60%;
+    /* background: none; */
+    /* border: none; */
+}
+
+.result-wrap {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}

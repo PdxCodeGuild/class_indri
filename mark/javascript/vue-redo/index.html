@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-RPS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Rock Paper Scissors</p>
+        <p>Make a choice:</p>
+        
+
+        <button v-on:click="playGame" class="choice" name="rock">Rock</button>
+        <button v-on:click="playGame" class="choice" name="paper">Paper</button>
+        <button v-on:click="playGame" class="choice" name="scissors">Scissors</button>
+
+        <table>
+            <tr>
+                <th>You</th>
+                <th>Result</th>
+                <th>Computer</th>
+            </tr>
+            <tr v-for="result in displayLog">
+                <td>{{ result.user }}</td>
+                <td>{{ result.result }}</td>
+                <td>{{ result.computer }}</td>
+            </tr>
+
+        </table>
+        <!-- <p v-for="result in displayLog">
+            
+        </p> -->
+    </div>
+</body>
+</html>
