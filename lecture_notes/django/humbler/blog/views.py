@@ -81,3 +81,15 @@ def edit(request, blog_id):
         'form': form
     }
     return render(request, 'blog/edit.html', context)
+
+
+def like(request, blog_id):
+    blog = get_object_or_404(BlogPost, id=blog_id)
+    if 'likes' in request.session:
+        request.session['likes'].append(blog_id)
+    else:
+        request.session['likes'] = [blog_id]
+
+    if request.user.is_authenticated:
+        blog.likes.add(request.user)
+    return redirect('home')

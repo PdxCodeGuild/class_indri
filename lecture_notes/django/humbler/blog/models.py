@@ -20,6 +20,7 @@ class BlogPost(models.Model):
     edited_date = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="blog_images/", blank=True)
+    likes = models.ManyToManyField(User, related_name="liked_posts")
 
     # Define the string representation of a BlogPost
     def __str__(self):

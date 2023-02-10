@@ -16,6 +16,9 @@ Humbler
 <p>{{post.body}}</p>
 <p>{{post.user.username}}</p>
 <p>{{post.edited_date}}</p>
+<p>Likes: {{post.likes.all|length}}</p>
+<!-- localhost:8000/like/4 -->
+<a href="{% url 'like' post.id %}">👍</a>
 <hr>
 {% endfor %}
 {% endblock %}

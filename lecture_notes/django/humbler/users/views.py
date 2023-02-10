@@ -5,9 +5,11 @@ from django.contrib.auth import authenticate, login as user_login, logout as use
 from django.contrib.auth.decorators import login_required
 from .forms import RegistrationForm, BaseForm as LoginForm
 from blog.models import BlogPost
-
+from .utils import add_likes
 
 # Login view - login a user
+
+
 def login(request):
     # If this is a GET request then create the default form
     if request.method == "GET":
@@ -26,6 +28,8 @@ def login(request):
                 request, username=username_input, password=password_input)
             # If user is found then log them in
             if user is not None:
+                if request.session.get('likes'):
+                    add_likes(user, request.session.get('likes'))
                 user_login(request, user)
                 # If the user was trying to access a page before logging in
                 # then redirect them to that page
@@ -75,6 +79,8 @@ def register(request):
                 # use .set_password() instead to store the hashed password to the db
                 user.set_password(password)
                 user.save()
+                if request.session.get('likes'):
+                    add_likes(user, request.session.get('likes'))
                 return redirect('profile')
 
     return render(request, 'users/register.html', {'form': form})
