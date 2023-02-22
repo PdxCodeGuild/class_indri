@@ -13,6 +13,16 @@ Staff:
 
 <hr>
 
+### Capstones
+
+- [Anthony](https://github.com/AnthonySambrano117/Project-117)
+- [Chastity](https://github.com/BoykinChas/comprime)
+- [Johnpaul](https://github.com/neshure/project_capstone)
+- [Mark](https://github.com/Mftodd/Agora)
+- [Noah](https://github.com/IcyStab/Property-Website)
+- [Victor](https://github.com/heirquiles/liftlink)
+
+
 ### Rough Timeline
 - Weeks 1, 2, 3, 4, 5: Python
 - Weeks 6, 7: HTML/CSS/Flask
